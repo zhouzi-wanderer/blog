@@ -38,4 +38,6 @@ export const en: Translation = {
 
   [Key.reading]: 'readings',
   [Key.loading]: 'Loading...',
+
+  [Key.links]: 'Links',
 }

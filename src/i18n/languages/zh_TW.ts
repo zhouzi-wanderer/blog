@@ -38,4 +38,6 @@ export const zh_TW: Translation = {
 
   [Key.reading]: '閱讀量',
   [Key.loading]: '載入中...',
+
+  [Key.links]: '友鏈',
 }

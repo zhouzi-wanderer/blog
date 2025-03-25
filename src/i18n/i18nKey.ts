@@ -35,6 +35,8 @@ enum I18nKey {
 
   reading = 'reading',
   loading = 'loading',
+
+  links = 'links',
 }
 
 export default I18nKey

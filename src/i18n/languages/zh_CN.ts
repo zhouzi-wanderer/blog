@@ -38,4 +38,6 @@ export const zh_CN: Translation = {
 
   [Key.reading]: '阅读量',
   [Key.loading]: '加载中...',
+
+  [Key.links]: '友链',
 }
