@@ -1,6 +1,6 @@
 ---
 title: LeetCode 每日一题
-published: 2025-03-24
+published: 2025-03-25
 description: 每天刷一道力扣
 image: ../../assets/images/cover2.jpg
 tags:
@@ -9,6 +9,34 @@ category: 实习找工
 draft: false
 lang: en
 ---
+
+## 2025-03-25
+
+> [3. 无重复字符的最长子串 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)
+
+从无重复字符，可以想到用 set 的数据结构维护一个子串所包含的所有字符，并用于查询新字符是否已经存在；然后用双指针记录当前子串左右边界，并且注意到每次左指针向右移动后，右指针一定是“不减”的。
+
+```python
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        l: int = 0
+        r: int = 1
+        max_l = 0
+        chars = set()
+        for l in range(len(s)):
+            if not l == 0:
+                chars.discard(s[l - 1])
+            chars.add(s[l])
+            r = max(l + 1, r)
+            while r < len(s):
+                if not s[r] in chars:
+                    chars.add(s[r])
+                    r += 1
+                else:
+                    break
+            max_l = max(max_l, r - l)
+        return max_l
+```
 
 ## 2025-03-24
 
