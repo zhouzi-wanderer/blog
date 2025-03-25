@@ -113,10 +113,56 @@ const jsonLd = {
                 <Content />
             </Markdown>
 
-            <script src="https://giscus.app/client.js" data-repo="KinnariyaMamaTanha/KinnariyaMamaTanha.github.io"
-            data-repo-id="R_kgDONZrjcA" data-category="Announcements" data-category-id="DIC_kwDONZrjcM4Ck-PT"
-            data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="1" data-input-position="top"
-            data-theme="dark" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+            <div id="giscus-container"></div>
+
+            <script>
+              function loadGiscus() {
+                const script = document.createElement('script');
+                script.src = 'https://giscus.app/client.js';
+                script.setAttribute('data-repo', 'KinnariyaMamaTanha/KinnariyaMamaTanha.github.io');
+                script.setAttribute('data-repo-id', 'R_kgDONZrjcA');
+                script.setAttribute('data-category', 'Announcements');
+                script.setAttribute('data-category-id', 'DIC_kwDONZrjcM4Ck-PT');
+                script.setAttribute('data-mapping', 'title');
+                script.setAttribute('data-strict', '0');
+                script.setAttribute('data-reactions-enabled', '1');
+                script.setAttribute('data-emit-metadata', '1');
+                script.setAttribute('data-input-position', 'top');
+                script.setAttribute('data-theme', isDarkMode() ? 'dark' : 'light');
+                script.setAttribute('data-lang', 'en');
+                script.setAttribute('data-loading', 'lazy');
+                script.crossorigin = 'anonymous';
+                script.async = true;
+                
+                const container = document.getElementById('giscus-container');
+                container.innerHTML = '';
+                container.appendChild(script);
+              }
+
+              // Detect dark mode - adjust this based on your theme implementation
+              function isDarkMode() {
+                return document.documentElement.classList.contains('dark');
+              }
+
+              // Initial load
+              loadGiscus();
+
+              // Update theme when it changes
+              const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                  if (mutation.attributeName === 'class') {
+                    const iframe = document.querySelector('.giscus-frame');
+                    if (iframe) {
+                      iframe.contentWindow.postMessage(
+                        { giscus: { setConfig: { theme: isDarkMode() ? 'dark' : 'light' } } },
+                        'https://giscus.app'
+                      );
+                    }
+                  }
+                });
+              });
+
+              observer.observe(document.documentElement, { attributes: true });
             </script>
 
             <br>
