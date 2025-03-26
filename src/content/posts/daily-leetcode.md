@@ -9,7 +9,37 @@ category: 实习找工
 draft: false
 lang: en
 ---
+## 2025-03-26
 
+> [438. 找到字符串中所有字母异位词 - 力扣（LeetCode）](https://leetcode.cn/problems/find-all-anagrams-in-a-string/description)
+
+很典的滑动窗口，导致我的做法和官方题解几乎一样……
+
+```python
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        len_s, len_p = len(s), len(p)
+
+        ans = []
+        if len_s >= len_p:
+            s_count = [0] * 26
+            p_count = [0] * 26
+            for i in range(len_p):
+                s_count[ord(s[i]) - 97] += 1
+                p_count[ord(p[i]) - 97] += 1
+    
+            if s_count == p_count:
+                ans.append(0)
+    
+            for i in range(len_s - len_p):
+                s_count[ord(s[i]) - 97] -= 1
+                s_count[ord(s[i + len_p]) - 97] += 1
+                
+                if s_count == p_count:
+                    ans.append(i + 1)
+
+        return ans    
+```
 ## 2025-03-25
 
 > [3. 无重复字符的最长子串 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)
