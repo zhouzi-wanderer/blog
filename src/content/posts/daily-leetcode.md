@@ -4,8 +4,8 @@ published: 2025-03-25
 description: 每天刷一道力扣
 image: ../../assets/images/cover2.jpg
 tags:
-    - leetcode
-category: 实习找工
+  - leetcode
+category: Career Journal
 draft: false
 lang: en
 ---

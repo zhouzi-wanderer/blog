@@ -4,7 +4,7 @@ tags:
   - tools
 published: 2025-03-16
 description: 一些 Ubuntu 的配置记录，防止下次没法还原了（
-category: 工具
+category: Knowledge Stack
 draft: false
 lang: en
 ---

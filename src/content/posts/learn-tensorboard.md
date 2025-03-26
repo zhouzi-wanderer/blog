@@ -1,9 +1,11 @@
 ---
-tags: [pytorch, tools]
+tags:
+  - pytorch
+  - tools
 title: Tensorboard 浅尝
 published: 2024-12-21
 description: 初学 tensorboard 的使用
-category: 人工智能
+category: Knowledge Stack
 draft: false
 lang: en
 modified: 星期日, 三月 23日 2025, 9:52:14 晚上

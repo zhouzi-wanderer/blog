@@ -10,7 +10,7 @@ tags:
   - transformer
 published: 2025-02-02
 description: 一些 LLM 的笔记杂烩
-category: 人工智能
+category: Research Log
 draft: false
 lang: en
 ---

@@ -6,7 +6,7 @@ tags:
   - nvidia
 published: 2025-02-17
 description: nccl 的基本使用
-category: MLSys
+category: Research Log
 draft: false
 lang: en
 ---

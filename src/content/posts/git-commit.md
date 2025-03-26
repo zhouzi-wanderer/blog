@@ -5,7 +5,7 @@ tags:
   - tools
 published: 2025-02-17
 description: git commit 相关规范
-category: 工具
+category: Knowledge Stack
 draft: false
 lang: en
 ---
