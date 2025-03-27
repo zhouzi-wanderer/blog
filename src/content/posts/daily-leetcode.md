@@ -9,6 +9,30 @@ category: Career Journal
 draft: false
 lang: en
 ---
+## 2025-03-27
+
+> [560. 和为 K 的子数组 - 力扣（LeetCode）](https://leetcode.cn/problems/subarray-sum-equals-k)
+
+这道题用前缀和可以做，但是想了想似乎加上哈希优化一下，时间复杂度会降到 $O(n)$ 去，所以就没有必要保存前缀和数组了；另外边界情况也要注意到。
+
+```python
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        pre_dict = {}
+        pre = 0
+        cnt = 0
+        for i in range(len(nums)):
+            pre += nums[i]
+            cnt += pre_dict.get(pre - k, 0)
+            if pre in pre_dict.keys():
+                pre_dict[pre] += 1
+            else:
+                pre_dict[pre] = 1
+            if pre == k:
+                cnt += 1
+        return cnt
+```
+
 ## 2025-03-26
 
 > [438. 找到字符串中所有字母异位词 - 力扣（LeetCode）](https://leetcode.cn/problems/find-all-anagrams-in-a-string/description)
