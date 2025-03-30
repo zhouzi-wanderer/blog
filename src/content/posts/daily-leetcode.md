@@ -10,6 +10,7 @@ draft: false
 lang: en
 ---
 ## 2025-03-30
+
 > [239. 滑动窗口最大值 - 力扣（LeetCode）](https://leetcode.cn/problems/sliding-window-maximum)
 
 很简单的滑动窗口，不必多说；唯一需要注意的点是 python 中 heapq 默认是小根堆。
