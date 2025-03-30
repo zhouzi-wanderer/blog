@@ -1,6 +1,6 @@
 ---
 title: LeetCode 每日一题
-published: 2025-03-25
+published: 2025-03-30
 description: 每天刷一道力扣
 image: ../../assets/images/cover2.jpg
 tags:
@@ -9,6 +9,24 @@ category: Career Journal
 draft: false
 lang: en
 ---
+## 2025-03-30
+> [239. 滑动窗口最大值 - 力扣（LeetCode）](https://leetcode.cn/problems/sliding-window-maximum)
+
+很简单的滑动窗口，不必多说；唯一需要注意的点是 python 中 heapq 默认是小根堆。
+
+```python
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        q = [(-nums[i], i) for i in range(k)]
+        heapq.heapify(q)
+        ans = [-q[0][0]]
+        for i in range(k, len(nums)):
+            heapq.heappush(q, (-nums[i], i))
+            while q[0][1] <= i - k:
+                heapq.heappop(q)
+            ans.append(-q[0][0])
+        return ans
+```
 ## 2025-03-27
 
 > [560. 和为 K 的子数组 - 力扣（LeetCode）](https://leetcode.cn/problems/subarray-sum-equals-k)
