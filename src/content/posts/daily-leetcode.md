@@ -1,6 +1,6 @@
 ---
 title: LeetCode 每日一题
-published: 2025-03-30
+published: 2025-03-31
 description: 每天刷一道力扣
 image: ../../assets/images/cover2.jpg
 tags:
@@ -9,6 +9,30 @@ category: Career Journal
 draft: false
 lang: en
 ---
+## 2025-03-31
+
+> [56. 合并区间 - 力扣（LeetCode）](https://link.zhihu.com/?target=https%3A//leetcode.cn/problems/merge-intervals/)
+
+这道题挺简单的，注意到区间的连续性，可以选择先把所有区间根据 start 进行排序，以减少时间复杂度。另外需要考虑到排序后前后两个区间的相对关系，共有如 `[1,4]` 和 `[2, 6]`、`[1, 4]` 和 `[2, 3]`、`[1, 4]` 和 `[5, 6]` 这三种情况。
+
+```python
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals = sorted(intervals, key=lambda x: x[0])
+        start = intervals[0][0]
+        end = intervals[0][1]
+        ans = []
+        for interval in intervals:
+            if interval[0] <= end:
+                if interval[1] >= end:
+                    end = interval[1]
+            else:
+                ans.append([start, end])
+                start = interval[0]
+                end = interval[1]
+        ans.append([start, end])
+        return ans
+```
 ## 2025-03-30
 
 > [239. 滑动窗口最大值 - 力扣（LeetCode）](https://leetcode.cn/problems/sliding-window-maximum)
