@@ -7,8 +7,8 @@ import type {
 import { LinkPreset } from './types/config'
 
 export const siteConfig: SiteConfig = {
-  title: 'Kinnari',
-  subtitle: 'Kinnari\'s Blogs',
+  title: 'Zhouzi',
+  subtitle: 'Zhouzi\'s Blogs',
   lang: 'en',         // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
   themeColor: {
     hue: 250,         // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
@@ -30,7 +30,7 @@ export const siteConfig: SiteConfig = {
   },
   favicon: [    // Leave this array empty to use the default favicon
     {
-      src: '/favicon/icon.png',    // Path of the favicon, relative to the /public directory
+      src: '/favicon/icon.jpg',    // Path of the favicon, relative to the /public directory
       // theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
       // sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
     }
@@ -52,19 +52,19 @@ export const navBarConfig: NavBarConfig = {
 }
 
 export const profileConfig: ProfileConfig = {
-  avatar: 'assets/images/avatar.png',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-  name: 'Kinnari',
-  bio: 'B.Eng @ SJTU',
+  avatar: 'assets/images/avatar.jpg',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+  name: 'Zhouzi',
+  bio: 'Physics @ USTC',
   links: [
     {
       name: 'GitHub',
       icon: 'fa6-brands:github',
-      url: 'https://github.com/KinnariyaMamaTanha',
+      url: 'https://github.com/zhouzi-aimless',
     },
     {
       name: 'ZhiHu',
-      icon: 'fa6-brands:zhihu',
-      url: 'https://www.zhihu.com/people/Kinnariya',
+      icon: 'fa6-brands:qq',
+      url: 'https://user.qzone.qq.com/2692033293/main',
     }
   ],
 }
