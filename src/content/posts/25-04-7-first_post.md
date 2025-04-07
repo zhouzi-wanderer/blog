@@ -6,7 +6,7 @@ image: ../../assets/images/daily.jpg
 tags:
   - 日常
 category: Life
-draft: true
+draft: false
 lang: en
 ---
 
