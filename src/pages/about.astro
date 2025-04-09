@@ -35,7 +35,7 @@ const { Content } = await aboutPost.render()
                 script.setAttribute('data-theme', isDarkMode() ? 'dark' : 'light');
                 script.setAttribute('data-lang', 'en');
                 script.setAttribute('data-loading', 'lazy');
-                script.crossorigin = 'anonymous';
+                script.crossOrigin = 'anonymous';
                 script.async = true;
                 
                 const container = document.getElementById('giscus-container');

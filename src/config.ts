@@ -45,7 +45,7 @@ export const navBarConfig: NavBarConfig = {
     LinkPreset.Links,
     // {
     //   name: 'GitHub',
-    //   url: 'https://github.com/KinnariyaMamaTanha',     // Internal links should not include the base path, as it is automatically added
+    //   url: 'https://github.com/zhouzi-wanderer',     // Internal links should not include the base path, as it is automatically added
     //   external: true,                               // Show an external link icon and will open in a new tab
     // },
   ],
@@ -57,14 +57,14 @@ export const profileConfig: ProfileConfig = {
   bio: 'Physics @ USTC',
   links: [
     {
+      name: 'QQ',
+      icon: 'fa6-brands:qq',
+      url: 'https://user.qzone.qq.com/2692033293/main',
+    },
+    {
       name: 'GitHub',
       icon: 'fa6-brands:github',
       url: 'https://github.com/zhouzi-wanderer',
-    },
-    {
-      name: 'ZhiHu',
-      icon: 'fa6-brands:qq',
-      url: 'https://user.qzone.qq.com/2692033293/main',
     }
   ],
 }
