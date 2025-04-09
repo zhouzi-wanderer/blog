@@ -23,14 +23,14 @@ const { Content } = await aboutPost.render()
               function loadGiscus() {
                 const script = document.createElement('script');
                 script.src = 'https://giscus.app/client.js';
-                script.setAttribute('data-repo', 'zhouzi-aimless/blog');
+                script.setAttribute('data-repo', 'zhouzi-wanderer/my_blog');
                 script.setAttribute('data-repo-id', 'R_kgDOOU2lmQ');
                 script.setAttribute('data-category', 'Announcements');
                 script.setAttribute('data-category-id', 'DIC_kwDOOU2lmc4Co1Qn');
                 script.setAttribute('data-mapping', 'title');
                 script.setAttribute('data-strict', '0');
                 script.setAttribute('data-reactions-enabled', '1');
-                script.setAttribute('data-emit-metadata', '0');
+                script.setAttribute('data-emit-metadata', '1');
                 script.setAttribute('data-input-position', 'top');
                 script.setAttribute('data-theme', isDarkMode() ? 'dark' : 'light');
                 script.setAttribute('data-lang', 'en');

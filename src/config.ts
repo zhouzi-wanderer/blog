@@ -59,7 +59,7 @@ export const profileConfig: ProfileConfig = {
     {
       name: 'GitHub',
       icon: 'fa6-brands:github',
-      url: 'https://github.com/zhouzi-aimless',
+      url: 'https://github.com/zhouzi-wanderer,
     },
     {
       name: 'ZhiHu',
