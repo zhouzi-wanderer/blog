@@ -4,7 +4,8 @@ published: 2025-04-10
 description: 个人网页的第一篇post
 image: ../../assets/images/daily.jpg
 tags:
-  - 日常
+  - life
+  - start
 category: Life
 draft: false
 lang: en
