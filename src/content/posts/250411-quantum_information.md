@@ -5,7 +5,7 @@ description: 'some notes about quantum information'
 image: ''
 tags: [notes, quantum information]
 category: 'Notes'
-draft: true 
+draft: false
 lang: 'en'
 ---
 
