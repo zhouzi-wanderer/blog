@@ -11,7 +11,7 @@ lang: 'en'
 
 <style>
 p {
-  line-height: 1.2;
+  line-height: 1.5;
 }
 </style>
 
@@ -75,7 +75,9 @@ p {
     |\psi\rangle\to U|\psi\rangle
     $$    
 
-+ Nonelocal correlation: If we divide a quantum system into some subsystems and carry out each measurement within one of the subsystems, which means no collective measurements spanning the boundaries between the subsystems is allowed, the measurements will reveal very little information about what the state of original system is. Most of the information is stored in correlations. By measuring the correlations, which is considered to be a “collective” measurement, we can learn much more; in principle, we can completely reconstruct the state.
++ Nonelocal correlation: If we divide a quantum system into some subsystems and carry out each measurement within one of the subsystems, which means no collective measurements spanning the boundaries between the subsystems is allowed, the measurements will reveal very little information about what the state of original system is. 
+  
+  Most of the information is stored in correlations. By measuring the correlations, which is considered to be a “collective” measurement, we can learn much more; in principle, we can completely reconstruct the state.
 
 ### 1.5 Quantum parallelism
 
