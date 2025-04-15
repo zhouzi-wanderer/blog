@@ -84,10 +84,40 @@ p {
   
   To obtain all possible outcomes, $2^N$ computations are required for classical bits; however, only a single calculation is required for qubits.
 
-  Let the quantum computer acts as
+  >e.g. Deutsch's problem
+  >
+  >There is a black box that computes a function that takes a single bit $x$ to a single bit $f(x)$. We want to know whether $f(x)$ is constant $(f(0)=f(1))$ or balanced $(f(0)\neq f(1))$.
+  >
+  >For classical bits, 2 computations are required to get the answer. In contrast, for qubits, it just once calculation suffices.
+  >
+  >All we need is a transformation $U_f$ that operates on two qubits:
+  >$$
+  >U_f:|x\rangle|y\rangle\to|x\rangle|y\oplus f(x)\rangle.
+  >$$
+  >We can choose the second qubit of the input state to be a superposition of $|0\rangle$ and $|1\rangle$, $\frac{1}{\sqrt{2}}(|0\rangle-|1\rangle)$, then
+  >$$
+  >\begin{align*}
+  >U_f:|x\rangle\frac{1}{\sqrt{2}}(|0\rangle-|1\rangle)&\to|x\rangle\frac{1}{\sqrt{2}}(|0\oplus f(x)\rangle-|1\oplus f(x)\rangle)\\
+  >&=|x\rangle(-1)^{f(x)}\frac{1}{\sqrt{2}}(|0\rangle-|1\rangle),
+  >\end{align*}
+  >$$
+  >Now suppose we prepare the first qubit as $\frac{1}{\sqrt{2}}(|0\rangle+|1\rangle)$. Then the black box acts as
+  >$$
+  >\begin{align*}
+  >U_f:&\frac{1}{\sqrt{2}}(|0\rangle+|1\rangle)\frac{1}{\sqrt{2}}(|0\rangle-|1\rangle)\to\\
+  >&\frac{1}{\sqrt{2}}\left[(-1)^{f(0)}|0\rangle+(-1)^{f(1)}|1\rangle\right]\frac{1}{\sqrt{2}}(|0\rangle-|1\rangle).
+  >\end{align*}
+  >$$
+  >Finally, we can perform a measurement that projects the first qubit onto the basis
+  >$$
+  >|\pm\rangle=\frac{1}{\sqrt{2}}(|0\rangle\pm|1\rangle).
+  >$$
+  >Evidently, we will always obtain $|+\rangle$ if the function is constant$(f(0)=f(1))$, and $|-\rangle$ if the function is balanced$(f(0)\ne f(1))$.
+
++ Let the quantum computer acts as
 
   $$
-  U_f:|x\rangle\to|x\rangle|f(x)\rangle,
+  U_f:|x\rangle|\rangle\to|x\rangle|f(x)\rangle,
   $$
 
   we could choose the input register to be in a state
@@ -101,21 +131,13 @@ p {
   \frac{1}{2^{N/2}}\sum_{x=0}^{2^N-1}|x\rangle|f(x)\rangle.
   $$
 
-  >e.g. Deutsch's problem
-  >There is a black box that computes a function that takes a single bit $x$ to a single bit $f(x)$. We want to know whether $f(x)$ is constant $(f(0)=f(1))$ or balanced $(f(0)\neq f(1))$.
-  >
-  >For classical bits, 2 computations are required to get the answer. In contrast, for qubits, it just once calculation suffices.
-  >
-  >All we need is a transformation $U_f$ that operates on two qubits:
-  >$$
-  >U_f:|x\rangle|y\rangle\to|x\rangle|y\oplus f(x)\rangle
-  >$$
-  >We can choose the second qubit of the input state to be a superposition of $|0\rangle$ and $|1\rangle$, $\frac{1}{\sqrt{2}}(|0\rangle-|1\rangle)$, then
-  >$$
-  >\begin{align*}
-  >U_f:|x\rangle\frac{1}{\sqrt{2}}(|0\rangle-|1\rangle)&\to|x\rangle\frac{1}{\sqrt{2}}(|0\oplus f(x)\rangle-|1\oplus f(x)\rangle)\\&=|x\rangle(-1)^{f(x)}\frac{1}{\sqrt{2}}(|0\rangle-|1\rangle),
-  >\end{align*}
-  >$$
+  If we measure the first qubit and obtain $|x_0\rangle$. This procedure would prepare a state
+  $$
+  |x_0\rangle|f(x_0)\rangle.
+  $$
   
+  By measuring the state, we can find the value of $f(x_0)$. However, we can't determine $f(y_0)$ for any $y_0\ne x_0.$ We need to go back to the step before we measured the first qubit and expect measurement result of first qubit is $y_0$. In this case, then, the quantum computation provided no advantage over a classical one.
+
+### 1.6 A new classification of complexity
 
 ## Chap 2 &nbsp;&nbsp;&nbsp;&nbsp;States and Ensembles [📖](https://www.preskill.caltech.edu/ph219/chap2_15.pdf)
