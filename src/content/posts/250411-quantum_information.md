@@ -1,12 +1,14 @@
 ---
 title: Quantum Information (to be updated)
 published: 2025-04-11
-description: 'some notes about quantum information'
+description: some notes about quantum information
 image: ''
-tags: [notes, quantum information]
-category: 'Notes'
+tags: 
+  - notes
+  - quantum information
+category: Notes
 draft: false
-lang: 'en'
+lang: en
 ---
 
 <style>
