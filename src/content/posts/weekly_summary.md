@@ -6,8 +6,8 @@ image: ../../assets/images/thinking.jpg
 tags:
   - reflection
 category: Summary
-draft: false
-lang: en
+draft: true
+lang: en  
 ---
 
 以后~~每周都会~~觉得有必要的时候才会有周总结，主要就是回想一下这周或者更久之前的事情，小小写点感悟。
