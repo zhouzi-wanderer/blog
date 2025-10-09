@@ -1,8 +1,8 @@
 ---
-title: Electrodynamics
+title: 电动力学
 published: 2025-09-19
 description: ''
-image: ''
+image: '../../assets/images/studying.png'
 tags: [notes, electrodynamics]
 category: 'Notes'
 draft: false 
@@ -137,7 +137,7 @@ p {
 
   电磁力的功率密度为
 
-  $$p = \bm{f} \cdot \bm{v} = \bm{j} \cdot \bm{E} ~~~~ \bm{v}与\bm{v}同向$$ 
+  $$p = \bm{f} \cdot \bm{v} = \bm{j} \cdot \bm{E} ~~~~ \bm{v}与\bm{j}同向$$ 
 
   可见仅有电场对运动的电荷做工，且不区分场源种类。
 
@@ -168,20 +168,23 @@ p {
 
   称之为电磁场能量守恒定理，又称为坡印廷定理。物理含义为：单位体积、单位时间内电磁场能量的减小量等于单位时间内流出的电磁能量与对带电体做功之和。
 
-  电磁场同样存在动量和角动量以及它们的守恒定律，限于篇幅不再推导，后续将以表格形式展示。
-
+  
 ### 1.3.3 电磁场对带电体的力和功率小结
 
-  |                  | 真空中                                                                                             | 辅助矢量形式 （满足$D_i = \varepsilon_{ij} E_i ~~~~ B_i = \mu_{ij} H_i$）                              |
-  | :--------------- | :------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------- |
-  | 电磁能量密度     | $\mathcal{w} = \frac{1}{2} \varepsilon_0 E^2 + \frac{1}{2} \frac{B^2}{\mu_0}$                      | $\mathcal{w_0} = \frac{1}{2} \bm{D} \cdot \bm{E} + \frac{1}{2} \bm{B} \cdot \bm{H}$                    |
-  | 电磁能流密度     | $\bm{S} = \frac{1}{\mu_0} \bm{E} \times \bm{B}$                                                    | $\bm{S_0} = \bm{E} \times \bm{H}$                                                                      |
-  | 电磁动量密度     | $\bm{g} = \varepsilon_0 \bm{E} \times \bm{B}$                                                      | $\bm{g_0} = \bm{D} \times \bm{B}$                                                                      |
-  | 电磁动量流密度   | $\mathbf{T} = \mathcal{w} \mathbf{I} -\varepsilon_0 \bm{E} \bm{E} - \frac{1}{\mu_0} \bm{B} \bm{B}$ | $\mathbf{T_0} = \mathcal{w_0} \mathbf{I} -\varepsilon_0 \bm{D} \bm{E} - \frac{1}{\mu_0} \bm{B} \bm{H}$ |
-  | 电磁角动量密度   | $\bm{l} = \bm{r} \times \bm{g}$                                                                    | $\bm{l_0} = \bm{r} \times \bm{g_0}$                                                                    |
-  | 电磁角动量流密度 | $\mathbf{R} = - \mathbf{T} \times \bm{r}$                                                          | $\mathbf{R_0} = - \mathbf{T_0} \times \bm{r}$                                                          |
++ 电磁场同样存在动量和角动量以及它们的守恒定律，限于篇幅不再推导，后续将以表格形式展示。
 
-  |            |                                                                                           |
+  |                  | 真空中                                                                                              | 辅助矢量形式 （满足$D_i = \varepsilon_{ij} E_i ~~~~ B_i = \mu_{ij} H_i$）           |
+  | :--------------- | :-------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
+  | 电磁能量密度     | $\mathcal{w} = \frac{1}{2} \varepsilon_0 E^2 + \frac{1}{2} \frac{B^2}{\mu_0}$                       | $\mathcal{w_0} = \frac{1}{2} \bm{D} \cdot \bm{E} + \frac{1}{2} \bm{B} \cdot \bm{H}$ |
+  | 电磁能流密度     | $\bm{S} = \frac{1}{\mu_0} \bm{E} \times \bm{B}$                                                     | $\bm{S_0} = \bm{E} \times \bm{H}$                                                   |
+  | 电磁动量密度     | $\bm{g} = \varepsilon_0 \bm{E} \times \bm{B}$                                                       | $\bm{g_0} = \bm{D} \times \bm{B}$                                                   |
+  | 电磁动量流密度   | $\mathbf{T} = \mathcal{w} \mathbf{I} - \varepsilon_0 \bm{E} \bm{E} - \frac{1}{\mu_0} \bm{B} \bm{B}$ | $\mathbf{T_0} = \mathcal{w_0} \mathbf{I} - \bm{D} \bm{E} - \bm{B} \bm{H}$           |
+  | 电磁角动量密度   | $\bm{l} = \bm{r} \times \bm{g}$                                                                     | $\bm{l_0} = \bm{r} \times \bm{g_0}$                                                 |
+  | 电磁角动量流密度 | $\mathbf{R} = - \mathbf{T} \times \bm{r}$                                                           | $\mathbf{R_0} = - \mathbf{T_0} \times \bm{r}$                                       |
+
++ 守恒关系
+
+  |            | 守恒定理                                                                                  |
   | :--------- | :---------------------------------------------------------------------------------------- |
   | 能量守恒   | $- \frac{\partial{\mathcal{w}}}{\partial{t}} = \nabla \cdot \bm{S} + \bm{j} \cdot \bm{E}$ |
   | 动量守恒   | $- \frac{\partial{\bm{g}}}{\partial{t}} = \nabla \cdot \mathbf{T} + \bm{f}$               |

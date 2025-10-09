@@ -2,7 +2,7 @@
 title: 起点
 published: 2025-04-10
 description: 个人网页的第一篇post
-image: ../../assets/images/daily.jpg
+image: ../../assets/covers/start.png
 tags:
   - life
   - start

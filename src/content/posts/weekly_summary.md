@@ -2,7 +2,7 @@
 title: 周总结
 published: 2025-05-04
 description: 每周总结
-image: ../../assets/images/thinking.jpg
+image: ../../assets/covers/thinking1.png
 tags:
   - reflection
 category: Summary
