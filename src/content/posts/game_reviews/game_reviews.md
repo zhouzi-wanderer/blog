@@ -17,7 +17,7 @@ lang: 'cn'
 
 # 光环：士官长合集 HALO: The Master Chief Collection
 
-![](images\halo.jpeg)
+![](images/halo.jpeg)
 
 >该测评摘自QQ空间，写于2025年07月09日
 
@@ -39,17 +39,17 @@ lang: 'cn'
 
 # 亚托莉：我挚爱的时光 ATRI -My Dear Moments-
 
-![](images\atri1.jpeg)
+![](images/atri1.jpeg)
 
-![](images\atri2.jpeg)
+![](images/atri2.jpeg)
 
-![](images\atri3.jpeg)
+![](images/atri3.jpeg)
 
-![](images\atri4.jpeg)
+![](images/atri4.jpeg)
 
-![](images\atri5.jpeg)
+![](images/atri5.jpeg)
 
-![](images\atri6.jpeg)
+![](images/atri6.jpeg)
 
 >该测评摘自QQ空间，写于2024年07月19日
 

@@ -1,5 +1,5 @@
 ---
-title: Quantum Information (to be updated)
+title: Quantum Information
 published: 2025-04-11
 description: 'This note refers to the lecture notes of Professor John Preskill.'
 image: '../../assets/images/studying.png'
@@ -153,8 +153,11 @@ p {
 + Overall, we can divide the errors into four categories.
 
   >Phase error: $\ket 0 + \ket 1 \to \ket 0 - \ket 1$.
+  >
   >Small error: initial state $a \ket 0 + b \ket 1$ changes amount of order $\varepsilon$.
+  >
   >Measurement causes disturbance.
+  >
   >No cloning: quantum information cannot be copied with perfect fidelity.
 
 ## 1.8 Quantum error-correcting codes
@@ -250,15 +253,15 @@ p {
 
 ## 2.1 Axioms of quantum mechanics
 
-+ Axiom 1. States.
++ Axiom 1. __States__.
 
   A state is a complete description of a physical system. In quantum mechanics, a state is a ray in a Hilbert space.
 
-+ Axiom 2. Observables. 
-  
++ Axiom 2. __Observables__.
+
   An observable is a property of a physical system that in principle can be measured. In quantum mechanics, an observable is a self-adjoint operator.
 
-+ Axiom 3. Measurement.
++ Axiom 3. __Measurement__.
 
   A measurement is a process in which information about the state of a physical system is acquired by an observer. In quantum mechanics, the measurement of an observable $\pmb{A}$ prepares an eigenstate of $\pmb{A}$, and the observer learns the value of the corresponding eigenvalue.If the quantum state just prior to the measurement is $\ket{\psi}$, then the outcome an is obtained with a priori probability
 
@@ -272,11 +275,11 @@ p {
   \frac{\pmb{E_n} \ket{\psi}}{||\pmb{E_n} \ket{\psi}||}.
   $$
 
-+ Axiom 4. Dynamics.
++ Axiom 4. __Dynamics__.
 
   Dynamics describes how a state evolves over time. In quantum mechanics, the time evolution of a closed system is described by a unitary operator.
 
-+ Axiom 5. Composite Systems.
++ Axiom 5. __Composite Systems__.
 
   If the Hilbert space of system $A$ is $\mathcal{H}_A$ and the Hilbert space of system $B$ is $\mathcal{H}_B$, then the Hilbert space of the composite systems $AB$ is the tensor product $\mathcal{H}_A \otimes \mathcal{H}_B$. If system $A$ is prepared in the state $\ket{\psi}_{A}$ and system B is prepared in the state $\ket{\varphi}_{B}$, then the composite system’s state is the product $\ket{\psi}_A \otimes \ket{\varphi}_B$.
 
