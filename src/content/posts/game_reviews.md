@@ -2,7 +2,7 @@
 title: 游戏测评
 published: 2025-10-04
 description: ''
-image: '../../../assets/covers/gaming.png'
+image: '../../assets/covers/gaming.png'
 tags: [game reviews]
 category: 'game reviews'
 draft: false 
@@ -17,7 +17,7 @@ lang: 'cn'
 
 # 光环：士官长合集 HALO: The Master Chief Collection
 
-![](images/halo.jpeg)
+![](../../assets/game_reviews/halo.jpeg)
 
 >该测评摘自QQ空间，写于2025年07月09日
 
@@ -39,17 +39,17 @@ lang: 'cn'
 
 # 亚托莉：我挚爱的时光 ATRI -My Dear Moments-
 
-![](images/atri1.jpeg)
+![](../../assets/game_reviews/atri1.jpeg)
 
-![](images/atri2.jpeg)
+![](../../assets/game_reviews/atri2.jpeg)
 
-![](images/atri3.jpeg)
+![](../../assets/game_reviews/atri3.jpeg)
 
-![](images/atri4.jpeg)
+![](../../assets/game_reviews/atri4.jpeg)
 
-![](images/atri5.jpeg)
+![](../../assets/game_reviews/atri5.jpeg)
 
-![](images/atri6.jpeg)
+![](../../assets/game_reviews/atri6.jpeg)
 
 >该测评摘自QQ空间，写于2024年07月19日
 
@@ -71,7 +71,7 @@ ATRI是一部很优秀的作品。故事中的描写节奏缓慢，但饱含真�
 
 # 荒野大镖客：救赎2 Red Dead Redemption II
 
-![](images/red_dead_redemption.jpeg)
+![](../../assets/game_reviews/red_dead_redemption.jpeg)
 
 >该测评摘自QQ空间，写于2023年11月19日
 
@@ -89,7 +89,7 @@ ATRI是一部很优秀的作品。故事中的描写节奏缓慢，但饱含真�
 
 # 死亡搁浅 Death Stranding
 
-![](images/death_stranding.jpeg)
+![](../../assets/game_reviews/death_stranding.jpeg)
 
 >该测评摘自QQ空间，写于2023年11月06日
 

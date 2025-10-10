@@ -2,7 +2,7 @@
 title: 电动力学
 published: 2025-09-19
 description: ''
-image: '../../assets/images/studying.png'
+image: '../../assets/covers/studying.png'
 tags: [notes, electrodynamics]
 category: 'Notes'
 draft: false 

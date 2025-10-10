@@ -2,7 +2,7 @@
 title: Quantum Information
 published: 2025-04-11
 description: 'This note refers to the lecture notes of Professor John Preskill.'
-image: '../../assets/images/studying.png'
+image: '../../assets/covers/studying.png'
 tags: [notes, quantum information]
 category: 'Notes'
 draft: false
