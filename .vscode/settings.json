@@ -21,5 +21,12 @@
   "frontMatter.dashboard.openOnStart": false,
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  }
+  },
+  "cSpell.words": [
+    "eigenstate",
+    "eigenstates",
+    "nonlocal",
+    "qubit",
+    "qubits"
+  ]
 }

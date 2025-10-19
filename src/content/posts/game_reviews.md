@@ -1,7 +1,7 @@
 ---
 title: 游戏测评
 published: 2025-10-04
-description: ''
+description: '搬运自QQ空间的游戏测评'
 image: '../../assets/covers/gaming.png'
 tags: [game reviews]
 category: 'game reviews'
