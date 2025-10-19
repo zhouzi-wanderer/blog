@@ -5,7 +5,7 @@ description: 'Notes on Quantum Optics'
 image: '../../assets/covers/studying.png'
 tags: [notes, quantum optics]
 category: 'Notes'
-draft: false 
+draft: true 
 lang: 'en'
 ---
 
