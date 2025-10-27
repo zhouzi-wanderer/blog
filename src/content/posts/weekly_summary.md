@@ -3,8 +3,7 @@ title: 周总结
 published: 2025-05-04
 description: 每周总结
 image: ../../assets/covers/thinking1.png
-tags:
-  - reflection
+tags: [reflection]
 category: Summary
 draft: true
 lang: en  

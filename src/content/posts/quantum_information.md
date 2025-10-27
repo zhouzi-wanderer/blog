@@ -38,17 +38,35 @@ p {
 
 + True randomness
 
+  Measurement in quantum mechanics is inherently probabilistic. If we measure a general state $\ket \psi = \sum_{x} a_x \ket x$ by projecting onto the $\{\ket 0,\ket 1\}$ basis, the probability of obtaining the outcome $\ket x$ is $|a_x|^2$. This randomness is a fundamental feature of quantum theory.
+
 + Uncertainty principle
 
+  In quantum theory, noncommuting observables cannot simultaneously have precisely defined values (the uncertainty principle).
+
 + Acquiring information causes disturbance
+  
+  Performing a measurement of one observable $A$ will necessarily influence (disturb) the outcome of a subsequent measurement of an observable $B$, if $A$ and $B$ do not commute.
 
 + No-cloning principle
+  
+  It is impossible to create an independent and identical copy of an arbitrary unknown quantum state.
 
 + Nonlocal correlation
+  
+  In theoretical physics, quantum nonlocality refers to the phenomenon by which the measurement statistics of a multipartite quantum system do not allow an interpretation with local realism. 
 
 ## 1.3 Efficient quantum algorithms
 
 + Quantum bits have some properties that classical bits don't have, which can reduce the computational complexity on specific problems.
+
+  > e.g. **Shor's Algorithm**:
+  >
+  > This is a quantum algorithm for integer factorization. Classically, factoring a large number is considered a "hard" problem (it is in NP, but not believed to be in P). The best-known classical algorithms require super-polynomial time. Shor's algorithm, however, can run in polynomial time on a quantum computer, providing an exponential speedup.
+  >
+  > e.g. **Grover's Algorithm**:
+  >
+  > This is a quantum search algorithm. For an unstructured database with $N$ items, a classical search requires $O(N)$ operations on average to find a target. Grover's algorithm achieves this in $O(\sqrt{N})$ operations, a quadratic speedup. This can be applied to brute-forcing solutions for NP-Complete problems, reducing a classical $O(2^N)$ search time to a quantum $O(2^{N/2})$ time.
 
 ## 1.4 Quantum complexity
 
@@ -66,10 +84,10 @@ p {
 
   where $a_x$'s are complex number satisfying $\sum_x |a_x|^2=1$. If we measure all N qubits by projecting each onto the $\{\ket 0,\ket 1\}$ basis, the probability of obtaining the outcome $\ket x$ is $|a_x|^2$.
 
-+ Quantum gate: Apply a unitary transformation U to the N qubits,
++ Quantum gate: Apply a unitary transformation $\bm{U}$ to the N qubits,
 
   $$
-  \ket \psi \to U \ket \psi.
+  \ket \psi \to \bm{U} \ket \psi.
   $$    
 
 + Nonelocal correlation: If we divide a quantum system into some subsystems and carry out each measurement within one of the subsystems, which means no collective measurements spanning the boundaries between the subsystems is allowed, the measurements will reveal very little information about what the state of original system is. 
@@ -269,16 +287,16 @@ p {
 
 + Axiom 3. __Measurement__.
 
-  A measurement is a process in which information about the state of a physical system is acquired by an observer. In quantum mechanics, the measurement of an observable $\pmb{A}$ prepares an eigenstate of $\pmb{A}$, and the observer learns the value of the corresponding eigenvalue.If the quantum state just prior to the measurement is $\ket{\psi}$, then the outcome an is obtained with a priori probability
+  A measurement is a process in which information about the state of a physical system is acquired by an observer. In quantum mechanics, the measurement of an observable $\bm{A}$ prepares an eigenstate of $\bm{A}$, and the observer learns the value of the corresponding eigenvalue.If the quantum state just prior to the measurement is $\ket{\psi}$, then the outcome an is obtained with a priori probability
 
   $$
-  \mathrm{Prob}(a_n) = ||\pmb{E_n} \ket{\psi}||^2 = \bra{\psi} \pmb{E_n} \ket{\psi};
+  \text{Prob}(a_n) = \|\bm{E_n} \ket{\psi}\|^2 = \bra{\psi} \bm{E_n} \ket{\psi};
   $$
   
   if the outcome $a_n$ is attained, then the (normalized) quantum state just after the measurement is
 
   $$
-  \frac{\pmb{E_n} \ket{\psi}}{||\pmb{E_n} \ket{\psi}||}.
+  \frac{\bm{E_n} \ket{\psi}}{\|\bm{E_n} \ket{\psi}\|}.
   $$
 
 + Axiom 4. __Dynamics__.
@@ -324,7 +342,7 @@ p {
   where
 
   $$
-  \bm{\sigma_1} = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, ~~~ \bm{\sigma_2} = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, ~~~ \bm{\sigma_3} = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}.
+  \bm{\sigma}_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, ~~~ \bm{\sigma}_2 = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, ~~~ \bm{\sigma}_3 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}.
   $$
 
   It is easy to check that the Pauli matrices satisfy the relations
@@ -342,7 +360,7 @@ p {
   Now consider the dot product of a vector and the Pauli operators
 
   $$
-  \hat{n} \cdot \bm{\sigma} = n_1 \bm{\sigma_1} + n_2 \bm{\sigma_2} + n_3 \bm{\sigma_3} = \begin{pmatrix} n_3 & n_1 - i n_2 \\ n_1 + i n_2 & -n_3 \end{pmatrix},
+  \hat{n} \cdot \bm{\sigma} = n_1 \bm{\sigma}_1 + n_2 \bm{\sigma}_2 + n_3 \bm{\sigma}_3 = \begin{pmatrix} n_3 & n_1 - i n_2 \\ n_1 + i n_2 & -n_3 \end{pmatrix},
   $$
 
   where $\hat{n} = (n_1, n_2, n_3)$ is a unit vector. Then we have
@@ -437,10 +455,10 @@ p {
 
   where $\ket{ij} = \ket{i}_A \otimes \ket{j}_B$ and the complex coefficients $c_{ij}$ satisfy the normalization condition $\sum_{i,j} |c_{ij}|^2 = 1$.
 
-  An observable acting on both qubits A and B, $\bm{M} = \bm{M_A} \otimes \bm{M_B}$, has expectation value
+  An observable acting on both qubits A and B, $\bm{M} = \bm{M}_A \otimes \bm{M}_B$, has expectation value
 
   $$
-  \langle \bm{M} \rangle = \bra{\psi} (\bm{M_A} \otimes \bm{M_B}) \ket{\psi} = \text{tr}(\bm{M} \bm{\rho}),
+  \langle \bm{M} \rangle = \bra{\psi} (\bm{M}_A \otimes \bm{M}_B) \ket{\psi} = \text{tr}(\bm{M} \bm{\rho}),
   $$
 
   where $\bm{\rho} = \ket{\psi} \bra{\psi}$ is the density operator for the composite system.
@@ -448,25 +466,25 @@ p {
   An observable acting on qubit A only can be expressed as
 
   $$
-  \bm{M_A} \otimes \bm{I_B},
+  \bm{M}_A \otimes \bm{I}_B,
   $$
 
-  where $\bm{M_A}$ is a Hermitian operator acting on $\mathcal{H}_A$, and $\bm{I_B}$ is the identity operator acting on $\mathcal{H}_B$.
+  where $\bm{M}_A$ is a Hermitian operator acting on $\mathcal{H}_A$, and $\bm{I}_B$ is the identity operator acting on $\mathcal{H}_B$.
 
   The expectation value of the observable in the state $\ket{\psi}$ is:
 
   $$
   \begin{align*}
-  \langle \bm{M_A} \otimes \bm{I_B} \rangle &= \bra{\psi} (\bm{M_A} \otimes \bm{I_B}) \ket{\psi} \\ &= \sum_{i,j,i',j'} c_{ij}^* c_{i'j'} \bra{ij} (\bm{M_A} \otimes \bm{I_B}) \ket{i'j'} \\ &= \sum_{i,j,i',j'} c_{ij}^* c_{i'j'} \bra{i} \bm{M_A} \ket{i'} \bra{j} \bm{I_B} \ket{j'} \\ &= \sum_{i,i'} \alpha_{ii'} \bra{i} \bm{M_A} \ket{i'} \\ &= \text{tr}(\bm{M_A} \bm{\rho_A}),
+  \langle \bm{M}_A \otimes \bm{I}_B \rangle &= \bra{\psi} (\bm{M}_A \otimes \bm{I}_B) \ket{\psi} \\ &= \sum_{i,j,i',j'} c_{ij}^* c_{i'j'} \bra{ij} (\bm{M}_A \otimes \bm{I}_B) \ket{i'j'} \\ &= \sum_{i,j,i',j'} c_{ij}^* c_{i'j'} \bra{i} \bm{M}_A \ket{i'} \bra{j} \bm{I}_B \ket{j'} \\ &= \sum_{i,i'} \alpha_{ii'} \bra{i} \bm{M}_A \ket{i'} \\ &= \text{tr}(\bm{M}_A \bm{\rho}_A),
   \end{align*}
   $$
 
-  where $\alpha_{ii'} = \sum_{j} c_{ij}^* c_{i'j}$ and $\bm{\rho_A} = \sum_{ii'} \alpha_{ii'} \ket{i'} \bra{i}$. The operator $\bm{\rho_A}$ is called the density operator (or density matrix) for qubit A.
+  where $\alpha_{ii'} = \sum_{j} c_{ij}^* c_{i'j}$ and $\bm{\rho}_A = \sum_{ii'} \alpha_{ii'} \ket{i'} \bra{i}$. The operator $\bm{\rho}_A$ is called the density operator (or density matrix) for qubit A.
 
-  $\bm{\rho_A}$ can be obtained from $\bm{\rho}$ by taking the partial trace over subsystem B:
+  $\bm{\rho}_A$ can be obtained from $\bm{\rho}$ by taking the partial trace over subsystem B:
 
   $$
-  \bm{\rho_A} = \text{tr}_B(\bm{\rho}) = \sum_{j} (\bm{I_A} \otimes \bra{j}_B) \bm{\rho} (\bm{I_A} \otimes \ket{j}_B) = \sum_{i,j,i'} c_{ij}^* c_{i'j} \ket{i'} \bra{i}.
+  \bm{\rho}_A = \text{tr}_B(\bm{\rho}) = \sum_{j} (\bm{I}_A \otimes \bra{j}_B) \bm{\rho} (\bm{I}_A \otimes \ket{j}_B) = \sum_{i,j,i'} c_{ij}^* c_{i'j} \ket{i'} \bra{i}.
   $$
 
   The density operator $\bm{\rho}$ has the following properties:
@@ -479,10 +497,10 @@ p {
   A general density matrix, expressed in the basis {$\ket{i}$} in which it is diagonal, has the form
 
   $$
-  \bm{\rho} = \sum_i p_i \ket{i} \bra{i},
+  \bm{\rho} = \sum_{i} p_i \ket{i} \bra{i},
   $$
 
-  where $0 < p_i ≤ 1$ and $\sum_i p_i = 1$. A useful criterion for distinguishing pure states from mixed states is provided by the trace of the square of the density operator. If $\bm{\rho}$ represents a pure state, then $\bm{\rho}^2 = \bm{\rho}$, and so $\text{tr}(\bm{\rho}^2) = \text{tr}(\bm{\rho}) = 1$. On the other hand, if $\bm{\rho}$ represents a mixed state, then $\text{tr}(\bm{\rho}^2) < 1$. Thus we have the criterion
+  where $0 < p_i ≤ 1$ and $\sum_{i} p_i = 1$. A useful criterion for distinguishing pure states from mixed states is provided by the trace of the square of the density operator. If $\bm{\rho}$ represents a pure state, then $\bm{\rho}^2 = \bm{\rho}$, and so $\text{tr}(\bm{\rho}^2) = \text{tr}(\bm{\rho}) = 1$. On the other hand, if $\bm{\rho}$ represents a mixed state, then $\text{tr}(\bm{\rho}^2) < 1$. Thus we have the criterion
 
   $$
   \begin{cases}
@@ -494,12 +512,12 @@ p {
   The expectation value of any observable $\bm{M}$ in a state described by the density operator $\bm{\rho}$ is given by
 
   $$
-  \langle \bm{M} \rangle = \text{tr}(\bm{M} \bm{\rho}) = \sum_i p_i \bra{i} \bm{M} \ket{i}.
+  \langle \bm{M} \rangle = \text{tr}(\bm{M} \bm{\rho}) = \sum_{i} p_i \bra{i} \bm{M} \ket{i}.
   $$
 
 ### 2.3.2 Bloch sphere
 
-+ Let’s return to the case in which system A is a single qubit, and consider the form of the general density matrix. The most general self-adjoint 2 × 2 matrix has four real parameters, and can be expanded in the basis {$\bm{I}, \bm{\sigma_1}, \bm{\sigma_2}, \bm{\sigma_3}$}. Since each $\bm{\sigma_i}$ is traceless, the coefficient of $\bm{I}$ in the expansion of a density matrix $\bm{\rho}$ must be $\frac{1}{2}$ (so that $\text{tr}(\bm{\rho}) = 1$), and $\bm{\rho}$ may be expressed as
++ Let’s return to the case in which system A is a single qubit, and consider the form of the general density matrix. The most general self-adjoint 2 × 2 matrix has four real parameters, and can be expanded in the basis {$\bm{I}, \bm{\sigma}_1, \bm{\sigma}_2, \bm{\sigma}_3$}. Since each $\bm{\sigma_i}$ is traceless, the coefficient of $\bm{I}$ in the expansion of a density matrix $\bm{\rho}$ must be $\frac{1}{2}$ (so that $\text{tr}(\bm{\rho}) = 1$), and $\bm{\rho}$ may be expressed as
 
   $$
   \bm{\rho} = \bm{\rho} (\bm{P}) = \frac{1}{2} (\bm{I} + \bm{P} \cdot \bm{\sigma}) = \frac{1}{2} \begin{pmatrix} 1 + P_3 & P_1 - i P_2 \\ P_1 + i P_2 & 1 - P_3 \end{pmatrix},
@@ -536,7 +554,7 @@ p {
   If the $\{\ket{i}_A\}$ basis is chosen to be the basis in which $\bm{\rho}_A$ is diagonal, 
 
   $$
-  \bm{\rho}_A = \sum_i p_i \ket{i}_A \bra{i}_A,
+  \bm{\rho}_A = \sum_{i} p_i \ket{i}_A \bra{i}_A,
   $$
 
   where $p_i$ are the eigenvalues of $\bm{\rho}_A$ and $\ket{i}_A$ are the corresponding eigenvectors. Also, we can obtain $\bm{\rho}_A$ from $\ket{\psi}$ by taking the partial trace over subsystem B:
@@ -593,7 +611,7 @@ p {
 
   1. The number of nonzero terms in the Schmidt decomposition, $r$, is called the Schmidt rank of the state $\ket{\psi}_{AB}$. The Schmidt rank is at most $\min(d_A, d_B)$.
 
-  2. The reduced density matrices $\bm{\rho_A}$ and $\bm{\rho_B}$ have the same nonzero eigenvalues, which are the squares of the Schmidt coefficients $\sqrt{p_i}$.
+  2. The reduced density matrices $\bm{\rho}_A$ and $\bm{\rho}_B$ have the same nonzero eigenvalues, which are the squares of the Schmidt coefficients $\sqrt{p_i}$.
 
   3. The Schmidt decomposition is unique if $\rho_A$ (and hence $\rho_B$) have no degenerate eigenvalues other than zero.
 
@@ -606,10 +624,10 @@ p {
 + A density operator $\bm{\rho}$ can be expressed as a convex combination of pure states:
 
   $$
-  \bm{\rho} = \sum_i p_i \ket{\psi_i} \bra{\psi_i},
+  \bm{\rho} = \sum_{i} p_i \ket{\psi_i} \bra{\psi_i},
   $$
 
-  where $0 < p_i ≤ 1$ and $\sum_i p_i = 1$. The states {$\ket{\psi_i}$} are all normalized vectors, but we do not assume that they are mutually orthogonal. The set of all density operators is convex, meaning that if $\bm{\rho_1}$ and $\bm{\rho_2}$ are density operators, then any convex combination of them is also a density operator:
+  where $0 < p_i ≤ 1$ and $\sum_{i} p_i = 1$. The states {$\ket{\psi_i}$} are all normalized vectors, but we do not assume that they are mutually orthogonal. The set of all density operators is convex, meaning that if $\bm{\rho_1}$ and $\bm{\rho_2}$ are density operators, then any convex combination of them is also a density operator:
 
   $$
   \bm{\rho} = \lambda \bm{\rho_1} + (1 - \lambda) \bm{\rho_2}, ~~~ 0 ≤ \lambda ≤ 1.
@@ -646,7 +664,7 @@ p {
   1. For a density matrix $\bm{\rho}_A$, consider one such realization:
 
      $$
-     \bm{\rho}_A = \sum_i q_i \ket{\varphi_i}_A \bra{\varphi_i}_A, ~~~ \sum_i q_i = 1.
+     \bm{\rho}_A = \sum_{i} q_i \ket{\varphi_i}_A \bra{\varphi_i}_A, ~~~ \sum_{i} q_i = 1.
      $$
 
      Here the states {$\ket{\varphi_i}_A$} are all normalized vectors, but we do not assume that they are mutually orthogonal.
@@ -656,13 +674,13 @@ p {
   3. Construct the purified state $\ket{\Psi}_{AB}$ in the composite Hilbert space $\mathcal{H}_A \otimes \mathcal{H}_B$ as follows:
 
      $$
-     \ket{\Psi_1}_{AB} = \sum_i \sqrt{q_i} \ket{\varphi_i}_A \otimes \ket{\alpha_i}_B.
+     \ket{\Psi_1}_{AB} = \sum_{i} \sqrt{q_i} \ket{\varphi_i}_A \otimes \ket{\alpha_i}_B.
      $$
 
   The reduced density operator of subsystem A is obtained by taking the partial trace over subsystem B:
 
   $$
-  \bm{\rho}_A = \text{tr}_B(\ket{\Psi_1}_{AB} \bra{\Psi_1}_{AB}) = \sum_i q_i \ket{\varphi_i}_A \bra{\varphi_i}_A.
+  \bm{\rho}_A = \text{tr}_B(\ket{\Psi_1}_{AB} \bra{\Psi_1}_{AB}) = \sum_{i} q_i \ket{\varphi_i}_A \bra{\varphi_i}_A.
   $$
 
 + The purified state $\ket{\Psi_1}_{AB}$ is not unique; any unitary transformation applied to subsystem $B$ will yield a different purified state that still reduces to the same density operator $\bm{\rho}_A$ when traced over $B$. This non-uniqueness reflects the fact that there are many different ways to represent the same mixed state as a pure state in a larger Hilbert space.
@@ -682,23 +700,23 @@ p {
   where $\{\ket{\beta_\mu}_B\}$ is another orthonormal basis in $\mathcal{H}_B$. $\ket{\Psi_1}_{AB}$ and $\ket{\Psi_2}_{AB}$ are two different purifications of the same density operator $\bm{\rho}_A$. Since they are purifications of the same density operator, we can find their relation by using the Schmidt decomposition. Let
 
   $$
-  \bm{\rho}_A = \sum_i p_i \ket{i}_A \bra{i}_A, ~~~ \sum_i p_i = 1,
+  \bm{\rho}_A = \sum_{i} p_i \ket{i}_A \bra{i}_A, ~~~ \sum_{i} p_i = 1,
   $$
 
   be the spectral decomposition of $\bm{\rho}_A$. Then we can express $\ket{\Psi_1}_{AB}$ and $\ket{\Psi_2}_{AB}$ in their Schmidt decompositions:
 
   $$
-  \ket{\Psi_1}_{AB} = \sum_i \sqrt{p_i} \ket{i}_A \otimes \ket{i}_B,
+  \ket{\Psi_1}_{AB} = \sum_{i} \sqrt{p_i} \ket{i}_A \otimes \ket{i}_B,
   $$
 
   $$
-  \ket{\Psi_2}_{AB} = \sum_i \sqrt{p_i} \ket{i}_A \otimes \ket{i'}_B,
+  \ket{\Psi_2}_{AB} = \sum_{i} \sqrt{p_i} \ket{i}_A \otimes \ket{i'}_B,
   $$
 
   where $\{\ket{i}_B\}$ and $\{\ket{i'}_B\}$ are orthonormal bases in $\mathcal{H}_B$. Since both $\{\ket{i}_B\}$ and $\{\ket{i'}_B\}$ are orthonormal bases, there exists a unitary transformation $\bm{U}_B = \sum_{i} \ket{i'}_B \bra{i}_B$ such that
 
   $$
-  \ket{\Psi_2}_{AB} = (\bm{I_A} \otimes \bm{U}_B) \ket{\Psi_1}_{AB}.
+  \ket{\Psi_2}_{AB} = (\bm{I}_A \otimes \bm{U}_B) \ket{\Psi_1}_{AB}.
   $$
 
   This result is known as the Hughston-Jozsa-Wootters (HJW) theorem. It shows that any two ensemble interpretations of a given density operator can be related by a suitable unitary transformation on the auxiliary system used in the purification. The HJW theorem has important implications for quantum information theory, as it highlights the flexibility in representing mixed states and the role of auxiliary systems in quantum state preparation and manipulation.
@@ -783,13 +801,13 @@ p {
   The square root of a density operator $\bm{\rho}$, denoted as $\bm{\rho}^{\frac{1}{2}}$ or $\sqrt{\bm{\rho}}$, is a unique positive semidefinite operator that, when multiplied by itself, yields $\bm{\rho}$. The most straightforward way to compute it is through spectral decomposition. If the spectral decomposition of $\bm{\rho}$ is
   
   $$
-  \bm{\rho} = \sum_i p_i \ket{i} \bra{i},
+  \bm{\rho} = \sum_{i} p_i \ket{i} \bra{i},
   $$
   
   where $p_i$ are the eigenvalues and $\ket{i}$ are the corresponding eigenvectors, then its square root is defined as:
 
   $$
-  \bm{\rho}^{\frac{1}{2}} = \sum_i \sqrt{p_i} \ket{i} \bra{i}.
+  \bm{\rho}^{\frac{1}{2}} = \sum_{i} \sqrt{p_i} \ket{i} \bra{i}.
   $$
 
   The fidelity has the following properties:
@@ -805,12 +823,12 @@ p {
   F(\bm{\rho}, \bm{\sigma}) = \left\| \bm{\sigma^\frac{1}{2}} \bm{\rho^\frac{1}{2}} \right\|^2_1,
   $$
 
-  where $||\bm{A}||_1 = \text{tr} \sqrt{\bm{A}^\dagger \bm{A}}$.
+  where $\|\bm{A}\|_1 = \text{tr} \sqrt{\bm{A}^\dagger \bm{A}}$.
 
 + It is useful to know how the fidelity of two density operators is related to the overlap of their purifications. A particular purification of $\bm{\rho}$ has the form
 
   $$
-  \ket{\Psi_{\bm{\rho}}} = \sum_i \sqrt{p_i} \ket{i}_A \otimes \ket{i}_B,
+  \ket{\Psi_{\bm{\rho}}} = \sum_{i} \sqrt{p_i} \ket{i}_A \otimes \ket{i}_B,
   $$
 
   where $\{\ket{i}_A\}$ and $\{\ket{i}_B\}$ are orthonormal bases for systems A and B, respectively. According to the HJW theorem, a general purification has the form
@@ -825,7 +843,7 @@ p {
   \ket{\Psi_{\bm{\rho}}(\bm{V})} = (\bm{\rho}^\frac{1}{2} \otimes \bm{V}_B) \ket{\tilde{\Psi}},
   $$
 
-  where $\ket{\tilde{\Psi}} = \sum_i \ket{i}_A \otimes \ket{i}_B$ is the unconventionally normalized maximally entangled state.
+  where $\ket{\tilde{\Psi}} = \sum_{i} \ket{i}_A \otimes \ket{i}_B$ is the unconventionally normalized maximally entangled state.
 
   If $\bm{\rho}$ and $\bm{\sigma}$ are two density operators on $A$, the inner product of their purifications on $AB$ can be expressed as
 
@@ -878,25 +896,25 @@ p {
 + There are other possible ways besides fidelity for quantifying the difference between quantum states $\bm{\rho}$ and $\bm{\sigma}$, such as the distance between the states using the $L^1$ or $L^2$ norm,
 
   $$
-  ||\bm{\rho} - \bm{\sigma}||_1 \text{ or } ||\bm{\rho} - \bm{\sigma}||_2,
+  \|\bm{\rho} - \bm{\sigma}\|_1 \text{ or } \|\bm{\rho} - \bm{\sigma}\|_2,
   $$
 
   where the $L^2$ norm of an operator is defined by
 
   $$
-  ||\bm{A}||_2 = \sqrt{\text{tr} \bm{A^\dagger} \bm{A}}.
+  \|\bm{A}\|_2 = \sqrt{\text{tr} \bm{A^\dagger} \bm{A}}.
   $$
 
   If $\{|\lambda_i|, i = 0, 1, 2, \ldots d-1\}$ denotes the eigenvalues of $\sqrt{\bm{A}^\dagger \bm{A}}$, then
 
   $$
-  ||\bm{A}||_1 = \sum_{i=0}^{d-1} |\lambda_i|, ~~~ ||\bm{A}||_2 = \sqrt{\sum_{i=0}^{d-1} |\lambda_i|^2}.
+  \|\bm{A}\|_1 = \sum_{i=0}^{d-1} |\lambda_i|, ~~~ \|\bm{A}\|_2 = \sqrt{\sum_{i=0}^{d-1} |\lambda_i|^2}.
   $$
 
   According to the Cauchy-Schwarz inequality, we have
 
   $$
-  ||\bm{A}||_1 ≤ \sqrt{d} ||\bm{A}||_2.
+  \|\bm{A}\|_1 ≤ \sqrt{d} \|\bm{A}\|_2.
   $$
 
   Because of the factor of $\sqrt{d}$ on the right hand side, for a high-dimensional system density operators which are close together in the $L^2$ norm might not be close in the $L^1$ norm.
@@ -904,16 +922,16 @@ p {
 + We can derive a dimension-independent inequality relating the $L^1$ distance between $\bm{\rho}$ and $\bm{\sigma}$ and the $L^2$ distance
 
   $$
-  \sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}} = \sum_i \lambda_i \ket{i} \bra{i},
+  \sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}} = \sum_{i} \lambda_i \ket{i} \bra{i},
   $$
 
   where $\lambda_i$ are the eigenvalues of the operator $\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}$ and $\{\ket{i}\}$ is the corresponding orthonormal basis. Then we note that the absolute value of this difference may be written as
 
   $$
-  |\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}| = \sum_i |\lambda_i| \ket{i} \bra{i} = (\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}) \bm{U} = \bm{U} (\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}),
+  |\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}| = \sum_{i} |\lambda_i| \ket{i} \bra{i} = (\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}) \bm{U} = \bm{U} (\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}),
   $$
 
-  where $\bm{U} = \sum_i \text{sign}(\lambda_i) \ket{i} \bra{i}$ is a unitary operator. Using
+  where $\bm{U} = \sum_{i} \text{sign}(\lambda_i) \ket{i} \bra{i}$ is a unitary operator. Using
 
   $$
   \bm{\rho} - \bm{\sigma} = \frac{1}{2} (\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}})(\sqrt{\bm{\rho}} + \sqrt{\bm{\sigma}}) + \frac{1}{2} (\sqrt{\bm{\rho}} + \sqrt{\bm{\sigma}})(\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}),
@@ -923,29 +941,29 @@ p {
 
   $$
   \begin{align*}
-  \text{tr} [(\rho - \sigma) \bm{U}] &= \text{tr} [|\sqrt{\rho} - \sqrt{\sigma}|(\sqrt{\rho} + \sqrt{\sigma})] = \sum_i |\lambda_i| \bra{i} \sqrt{\rho} + \sqrt{\sigma} \ket{i} \\ &\geq \sum_i |\bra{i} \sqrt{\rho} - \sqrt{\sigma} \ket{i}| = \sum_i |\lambda_i|^2 = ||\sqrt{\rho} - \sqrt{\sigma}||^2_2.
+  \text{tr} [(\rho - \sigma) \bm{U}] &= \text{tr} [|\sqrt{\rho} - \sqrt{\sigma}|(\sqrt{\rho} + \sqrt{\sigma})] = \sum_{i} |\lambda_i| \bra{i} \sqrt{\rho} + \sqrt{\sigma} \ket{i} \\ &\geq \sum_{i} |\bra{i} \sqrt{\rho} - \sqrt{\sigma} \ket{i}| = \sum_{i} |\lambda_i|^2 = \|\sqrt{\rho} - \sqrt{\sigma}\|^2_2.
   \end{align*}
   $$
 
   Finally, using
 
   $$
-  ||\bm{\rho} - \bm{\sigma}||_1 = \text{tr} |\bm{\rho} - \bm{\sigma}| \geq \text{tr} [(\bm{\rho} - \bm{\sigma}) \bm{U}],
+  \|\bm{\rho} - \bm{\sigma}\|_1 = \text{tr} |\bm{\rho} - \bm{\sigma}| \geq \text{tr} [(\bm{\rho} - \bm{\sigma}) \bm{U}],
   $$
 
   we have
 
   $$
-  ||\bm{\rho} - \bm{\sigma}||_1 \geq ||\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}||_2^2.
+  \|\bm{\rho} - \bm{\sigma}\|_1 \geq \|\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}\|_2^2.
   $$
 
   This $L^2$ distance between square roots can be related to fidelity. First we note that
 
   $$
-  ||\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}||_2^2 = \text{tr}[(\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}})^2] = \text{tr}(\bm{\rho} + \bm{\sigma} -2 \sqrt{\bm{\rho}} \sqrt{\bm{\sigma}}) = 2 - 2 \text{tr}(\sqrt{\bm{\rho}} \sqrt{\bm{\sigma}}),
+  \|\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}\|_2^2 = \text{tr}[(\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}})^2] = \text{tr}(\bm{\rho} + \bm{\sigma} -2 \sqrt{\bm{\rho}} \sqrt{\bm{\sigma}}) = 2 - 2 \text{tr}(\sqrt{\bm{\rho}} \sqrt{\bm{\sigma}}),
   $$
 
-  since $\text{tr} \bm{\rho} = \text{tr} \bm{\sigma} = 1$. From the polar decomposition $A = U \sqrt{A^\dagger A}$ (where $U$ is unitary), we see that $\text{tr} \sqrt{A^\dagger A} \geq |\text{tr} A|$, and therefore
+  since $\text{tr} \bm{\rho} = \text{tr} \bm{\sigma} = 1$. From the polar decomposition $A = \bm{U} \sqrt{A^\dagger A}$ (where $\bm{U}$ is unitary), we see that $\text{tr} \sqrt{A^\dagger A} \geq |\text{tr} A|$, and therefore
 
   $$
   \sqrt{F(\bm{\rho}, \bm{\sigma})} = \text{tr} \sqrt{\bm{\rho^\frac{1}{2}} \bm{\sigma} \bm{\rho^\frac{1}{2}}} \geq |\text{tr}(\sqrt{\bm{\rho}} \sqrt{\bm{\sigma}})|;
@@ -954,19 +972,47 @@ p {
   hence,
 
   $$
-  \sqrt{F(\bm{\rho}, \bm{\sigma})} \geq 1 - \frac{1}{2} ||\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}||_2^2 \geq 1 - \frac{1}{2} ||\bm{\rho} - \bm{\sigma}||_1
+  \sqrt{F(\bm{\rho}, \bm{\sigma})} \geq 1 - \frac{1}{2} \|\sqrt{\bm{\rho}} - \sqrt{\bm{\sigma}}\|_2^2 \geq 1 - \frac{1}{2} \|\bm{\rho} - \bm{\sigma}\|_1.
   $$
 
-  The $L^1$ distance also provides an upper bound on fidelity:
+  The $L^1$ distance also provides an upper bound on fidelity. To derive this upper limit, first we need to prove that the trace norm is contractive under the partial trace. Let $X_A = \text{tr}_B(X_{AB})$. There exists a unitary matrix $\bm{U}_A$, such that $\|\bm{X_A}\|_1 = \text{tr}(\bm{X_A} \bm{U}_A)$. By properties of the partial trace, we have 
 
   $$
-  F(\bm{\rho}, \bm{\sigma}) \leq 1 - \frac{1}{4} ||\bm{\rho} - \bm{\sigma}||_1^2.
+  \begin{align*}
+  \text{tr}(\bm{X_A} \bm{U}_A) &= \sum_{i} \bra{i}_A \bm{X}_A \bm{U}_A \ket{i}_A \\ &= \sum_{i} \bra{i}_A \text{tr}_B(X_{AB}) \bm{U}_A \ket{i}_A \\ &= \sum_{i} \bra{i}_A \bra{j}_B X_{AB} \ket{j}_B \bm{U}_A \ket{i}_A \\ &= \sum_{ij} \bra{ij}_{AB} X_{AB} (\bm{U}_A \otimes \bm{I}_B) \ket{ij}_{AB} \\ &= \text{tr}_{AB}[\bm{X}_{AB} (\bm{U}_A \otimes \bm{I}_B)].
+  \end{align*}
   $$
 
-  This formula is relatively complicated and will not be proved here. By combining these two inequalities we have
+  Then we have $\text{tr}_{AB}[\bm{X}_{AB} (\bm{U}_A \otimes \bm{I}_B)] \le \|X_{AB}\|_1$. Combining these steps gives $\|\text{tr}_B(\bm{X}_{AB})\|_1 = \text{tr}_{AB}[\bm{X}_{AB} (\bm{U}_A \otimes \bm{I}_B)] \le \|\bm{X}_{AB}\|_1$.
+
+  Let $|\Psi_{\bm{\rho}*}\rangle$ and $|\Psi_{\bm{\sigma}*}\rangle$ be the optimal purifications of $\bm{\rho}$ and $\bm{\sigma}$. Start with the trace distance and Substituting into the above inequality we got:
+
+  $$  
+  \|\bm{\rho} - \bm{\sigma}\|_1 = \|\text{tr}_B(|\Psi_{\bm{\rho}*}\rangle\langle\Psi_{\bm{\rho}*}| - |\Psi_{\bm{\sigma}*}\rangle\langle\Psi_{\bm{\sigma}*}|)\|_1 \le \||\Psi_{\bm{\rho}*}\rangle\langle\Psi_{\bm{\rho}*}| - |\Psi_{\bm{\sigma}*}\rangle\langle\Psi_{\bm{\sigma}*}|\|_1
+  $$
+  
+  Apply the formula for trace distance between two pure states, $\||\psi\rangle\langle\psi| - |\phi\rangle\langle\phi|\|_1 = 2\sqrt{1 - |\langle \psi | \phi \rangle|^2}$:
+
+  $$  
+  \|\bm{\rho} - \bm{\sigma}\|_1 \le 2\sqrt{1 - |\langle \Psi_{\bm{\sigma}*} | \Psi_{\bm{\rho}*} \rangle|^2}
+  $$
+  
+  By Uhlmann's theorem, the fidelity is the maximal overlap of purifications, $\sqrt{F(\bm{\rho}, \bm{\sigma})} = |\langle \Psi_{\bm{\sigma}*} | \Psi_{\bm{\rho}*} \rangle|$.Substituting this gives the intermediate relation:
+  
+  $$  
+  \|\bm{\rho} - \bm{\sigma}\|_1 \le 2\sqrt{1 - F(\bm{\rho}, \bm{\sigma})}
+  $$
+  
+  Squaring both sides yields $\|\bm{\rho} - \bm{\sigma}\|_1^2 \le 4(1 - F(\bm{\rho}, \bm{\sigma}))$.Rearranging this gives the final inequality: 
 
   $$
-  1 - \sqrt{F(\bm{\rho}, \bm{\sigma})} \leq \frac{1}{2} ||\bm{\rho} - \bm{\sigma}||_1 \leq \sqrt{1- F(\bm{\rho}, \bm{\sigma})}.
+  F(\bm{\rho}, \bm{\sigma}) \leq 1 - \frac{1}{4} \|\bm{\rho} - \bm{\sigma}\|_1^2.
+  $$
+
+  Finally, we have
+
+  $$
+  1 - \sqrt{F(\bm{\rho}, \bm{\sigma})} \leq \frac{1}{2} \|\bm{\rho} - \bm{\sigma}\|_1 \leq \sqrt{1- F(\bm{\rho}, \bm{\sigma})}.
   $$
 
 &nbsp;
@@ -977,6 +1023,479 @@ p {
 
 # Chap 3 &nbsp;&nbsp;&nbsp; Measurement and Evolution [📖](https://www.preskill.caltech.edu/ph219/chap3_15.pdf)
 
-## 3.1 Orthogonal measurement and Generalized measurement
+## 3.1 Orthogonal measurement and generalized measurement
 
-+ 
++ An axiom of quantum theory asserts that a measurement may be described as an **orthogonal projection operator**. However, if we realize a measurement of system S by performing an orthogonal measurement on a larger system that contains S, the resulting operation performed on S alone need not be an orthogonal projection.
+
+  We would like to find a mathematical description of such "**generalized measurements**" on system S. But first, let's recall how measurement of an arbitrary Hermitian operator can be achieved in principle, following the classic treatment of **Von Neumann**.
+
+### 3.1.1 The Von Neumann pointer model
+
++ To measure an observable $\bm{M}$, we will modify the Hamiltonian by turning on a coupling between that observable and another variable that represents the **apparatus**. This auxiliary system can be referred to as the "**pointer**", the "**meter**", or the "**ancilla**". This coupling establishes a correlation between the eigenstates of the observable and the distinguishable states of the pointer, so that we can prepare an eigenstate of the observable by "observing" the pointer.
+  Von Neumann's model treats the pointer as a particle of mass $m$. We intend to measure the position of the pointer, so it should be prepared initially in a wavepacket state that is narrow in position space. But the wavepacket cannot be too narrow, because according to the uncertainty principle, a very narrow wave packet will spread too rapidly. If the initial width of the wave packet is $\Delta x$, then the uncertainty in its velocity will be $\Delta v = \Delta p / m \sim \hbar / (m \Delta x)$. After a time $t$, the wavepacket will spread to a width:
+  
+  $$
+  \Delta x(t) \sim \Delta x + \frac{\hbar t}{m \Delta x}.
+  $$
+
+  This width is minimized when $(\Delta x)^2 \sim \hbar t / m$. Therefore, if the experiment takes a time $t$, the resolution we can achieve for the final position of the pointer is limited by:
+  
+  $$
+  \Delta x \ge (\Delta x)_{SQL} \sim \sqrt{\frac{\hbar t}{m}}.
+  $$
+
+  This is known as the "**standard quantum limit**" (SQL). In the Von Neumann model, we choose a pointer that is sufficiently heavy ($m$ is large enough) that this limitation is not serious, and the spreading of its wavepacket can be neglected.
+
+  The Hamiltonian describing the coupling of the quantum system to the pointer has the form:
+ 
+  $$
+  \bm{H} = \bm{H}_0 + \frac{1}{2m}P^2 + \lambda(t) \bm{M} \otimes \bm{P};
+  $$
+
+  where $\bm{H}_0$ is the system's Hamiltonian, $P^2/2m$ is the pointer's Hamiltonian, $\lambda(t)$ is a tunable coupling constant, and the observable $\bm{M}$ is coupled to the pointer's momentum $\bm{P}$.
+
+  To simplify the analysis, we assume:
+    1. The pointer is very heavy, so the $\frac{P^2}{2m}$ term can be neglected.
+    2. The measurement is very fast, or $[\bm{M}, \bm{H}_0] = 0$, so the system's free evolution $\bm{H}_0$ can be neglected.
+
+  Under these conditions, the Hamiltonian is approximated as $\bm{H} \simeq \lambda(t) \bm{M} \otimes P$. If the coupling is turned on between time 0 and T, the evolution operator is:
+
+  $$
+  \bm{U}(T) \simeq \exp(-i \lambda T \bm{M} \otimes \bm{P}).
+  $$
+
+  We expand in the eigenbasis of $\bm{M}$, $\{\ket{a}\}$, where $\bm{M} = \sum_a \ket{a} M_a \bra{a}$. The evolution operator becomes:
+
+  $$
+  \bm{U}(T) = \sum_a \ket{a} \exp(-i \lambda T M_a \bm{P}) \bra{a}.
+  $$
+
+  The momentum operator $\bm{P}$ is the generator of position translations ($\bm{P} = -i \frac{d}{dx}$), so $e^{-ix_0 \bm{P}} \psi(x) = \psi(x - x_0)$. Assume the initial state of the system and pointer is $(\sum_a \alpha_a \ket{a}) \otimes \ket{\psi(x)}$. After evolving for time T, the state becomes:
+
+  $$
+  \bm{U}(T) \left( \sum_a \alpha_a \ket{a} \otimes \ket{\psi(x)} \right) = \sum_a \alpha_a \ket{a} \otimes \ket{\psi(x - \lambda T M_a)}.
+  $$
+
+  The result of the evolution is that the pointer's position, $\lambda T M_a$, becomes correlated with the eigenvalue $M_a$ of the system's observable $\bm{M}$. If the pointer's wavepacket is narrow enough for us to resolve the position shifts corresponding to different $M_a$, then when we "observe" the pointer has shifted by $\lambda T M_a$, we have prepared the system in the corresponding eigenstate $\ket{a}$ with probability $|\alpha_a|^2$. This is Von Neumann's model of orthogonal measurement.
+
+  > e.g. Stern-Gerlach Apparatus
+  >
+  > This is a classic example of measuring $\bm{\sigma}_3$ for a spin-1/2 object. The object passes through an inhomogeneous magnetic field $B_3 = \lambda z$. The coupling Hamiltonian is:
+  >
+  > $$
+  > \bm{H} = -\lambda \mu z \bm{\sigma}_3.
+  > $$
+  >
+  > In this case, the observable $\bm{\sigma}_3$ (system) is coupled to the position $z$ (pointer). This coupling imparts an impulse (change in momentum) to the pointer that is correlated with the spin, allowing us to project the spin onto the $\ket{\uparrow_z}$ or $\ket{\downarrow_z}$ state by observing whether the object is pushed up or down.
+
+### 3.1.2 Orthogonal measurements
+
++ Thinking more abstractly, suppose that $\{\bm{P}_a, a=0,1,2,...N-1\}$ is a complete set of orthogonal projectors satisfying
+ 
+  $$
+  \bm{P}_a \bm{P}_b = \delta_{ab} \bm{P}_a, \quad \bm{P}_a = \bm{P}_a^\dagger, \quad \sum_a \bm{P}_a = \bm{I}.
+  $$
+  
+  To perform an orthogonal measurement with these outcomes, we introduce an N-dimensional pointer system with fiducial orthonormal basis states $\{\ket{a}, a=0,1,2,...,N-1\}$, and, by coupling the system to the pointer, perform the unitary transformation
+  
+  $$
+  \bm{U} = \sum_{a,b} \bm{P}_a \otimes \ket{b+a}\bra{b}.
+  $$
+  
+  Thus the pointer advances by an amount $a$ if the state of the system is within the support of the projector $\bm{P}_a$. (The addition in $\ket{b+a}$ is understood to be modulo N). The unitarity of $\bm{U}$ is easy to verify:
+  
+  $$
+  \begin{align*}
+  \bm{U} \bm{U}^\dagger &= \left( \sum_{a,b} \bm{P}_a \otimes \ket{b+a}\bra{b} \right) \left( \sum_{c,d} \bm{P}_c \otimes \ket{d}\bra{d+c} \right) \\
+  &= \sum_{a,b,c,d} \delta_{ac} \bm{P}_a \otimes \delta_{bd} \ket{b+a}\bra{d+c} \\
+  &= \sum_a \bm{P}_a \otimes \sum_b \ket{b+a}\bra{b+a} = \bm{I} \otimes \bm{I}.
+  \end{align*}
+  $$
+  
+  This unitary transformation acts on an initial product state of system and pointer according to
+  
+  $$
+  \bm{U}: \ket{\Psi} = \ket{\psi} \otimes \ket{0} \mapsto \ket{\Psi'} = \sum_a \bm{P}_a \ket{\psi} \otimes \ket{a};
+  $$
+  
+  if the pointer is then measured in the fiducial basis, the measurement postulate implies that the outcome $a$ occurs with probability
+  
+  $$
+  \text{Prob}(a) = \bra{\Psi'} (\bm{I} \otimes \ket{a}\bra{a}) \ket{\Psi'} = \bra{\psi} \bm{P}_a \ket{\psi},
+  $$
+  
+  and that when this outcome occurs the normalized post-measurement state is
+  
+  $$
+  \frac{\bm{P}_a \ket{\psi}}{\| \bm{P}_a \ket{\psi} \|}.
+  $$
+  
+  If the measurement is performed and its outcome is not known, the initial pure state of the system becomes a mixture of these post-measurement states:
+  
+  $$
+  \sum_a \text{Prob}(a) \frac{\bm{P}_a \ket{\psi} \bra{\psi} \bm{P}_a}{\bra{\psi} \bm{P}_a \ket{\psi}} = \sum_a \bm{P}_a \ket{\psi} \bra{\psi} \bm{P}_a.
+  $$
+  
+  In fact, the system is described by this density operator once it becomes entangled with the pointer, whether we bother to observe the pointer or not.
+
+  If the initial state of the system before the measurement is a mixed state with density matrix $\bm{\rho}$, then by expressing $\bm{\rho}$ as an ensemble of pure states we conclude that the measurement modifies the state according to
+  
+  $$
+  \bm{\rho} \mapsto \sum_a \bm{P}_a \bm{\rho} \bm{P}_a.
+  $$
+  
+  We see that if, by coupling the system to our pointer, we can execute suitable unitary transformations correlating the system and the pointer, and if we can observe the pointer in its fiducial basis, then we are empowered to perform any conceivable orthogonal measurement on the system.
+
+  Here is the summary of section 3.1.2, formatted in your note-taking style:
+
+### 3.1.3 Generalized measurements (POVM)
+
++ In the discussion of orthogonal measurement, the pointer's fiducial basis was used for two things: correlating with the system's projectors $\{\bm{P}_a\}$ and being the basis in which the pointer is measured.
+
+  A **generalized measurement** arises when these two roles are separated. For example, the pointer might be measured in a different basis than the one used to establish the correlation.
+
+  > e.g. Qubit-Qubit Measurement
+  >
+  > Suppose a qubit system A and a qubit pointer B interact via the unitary map:
+  >
+  > $$
+  > \bm{U}: (\alpha\ket{0}+\beta\ket{1})_{A}\otimes\ket{0}_{B} \mapsto \alpha\ket{0}_{A}\otimes\ket{0}_{B}+\beta\ket{1}_{A}\otimes\ket{1}_{B}.
+  > $$
+  >
+  > If we measure the pointer B in the $\{\ket{0}, \ket{1}\}$ basis, this induces an orthogonal measurement on system A in its $\{\ket{0}, \ket{1}\}$ basis. However, if we instead measure the pointer B in the Hadamard basis $\{\ket{\pm} = \frac{1}{\sqrt{2}}(\ket{0} \pm \ket{1}) \}$, the two possible outcomes yield two post-measurement states for system A:
+  >
+  > $$
+  > \alpha\ket{0} \pm \beta\ket{1}.
+  > $$
+  >
+  > These two post-measurement states are not orthogonal (unless $|\alpha|=|\beta|$). This is a generalized measurement. If two such measurements are performed in succession, the outcomes need not be the same.
+
+  In the general case, we entangle system A with a pointer B (initially in state $\ket{0}_B$) via a unitary $\bm{U}$, and then perform an orthogonal measurement on B in the basis $\{\ket{a}\}$. We can expand the action of $\bm{U}$ as:
+
+  $$
+  \bm{U}: \ket{\psi}_A \otimes \ket{0}_B \mapsto \sum_a \bm{M}_a \ket{\psi}_A \otimes \ket{a}_B.
+  $$
+
+  The operators $\{\bm{M}_a\}$ are the measurement operators for the generalized measurement on A. Since $\bm{U}$ is unitary, it preserves the norm, which implies the **completeness relation**:
+
+  $$
+  \sum_a \bm{M}_a^\dagger \bm{M}_a = \bm{I}.
+  $$
+
+  The measurement postulate asserts that outcome $a$ occurs with probability:
+
+  $$
+  \text{Prob}(a) = \| \bm{M}_a \ket{\psi} \|^2.
+  $$
+
+  If outcome $a$ occurs, the post-measurement state of the system is:
+
+  $$
+  \frac{\bm{M}_a \ket{\psi}}{\| \bm{M}_a \ket{\psi} \|}.
+  $$
+
+  If the initial state is a density operator $\bm{\rho}$, the probability of outcome $a$ is given by 
+
+  $$
+  \text{Prob}(a) = \text{tr}(\bm{E}_a \bm{\rho}),
+  $$ 
+  
+  where $\bm{E}_a = \bm{M}_a^\dagger \bm{M}_a$. The set of operators $\{\bm{E}_a\}$ is called a **positive operator-valued measure (POVM)**. These operators satisfy the following properties:
+  
+  1.  **Hermiticity**: $\bm{E}_a = \bm{E}_a^\dagger$.
+  2.  **Positivity**: $\bm{E}_a \ge 0$ (i.e., $\bra{\psi} \bm{E}_a \ket{\psi} \ge 0$ for any $\ket{\psi}$).
+  3.  **Completeness**: $\sum_a \bm{E}_a = \bm{I}$.
+
+  Any set of operators $\{\bm{E}_a\}$ satisfying these properties (a POVM) can be realized by an orthogonal measurement on an auxiliary system. We can define measurement operators $\bm{M}_a = \bm{U}_a \sqrt{\bm{E}_a}$, where $\bm{U}_a$ is an arbitrary unitary operator. This is the **polar decomposition** of $\bm{M}_a$. The POVM $\{\bm{E}_a\}$ only determines the *probability* of each outcome. The post-measurement state, 
+
+  $$
+  \bm{U}_a \frac{\sqrt{\bm{E}_a} \ket{\psi}}{\| \sqrt{\bm{E}_a} \ket{\psi} \|},
+  $$
+
+  is not uniquely determined by the POVM, as it depends on the arbitrary choice of the unitaries $\{\bm{U}_a\}$ for each outcome.
+    
++ The POVM formalism is not just a mathematical generalization; it grants us access to measurement strategies that are impossible for standard orthogonal measurements. A key example of this advantage is in the task of distinguishing non-orthogonal states. If one is given a state known to be either $\ket{\psi_1}$ or $\ket{\psi_2}$ (where $\langle \psi_1 | \psi_2 \rangle \neq 0$), a single orthogonal measurement cannot perfectly determine which state it was without a finite probability of error. However, the flexibility of POVMs allows us to design a measurement that never makes an error, at the cost of sometimes returning an inconclusive result. The following example illustrates this powerful technique, known as unambiguous state discrimination.
+
+  > e.g. Distinguishing Non-Orthogonal States
+  >
+  > Suppose Alice gives Bob a qubit that is in one of two non-orthogonal states:
+  >
+  > $$
+  > \ket{\psi_1} = \ket{0} \quad \text{or} \quad \ket{\psi_2} = \frac{1}{\sqrt{2}}(\ket{0} + \ket{1}) = \ket{+}.
+  > $$
+  >
+  > Bob cannot perform any measurement that perfectly distinguishes these two states. However, he can perform a measurement that *sometimes* identifies the state perfectly, without ever making an error.
+  >
+  > The strategy is to construct a POVM where some outcomes are "forbidden" for one of the states.
+  >
+  > 1.  We need an outcome $\bm{E}_1$ that *proves* the state was $\ket{\psi_2}$. This requires the probability of this outcome for $\ket{\psi_1}$ to be zero: $\bra{\psi_1} \bm{E}_1 \ket{\psi_1} = \bra{0} \bm{E}_1 \ket{0} = 0$. This means $\bm{E}_1$ must be proportional to the projector onto the state orthogonal to $\ket{0}$, which is $\ket{1}\bra{1}$.
+  > 2.  We need an outcome $\bm{E}_2$ that *proves* the state was $\ket{\psi_1}$. This requires $\bra{\psi_2} \bm{E}_2 \ket{\psi_2} = \bra{+} \bm{E}_2 \ket{+} = 0$. This means $\bm{E}_2$ must be proportional to the projector onto the state orthogonal to $\ket{+}$, which is $\ket{-}\bra{-}$.
+  > 3.  The third outcome, $\bm{E}_3$, represents the "inconclusive" result.
+  >
+  > This logic leads to the following POVM (where the pre-factors are chosen to maximize the success probability while ensuring all $\bm{E}_i$ are positive operators):
+  >
+  > $$
+  > \begin{align*}
+  > \bm{E}_1 &= \frac{\sqrt{2}}{1+\sqrt{2}} \ket{1}\bra{1} \\
+  > \bm{E}_2 &= \frac{\sqrt{2}}{1+\sqrt{2}} \ket{-}\bra{-} \quad \text{where } \ket{-} = \frac{1}{\sqrt{2}}(\ket{0} - \ket{1}) \\
+  > \bm{E}_3 &= \bm{I} - \bm{E}_1 - \bm{E}_2.
+  > \end{align*}
+  > $$
+  >
+  > One can check that $\bm{E}_1 + \bm{E}_2 + \bm{E}_3 = \bm{I}$, so this is a valid POVM.
+  >
+  > Now, let's analyze the measurement outcomes for each possible state Bob receives:
+  >
+  > 1.  **If Bob receives $\ket{\psi_1} = \ket{0}$:**
+  >     * $\text{Prob}(E_1) = \bra{\psi_1} \bm{E}_1 \ket{\psi_1} = \frac{\sqrt{2}}{1+\sqrt{2}} \bra{0} \ket{1}\bra{1} \ket{0} = 0$.
+  >     * $\text{Prob}(E_2) = \bra{\psi_1} \bm{E}_2 \ket{\psi_1} = \frac{\sqrt{2}}{1+\sqrt{2}} |\langle 0 | - \rangle|^2 = \frac{\sqrt{2}}{1+\sqrt{2}} \left| \frac{1}{\sqrt{2}} \right|^2 = \frac{\sqrt{2}}{2(1+\sqrt{2})}$.
+  >
+  > 2.  **If Bob receives $\ket{\psi_2} = \ket{+}$:**
+  >     * $\text{Prob}(E_1) = \bra{\psi_2} \bm{E}_1 \ket{\psi_2} = \frac{\sqrt{2}}{1+\sqrt{2}} |\langle + | 1 \rangle|^2 = \frac{\sqrt{2}}{1+\sqrt{2}} \left| \frac{1}{\sqrt{2}} \right|^2 = \frac{\sqrt{2}}{2(1+\sqrt{2})}$.
+  >     * $\text{Prob}(E_2) = \bra{\psi_2} \bm{E}_2 \ket{\psi_2} = \frac{\sqrt{2}}{1+\sqrt{2}} |\langle + | - \rangle|^2 = 0$.
+  >
+  > The key is in the zero probabilities:
+  >
+  > * If Bob's measurement yields outcome $\bm{E}_1$, he knows with certainty that the state must have been $\ket{\psi_2}$ (because $\text{Prob}(E_1|\psi_1) = 0$).
+  > * If Bob's measurement yields outcome $\bm{E}_2$, he knows with certainty that the state must have been $\ket{\psi_1}$ (because $\text{Prob}(E_2|\psi_2) = 0$).
+  > * If Bob's measurement yields outcome $\bm{E}_3$, he gains no information and cannot distinguish the states.
+  >
+  > In this procedure, Bob *never* makes an error in identifying the state. The trade-off is that he only succeeds some of the time; in the case of outcome $\bm{E}_3$, his measurement is inconclusive.
+
+## 3.2 Quantum channels
+
+### 3.2.1 The operator-sum representation
+
++ We now ask how to describe the evolution of a subsystem A when the total system AB undergoes unitary evolution. This is the next step from generalized measurements. We can model this process by imagining that system A starts in a state $\bm{\rho}$ (unentangled with an environment B in a state $\ket{0}_B$) and then interacts with B via a unitary $\bm{U}$. The resulting joint state, if we were to measure the environment in a basis $\{\ket{a}\}$, would be $\sum_a \bm{M}_a \ket{\psi}_A \otimes \ket{a}_B$. If we do not measure the environment, but instead "trace out" (ignore) its degrees of freedom, the initial state $\bm{\rho}$ of system A evolves to a new state $\mathcal{E}(\bm{\rho})$. This evolution is given by a linear map $\mathcal{E}$:
+  
+  $$
+  \mathcal{E}(\bm{\rho}) = \sum_a \bm{M}_a \bm{\rho} \bm{M}_a^\dagger.
+  $$
+
+  This map is called a **quantum channel**. It is also known as a **superoperator** (as it maps operators to operators) or, more formally, a **trace-preserving completely positive (TPCP) map**. The expression $\mathcal{E}(\bm{\rho}) = \sum_a \bm{M}_a \bm{\rho} \bm{M}_a^\dagger$ is called the **operator-sum representation** of the channel. The operators $\{\bm{M}_a\}$ are called the **Kraus operators** or **operation elements**. For $\mathcal{E}$ to be a valid channel, the Kraus operators must satisfy the **completeness relation**, which follows from the fact that the total evolution $\bm{U}$ is unitary:
+
+  $$
+  \sum_a \bm{M}_a^\dagger \bm{M}_a = \bm{I}.
+  $$
+
+  A quantum channel maps density operators to density operators. This means the map $\mathcal{E}$ has the following properties:
+
+  1.  **Linearity**: $\mathcal{E}(\alpha \bm{\rho}_1 + \beta \bm{\rho}_2) = \alpha \mathcal{E}(\bm{\rho}_1) + \beta \mathcal{E}(\bm{\rho}_2).$
+  2.  **Preserves Hermiticity**: If $\bm{\rho} = \bm{\rho}^\dagger$, then $\mathcal{E}(\bm{\rho}) = \mathcal{E}(\bm{\rho})^\dagger$.
+  3.  **Preserves positivity**: If $\bm{\rho} \ge 0$, then $\mathcal{E}(\bm{\rho}) \ge 0$.
+  4.  **Preserves trace**: $\text{tr}(\mathcal{E}(\bm{\rho})) = \text{tr}(\bm{\rho})$.
+
+  Any map $\mathcal{E}$ that has an operator-sum representation can be physically realized by a unitary transformation $\bm{U}$ on an extended system AB, followed by a partial trace over B.
+
++ The operator-sum representation of a given channel $\mathcal{E}$ is not unique. This is because we can choose to trace out the environment B in any orthonormal basis we please. Suppose we had the joint state $\sum_a \bm{M}_a \ket{\psi}_A \otimes \ket{a}_B$. If we choose a different basis $\{\ket{\mu}\}$ for the environment, related to the first by a unitary matrix $\bm{V}$ such that:
+  
+  $$
+  \ket{a} = \sum_\mu \ket{\mu} V_{\mu a}.
+  $$
+
+  Then the joint state can be rewritten as:
+
+  $$
+  \sum_a \bm{M}_a \ket{\psi}_A \otimes \left( \sum_\mu \ket{\mu}_B V_{\mu a} \right) = \sum_\mu \left( \sum_a V_{\mu a} \bm{M}_a \right) \ket{\psi}_A \otimes \ket{\mu}_B.
+  $$
+
+  This gives a new set of Kraus operators $\{\bm{N}_\mu\}$, where
+
+  $$
+  \bm{N}_\mu = \sum_a V_{\mu a} \bm{M}_a.
+  $$
+
+  This new set describes the *exact same* quantum channel, as $\sum_\mu \bm{N}_\mu \bm{\rho} \bm{N}_\mu^\dagger = \sum_a \bm{M}_a \bm{\rho} \bm{M}_a^\dagger$ for all $\bm{\rho}$. Two channels $\mathcal{E}_1$ and $\mathcal{E}_2$ can be composed to obtain another channel $\mathcal{E}_2 \circ \mathcal{E}_1$. If $\mathcal{E}_1$ has operators $\{\bm{M}_a\}$ and $\mathcal{E}_2$ has operators $\{\bm{N}_\mu\}$, the composed channel $\mathcal{E}_2 \circ \mathcal{E}_1$ has operators $\{\bm{N}_\mu \bm{M}_a\}$. Because they can be composed this way, quantum channels form a **dynamical semigroup**.
+
+  Quantum channels are the formal mechanism for describing **decoherence**, the evolution of pure states into mixed states. Unitary evolution is the special case of a channel with only one Kraus operator.
+
+### 3.2.2 Linearity
+
++ A quantum channel specifies how an initial density operator evolves to a final density operator. On general grounds, we should expect this evolution to be described by a linear map $\mathcal{E}$. This requirement stems from the interpretation of the density operator as an ensemble of possible states.
+
+  Suppose that at time $t=0$, an initial state $\bm{\rho}_i$ is prepared with probability $p_i$. The initial state of the ensemble is described by the convex combination:
+
+  $$
+  \bm{\rho} = \sum_i p_i \bm{\rho}_i.
+  $$
+
+  If this ensemble evolves to time $t=T$, the final state will be:
+
+  $$
+  \bm{\rho}' = \mathcal{E}(\bm{\rho}) = \mathcal{E}\left(\sum_i p_i \bm{\rho}_i\right).
+  $$
+
+  Alternatively, we can consider the ensemble of the *final* states. At time $t=T$, the state will be $\mathcal{E}(\bm{\rho}_i)$ with probability $p_i$. The density operator describing this final ensemble is:
+
+  $$
+  \bm{\rho}' = \sum_i p_i \mathcal{E}(\bm{\rho}_i).
+  $$
+
+  Equating these two equivalent descriptions of the final state $\bm{\rho}'$ forces the map $\mathcal{E}$ to be linear:
+
+  $$
+  \mathcal{E}\left(\sum_i p_i \bm{\rho}_i\right) = \sum_i p_i \mathcal{E}(\bm{\rho}_i).
+  $$
+
+### 3.2.3 Complete positivity
+
++ A quantum channel is a linear map that takes density operators to density operators. In particular, it maps nonnegative operators to nonnegative operators. We therefore say that a channel is a **positive map**.
+
+  However, a channel has a stronger property than mere positivity; it is **completely positive**. This means that the channel remains positive even when we consider it to be acting on just part of a larger system. If a channel $\mathcal{E}$ maps system A to system $A'$, we can extend it to an auxiliary system B by considering the map $\mathcal{E} \otimes \bm{I}$, which acts on the composite system AB. A map $\mathcal{E}$ is **completely positive** if any such extension $\mathcal{E} \otimes \bm{I}$ is a positive map.
+
+  Quantum channels (which have an operator-sum representation) are clearly completely positive. If $\mathcal{E}$ has Kraus operators $\{\bm{M}_a\}$, then the extended map $\mathcal{E} \otimes \bm{I}$ also has an operator-sum representation with Kraus operators $\{\bm{M}_a \otimes \bm{I}\}$. Since $\mathcal{E} \otimes \bm{I}$ maps $\bm{\rho}_{AB} \mapsto \sum_a (\bm{M}_a \otimes \bm{I}) \bm{\rho}_{AB} (\bm{M}_a^\dagger \otimes \bm{I})$, it will always map positive operators to positive operators.
+
+  This is a crucial physical requirement. Even if our channel only describes system A, we must ensure it can map a valid (positive) state of the entire universe (AB) to another valid (positive) state.
+
++ Not all positive maps are completely positive.
+
+  > e.g. The Transpose Map
+  >
+  > Consider the transpose map $\bm{T}$, which acts on a $d$-dimensional system A as:
+  > 
+  > $$
+  > \bm{T}: \bm{\rho} \mapsto \bm{\rho}^T.
+  > $$
+  > >
+  > This map $\bm{T}$ is positive, because for any vector $\ket{\psi}$:
+  >
+  > $$
+  > \bra{\psi} \bm{\rho}^T \ket{\psi} = \sum_{i,j} \psi_j^* (\bm{\rho}^T)_{ji} \psi_i = \sum_{i,j} \psi_i (\bm{\rho})_{ij} \psi_j^* = \bra{\psi^*} \bm{\rho} \ket{\psi^*} \ge 0,
+  > $$
+  > 
+  > so $\bm{\rho}^T$ is non-negative if $\bm{\rho}$ is.
+  >
+  > However, $\bm{T}$ is **not completely positive**. Consider its extension $\bm{T} \otimes \bm{I}$ acting on a $d \times d$ maximally entangled state on AB:
+  >
+  > $$
+  > \ket{\tilde{\Phi}}_{AB} = \sum_{i=0}^{d-1} \ket{i}_A \otimes \ket{i}_B.
+  > $$
+  > 
+  > The extended map acts on the projector $\ket{\tilde{\Phi}}\bra{\tilde{\Phi}}$ as:
+  > 
+  > $$
+  > \begin{align*}
+  > (\bm{T} \otimes \bm{I}) (\ket{\tilde{\Phi}}\bra{\tilde{\Phi}}) &= (\bm{T} \otimes \bm{I}) \left( \sum_{i,j} \ket{i}\bra{j}_A \otimes \ket{i}\bra{j}_B \right) \\
+  > &= \sum_{i,j} \bm{T}(\ket{i}\bra{j}_A) \otimes \ket{i}\bra{j}_B \\
+  > &= \sum_{i,j} \ket{j}\bra{i}_A \otimes \ket{i}\bra{j}_B.
+  > \end{align*}
+  > $$
+  > 
+  > The resulting operator is the $\textbf{SWAP}$ operator, which interchanges the systems A and B.
+  > 
+  > $$
+  > \textbf{SWAP} : \ket{\psi}_A \otimes \ket{\varphi}_B \mapsto \ket{\varphi}_A \otimes \ket{\psi}_B.
+  > $$
+  > 
+  > Since the square of SWAP is the identity, its eigenvalues are $\pm 1$. States which are symmetric under interchange of A and B have eigenvalue +1, while antisymmetric states have eigenvalue -1.
+  >
+  > Since the output operator $\textbf{SWAP}$ is not a positive operator (it has negative eigenvalues), the map $\bm{T} \otimes \bm{I}$ is not positive. Therefore, the transpose map $\bm{T}$ is not completely positive.
+
+### 3.2.4 Reversibility
+
++ A unitary transformation $\bm{U}$ is reversible, as it has a unitary inverse $\bm{U}^\dagger$. If a state evolves by $\bm{U}$, we can recover the original state by applying $\bm{U}^\dagger$. Is the same true for general quantum channels? If a channel $\mathcal{E}_1$ (with Kraus operators $\{\bm{M}_a\}$) is inverted by a channel $\mathcal{E}_2$ (with Kraus operators $\{\bm{N}_\mu\}$), then their composition must be the identity map for any pure state $\ket{\psi}$:
+
+  $$
+  \mathcal{E}_2 \circ \mathcal{E}_1 (\ket{\psi}\bra{\psi}) = \sum_{\mu, a} \bm{N}_\mu \bm{M}_a \ket{\psi}\bra{\psi} \bm{M}_a^\dagger \bm{N}_\mu^\dagger = \ket{\psi}\bra{\psi}.
+  $$
+
+  Since the left-hand side is a sum of positive terms, this equation can only hold if each term is proportional to $\ket{\psi}\bra{\psi}$, which implies:
+
+  $$
+  \bm{N}_\mu \bm{M}_a = \lambda_{\mu a} \bm{I},
+  $$
+
+  for each $\mu$ and $a$. Using the completeness relation for $\mathcal{E}_2$ ($\sum_\mu \bm{N}_\mu^\dagger \bm{N}_\mu = \bm{I}$), we find:
+
+  $$
+  \bm{M}_b^\dagger \bm{M}_a = \bm{M}_b^\dagger \left( \sum_\mu \bm{N}_\mu^\dagger \bm{N}_\mu \right) \bm{M}_a = \sum_\mu (\bm{N}_\mu \bm{M}_b)^\dagger (\bm{N}_\mu \bm{M}_a) = \sum_\mu \lambda_{\mu b}^* \lambda_{\mu a} \bm{I} \equiv \beta_{ba} \bm{I}.
+  $$
+
+  This means that each Kraus operator $\bm{M}_a$ must be proportional to a unitary matrix. Using the polar decomposition $\bm{M}_a = \bm{U}_a \sqrt{\bm{M}_a^\dagger \bm{M}_a}$, we get:
+
+  $$
+  \bm{M}_a = \bm{U}_a \sqrt{\beta_{aa}}.
+  $$
+
+  Substituting this back into the relation $\bm{M}_b^\dagger \bm{M}_a = \beta_{ba} \bm{I}$, we find that all the unitaries $\bm{U}_a, \bm{U}_b, ...$ must be proportional to each other. This implies that the channel $\mathcal{E}_1$ must have only one Kraus operator (up to a scaling factor), which is a single unitary matrix. We conclude that a quantum channel can be inverted by another quantum channel if and only if it is a unitary transformation. This means that **decoherence is irreversible**. Once system A becomes entangled with system B (the environment), we cannot undo the evolution of A if we don't have access to B. Decoherence causes quantum information to leak to the environment, and because we cannot control the environment, this information cannot be recovered.
+
+  This argument applies to channels mapping a system A to another system A' as long as they have the same dimension. This conclusion can be evaded if $\dim(A') > \dim(A)$. In this case, the Kraus operators are rectangular, and the same application of the polar decomposition and its consequences does not hold. This exception, where information can be encoded into a larger Hilbert space, is the basis for quantum error correction.
+
+### 3.2.5 Quantum channels in the Heisenberg picture
+
++ We have described quantum channels in the **Schrödinger picture**, where the quantum state evolves:
+  
+  $$
+  \bm{\rho}' = \mathcal{E}(\bm{\rho}) = \sum_a \bm{M}_a \bm{\rho} \bm{M}_a^\dagger.
+  $$
+
+  Alternatively, we can use the **Heisenberg picture**, where the state is stationary and the operators (observables) evolve. This evolution is described by the **dual map**, $\mathcal{E}^*$:
+
+  $$
+  \bm{A}' = \mathcal{E}^*(\bm{A}) = \sum_a \bm{M}_a^\dagger \bm{A} \bm{M}_a.
+  $$
+
+  These two pictures give the same expectation values, as $\text{tr}(\bm{A} \mathcal{E}(\bm{\rho})) = \text{tr}(\mathcal{E}^*(\bm{A}) \bm{\rho})$.
+
+  Note that the dual of a channel need not be a channel; that is, it might not be trace preserving ($\sum_{a} \bm{M}_a \bm{M}_a^\dagger \ne \bm{I}$). Instead, the completeness property of the Kraus operators $\{\bm{M}_a\}$ implies that:
+  
+  $$
+  \mathcal{E}^*(\bm{I}) = \bm{I},
+  $$
+  
+  if $\mathcal{E}$ is a channel. We say that a map is unital if it preserves the identity operator, and conclude that the dual of a channel is a unital map.Not all quantum channels are unital, but some are. If the Kraus operators of $\mathcal{E}$ satisfy:
+  
+  $$
+  \sum_a \bm{M}_a^\dagger \bm{M}_a = \bm{I} = \sum_a \bm{M}_a \bm{M}_a^\dagger,
+  $$
+  
+  then $\mathcal{E}$ is unital and its dual $\mathcal{E}^*$ is also a unital channel.A unital quantum channel maps a maximally mixed density operator to itself.
+
+### 3.2.6 Quantum operations
+
++ Generalized measurements and quantum channels are special cases of a more general notion called a **quantum operation**. This concept arises when we entangle a system with a meter, measure the meter, and then retain *some* of the information about the outcome while discarding the rest. 
+  
+  We can consider a generalized measurement described by Kraus operators $\{\bm{M}_{a\mu}\}$ which carry two labels, $a$ and $\mu$. These obey the usual completeness relation:
+
+  $$
+  \sum_{a,\mu} \bm{M}_{a\mu}^\dagger \bm{M}_{a\mu} = \bm{I}.
+  $$
+
+  Suppose that after the measurement, we remember the outcome $a$ but forget the outcome $\mu$. If the quantum state before the measurement is $\bm{\rho}$, we sum over the outcomes $\mu$ that we forgot. The resulting map, $\mathcal{E}_a$, associated with outcome $a$, is:
+
+  $$
+  \mathcal{E}_a(\bm{\rho}) \equiv \sum_\mu \bm{M}_{a\mu} \bm{\rho} \bm{M}_{a\mu}^\dagger.
+  $$
+
+  The outcome $a$ occurs with probability:
+
+  $$
+  \mathrm{Prob}(a) = \text{tr}(\mathcal{E}_a(\bm{\rho})).
+  $$
+
+  The map $\mathcal{E}_a$ looks like a quantum channel, except that its Kraus operators satisfy an inequality constraint instead of an equality:
+
+  $$
+  \sum_\mu \bm{M}_{a\mu}^\dagger \bm{M}_{a\mu} \le \bm{I}.
+  $$
+
+  This means that a quantum operation is not, in general, trace-preserving.
+
+  * If $a$ takes just one value (all information is discarded), the map is a **quantum channel**.
+
+  * If $\mu$ takes just one value (all information is retained), the map corresponds to a **generalized measurement**.
+
+  Because the map $\mathcal{E}_a$ is not trace-preserving, the post-measurement state must be renormalized:
+
+  $$
+  \bm{\rho} \mapsto \frac{\mathcal{E}_a(\bm{\rho})}{\text{tr}(\mathcal{E}_a(\bm{\rho}))}.
+  $$
+
+  This is a nonlinear map on the state. However, it is often convenient to regard the operation as the linear map $\mathcal{E}_a$ that takes $\bm{\rho}$ to a subnormalized state. For example, in a sequence of $n$ measurements with outcomes $\{a_1, a_2, ..., a_n\}$, we can apply the linear maps in order and renormalize only at the very end:
+
+  $$
+  \bm{\rho} \mapsto \frac{\mathcal{E}_{a_n} \circ \cdots \circ \mathcal{E}_{a_1}(\bm{\rho})}{\text{tr}(\mathcal{E}_{a_n} \circ \cdots \circ \mathcal{E}_{a_1}(\bm{\rho}))}.
+  $$
+
+  The denominator in this expression is the total probability of observing that specific sequence of measurement outcomes.
+
