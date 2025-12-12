@@ -1499,3 +1499,101 @@ p {
 
   The denominator in this expression is the total probability of observing that specific sequence of measurement outcomes.
 
+## 3.3 Channel-state duality and the dilation of a channel
+
+### 3.3.1 Channel-state duality
+
++ We have defined a quantum channel as a trace-preserving completely positive (TPCP) linear map that arises from a unitary map on an extended system. It is satisfying to note that the converse is also true: any TPCP map is a quantum channel, meaning it has an operator-sum representation and a unitary realization. To prove this, we use a powerful trick that establishes a correspondence between channels and states. This is known as the **Choi-Jamiolkowski isomorphism** or **channel-state duality**.
+
+  For a channel $\mathcal{E}$ mapping system A (dimension $d$) to $A'$, we introduce an auxiliary reference system R, also of dimension $d$. We then apply the extended map $\bm{I} \otimes \mathcal{E}$ to one half of a (non-normalized) maximally entangled state $\ket{\tilde{\Phi}}_{RA} = \sum_i \ket{i}_R \otimes \ket{i}_A$. The result is a positive operator on the $RA'$ system, which can be decomposed into an ensemble of pure states:
+
+  $$
+  (\bm{I} \otimes \mathcal{E})((\ket{\tilde{\Phi}}\bra{\tilde{\Phi}})_{RA}) = \sum_a (\ket{\tilde{\Psi}_a}\bra{\tilde{\Psi}_a})_{RA'}.
+  $$
+
+  This state on $RA'$ is the "state" representation of the channel $\mathcal{E}$. Conversely, we can recover the action of the channel $\mathcal{E}$ on any state $\ket{\varphi}_A$ using the "relative-state method", which relies on the identity 
+
+  $$
+  \ket{\varphi}_A = \sum_i \varphi_i \ket{i}_A = \sum_i \varphi_i ({ }_R\langle i | \tilde{\Phi} \rangle_{RA}) = { }_R\langle \varphi^* | \tilde{\Phi} \rangle_{RA};
+  $$. 
+
+  This gives:
+
+  $$
+  \mathcal{E}((|\varphi\rangle\langle\varphi|)_A) = \sum_a ({ }_R\langle\varphi^*|\tilde{\Psi}_a\rangle \langle\tilde{\Psi}_a|\varphi^*\rangle_R)_{A'}.
+  $$
+
+  This procedure provides an operator-sum representation for $\mathcal{E}$,
+
+  $$
+  \mathcal{E}(\bm{\rho}) = \sum_a \bm{M}_a \bm{\rho} \bm{M}_a^\dagger,
+  $$
+
+  where the Kraus operators are defined from the ensemble states $\ket{\tilde{\Psi}_a}$ as:
+
+  $$
+  \bm{M}_a \ket{\varphi}_A \equiv { }_R\langle \varphi^* | \tilde{\Psi}_a \rangle_{RA'}.
+  $$
+
+  This isomorphism makes it clear that the non-uniqueness of a channel's Kraus operators (from 3.2.1) is the exact same phenomenon as the non-uniqueness of a density operator's ensemble (the HJW theorem). According to the HJW theorem, any two ensemble realizations of this state, such as:
+
+  $$
+  (\bm{I}\otimes\mathcal{E})((\ket{\tilde{\Phi}}\bra{\tilde{\Phi}})_{RA})=\sum_{a}(\ket{\tilde{\Psi}_{a}}\bra{\tilde{\Psi}_{a}})_{RA^{\prime}}=\sum_{\mu}(\ket{\tilde{\gamma}_{\mu}}\bra{\tilde{\gamma}_{\mu}})_{RA^{\prime}},
+  $$
+  
+  are related by a unitary change of basis:
+
+  $$
+  \ket{\tilde{\gamma}_\mu} = \sum_a V_{\mu a} \ket{\tilde{\Psi}_a}.
+  $$
+
+  Correspondingly, the two sets of Kraus operators $\{\bm{M}_a\}$ and $\{\bm{N}_\mu\}$ derived from these ensembles are related by the same unitary transformation:
+
+  $$
+  \bm{N}_\mu = \sum_a V_{\mu a} \bm{M}_a.
+  $$
+
+### 3.3.2 Stinespring dilation
+
++ Once we have an operator-sum representation for a channel $\mathcal{E}_{A \to A'}$, we can easily see how it can be realized by a unitary map acting on an extended system. This realization is known as the **Stinespring dilation** of the channel.
+
+  We introduce an extra system E, the channel's **environment**, which has a dimension equal to the number of Kraus operators and an orthonormal basis $\{\ket{a}\}$. We then define an inner-product-preserving map (an **isometry**) which takes system A to the composite system $A'E$ according to:
+
+  $$
+  \bm{U}_{A \to A'E}: \ket{\psi} \mapsto \sum_a \bm{M}_a \ket{\psi} \otimes \ket{a}.
+  $$
+
+  The completeness relation satisfied by the $\{\bm{M}_a\}$ implies that this map is indeed an isometry:
+
+  $$
+  \bm{U}^\dagger \bm{U} = \bm{I}_A.
+  $$
+
+  We can always extend an isometry to a full unitary transformation by expanding the input Hilbert space. This $\bm{U}$, which yields $\mathcal{E}_{A \to A'}$ when we trace out the environment E, is the Stinespring dilation.
+
++ Another way to construct the dilation is to use the environment E to purify the density operator that arises from channel-state duality (eq. 3.71). This purification is a pure state on $RA'E$:
++ 
+  $$
+  \ket{\bar{\Psi}}_{RA'E} = \sum_a \ket{\tilde{\Psi}_a}_{RA'} \otimes \ket{a}_E.
+  $$
+
+  We can then recover the dilation $\bm{U}$ from this pure state $\ket{\bar{\Psi}}$ using the relative-state method:
+
+  $$
+  \bm{U}_{A \to A'E} \ket{\psi}_A = { }_R\langle \psi^* | \bar{\Psi} \rangle_{RA'E}.
+  $$
+
+  This provides a succinct way to characterize a quantum channel using a single pure state.
+
+### 3.3.3 Axioms revisited
+
+With the theory of open quantum systems, we can formulate an alternative set of axioms for quantum mechanics:
+
+1. **States.** A state is a **density operator**.
+
+2. **Measurement.** A measurement is a **POVM** (positive operator-valued measure).
+
+3. **Dynamics.** Time evolution is described by a **TPCP map** (trace-preserving completely positive map).
+
+This open-system formulation is equivalent to the closed-system formulation (pure states, orthogonal measurements, unitary evolution). The closed-system axioms are special cases of the open-system ones. Conversely, every open-system concept can be realized by a closed-system one in an extended system (e.g., purification of states, dilation of channels). This core idea—that any open system may always be regarded as part of a larger closed system—is known as the **church of the larger Hilbert space**.
+
