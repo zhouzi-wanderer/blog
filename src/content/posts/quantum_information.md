@@ -16,7 +16,18 @@ p {
 </style>
 
 >This note refers to the lecture notes of [Professor John Preskill](https://www.preskill.caltech.edu/).   
+>
 >To get the original lecture notes, click [📖]().
+>
+>Completed jointly with Gemini Pro🤖 after Chapter 1.
+
+&emsp;&emsp;
+
+&emsp;&emsp;
+
+&emsp;&emsp;
+
+---
 
 # Chap 1 &nbsp;&nbsp;&nbsp; Introduction and Overview [📖](https://www.preskill.caltech.edu/ph229/notes/chap1.pdf)
 
@@ -267,11 +278,13 @@ p {
    
 + There are many kinds of quantum hardwares, like iron trap, superconducting quantum computer etc. The introduction in the lecture seems outdated. To better understand these things, it is recommended to read relevant reviews from recent years.
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
+
+---
 
 # Chap 2 &nbsp;&nbsp;&nbsp; States and Ensembles [📖](https://www.preskill.caltech.edu/ph219/chap2_15.pdf)
 
@@ -1015,11 +1028,13 @@ p {
   1 - \sqrt{F(\bm{\rho}, \bm{\sigma})} \leq \frac{1}{2} \|\bm{\rho} - \bm{\sigma}\|_1 \leq \sqrt{1- F(\bm{\rho}, \bm{\sigma})}.
   $$
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
+
+---
 
 # Chap 3 &nbsp;&nbsp;&nbsp; Measurement and Evolution [📖](https://www.preskill.caltech.edu/ph219/chap3_15.pdf)
 

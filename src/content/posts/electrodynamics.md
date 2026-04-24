@@ -18,6 +18,18 @@ p {
 > 该笔记主要参考《电磁学与电动力学（下册）》（胡秋友 程福臻），以及《电动力学》（郭硕鸿）。
 > 
 > 该笔记未讲解该书第七章，将缺少电磁波的散射、色散和吸收以及电磁质量与辐射阻尼部分。
+>
+> 第一章之后部分与Gemini Pro🤖共同完成
+> 
+> 完成于2026年1月6日
+
+&emsp;&emsp;
+
+&emsp;&emsp;
+
+&emsp;&emsp;
+
+---
 
 # 第1章 电磁现象的基本规律
 
@@ -256,11 +268,13 @@ p {
   | 动量守恒   | $- \frac{\partial{\bm{g}}}{\partial{t}} = \nabla \cdot \mathbf{T} + \bm{f}$               |
   | 角动量守恒 | $- \frac{\partial{\bm{l}}}{\partial{t}} = \nabla \cdot \mathbf{R} + \bm{r} \times \bm{f}$ |
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
+
+---
 
 # 第2章 静电场
 
@@ -821,11 +835,13 @@ p {
 
   上式中，第一项为单极矩与外电势的相互作用能，第二项为偶极矩与外电场的相互作用能，第三项为四极矩与外电场梯度的相互作用能。
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
+
+---
 
 # 第3章 静磁场
 
@@ -1128,11 +1144,13 @@ p {
   U = - \bm{m} \cdot \bm{B}_e
   $$
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
+
+---
 
 # 第4章 电磁波的传播
 
@@ -1804,11 +1822,13 @@ p {
   
   满足 $v_p v_g = v^2$。波导具有显著的色散特性。
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
+
+---
 
 # 第5章 电磁波的辐射
 
@@ -2372,11 +2392,13 @@ p {
 
   这里的 $\sum |D_{ij}|^2$ 是张量 $\bm{D}$ 的模的平方（双点积 $\bm{D}:\bm{D}^*$）。电四极辐射功率与频率的六次方 $\omega^6$ 成正比。
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
+
+---
 
 # 第6章 运动电荷的辐射
 
@@ -2735,11 +2757,13 @@ p {
   
   同步辐射既是高能粒子加速器的能量损耗机制（需克服的困难），也是一种极为优良的强光源（同步辐射光源）。
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
 
-&nbsp;
+&emsp;&emsp;
+
+---
 
 # 第7章 狭义相对论
 
