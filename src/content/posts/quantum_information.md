@@ -1514,12 +1514,8 @@ p {
   This state on $RA'$ is the "state" representation of the channel $\mathcal{E}$. Conversely, we can recover the action of the channel $\mathcal{E}$ on any state $\ket{\varphi}_A$ using the "relative-state method", which relies on the identity 
 
   $$
-  \ket{\varphi}_A = \sum_i \varphi_i \ket{i}_A = \sum_i \varphi_i ({ }_R\langle i | \tilde{\Phi} \rangle_{RA}) = { }_R\langle \varphi^* | \tilde{\Phi} \rangle_{RA}
-<<<<<<< HEAD
+  \ket{\varphi}_A = \sum_i \varphi_i \ket{i}_A = \sum_i \varphi_i ({ }_R\langle i | \tilde{\Phi} \rangle_{RA}) = { }_R\langle \varphi^* | \tilde{\Phi} \rangle_{RA};
   $$ 
-=======
-  $$. 
->>>>>>> 977a94b2fc531e922d35eaa4bb66cd459655ae88
 
   This gives:
 

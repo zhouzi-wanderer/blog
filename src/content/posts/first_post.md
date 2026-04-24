@@ -3,13 +3,7 @@ title: 起点
 published: 2025-04-10
 description: 个人网页的第一篇post
 image: ../../assets/covers/start.png
-<<<<<<< HEAD
 tags: [life, start]
-=======
-tags:
-  - life
-  - start
->>>>>>> 977a94b2fc531e922d35eaa4bb66cd459655ae88
 category: Life
 draft: false
 lang: en
