@@ -1,0 +1,75 @@
+---
+
+import MainGridLayout from '../layouts/MainGridLayout.astro'
+
+import { getEntry } from 'astro:content'
+import Markdown from '@components/misc/Markdown.astro'
+import I18nKey from '../i18n/i18nKey'
+import { i18n } from '../i18n/translation'
+
+const aboutPost = await getEntry('spec', 'about')
+
+const { Content } = await aboutPost.render()
+---
+<MainGridLayout title={i18n(I18nKey.about)} description={i18n(I18nKey.about)}>
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full ">
+            <Markdown class="mt-2">
+                <Content />
+            </Markdown>
+            <div id="giscus-container"></div>
+
+            <script>
+              function loadGiscus() {
+                const script = document.createElement('script');
+                script.src = 'https://giscus.app/client.js';
+                script.setAttribute('data-repo', 'zhouzi-wanderer/my_blog');
+                script.setAttribute('data-repo-id', 'R_kgDOOU2lmQ');
+                script.setAttribute('data-category', 'Announcements');
+                script.setAttribute('data-category-id', 'DIC_kwDOOU2lmc4Co1Qn');
+                script.setAttribute('data-mapping', 'title');
+                script.setAttribute('data-strict', '0');
+                script.setAttribute('data-reactions-enabled', '1');
+                script.setAttribute('data-emit-metadata', '1');
+                script.setAttribute('data-input-position', 'top');
+                script.setAttribute('data-theme', isDarkMode() ? 'dark' : 'light');
+                script.setAttribute('data-lang', 'en');
+                script.setAttribute('data-loading', 'lazy');
+                script.crossOrigin = 'anonymous';
+                script.async = true;
+                
+                const container = document.getElementById('giscus-container');
+                container.innerHTML = '';
+                container.appendChild(script);
+              }
+
+              // Detect dark mode - adjust this based on your theme implementation
+              function isDarkMode() {
+                return document.documentElement.classList.contains('dark');
+              }
+
+              // Initial load
+              loadGiscus();
+
+              // Update theme when it changes
+              const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                  if (mutation.attributeName === 'class') {
+                    const iframe = document.querySelector('.giscus-frame');
+                    if (iframe) {
+                      iframe.contentWindow.postMessage(
+                        { giscus: { setConfig: { theme: isDarkMode() ? 'dark' : 'light' } } },
+                        'https://giscus.app'
+                      );
+                    }
+                  }
+                });
+              });
+
+              observer.observe(document.documentElement, { attributes: true });
+            </script>
+
+            <br>
+        </div>
+    </div>
+</MainGridLayout>
