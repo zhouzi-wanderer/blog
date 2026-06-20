@@ -5,7 +5,7 @@ description: '展示用代码模拟离子阱系统中的各种操作。'
 image: '../../assets/covers/rest-state.png'
 tags: [code, trapped-ions]
 category: ''
-draft: false 
+draft: true 
 lang: 'cn'
 ---
 
