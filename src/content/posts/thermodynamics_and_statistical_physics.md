@@ -1,7 +1,7 @@
 ---
 title: 热力学与统计物理
 published: 2026-03-11
-description: ''
+description: '四大力学之一：热力学与统计物理相关笔记，分为热力学（1-4章）与统计物理学（5-7章）两部分。'
 image: '../../assets/covers/studying.png'
 tags: [notes, thermodynamics, statistical physics]
 category: 'Notes'
@@ -17,7 +17,7 @@ p {
 
 > 该笔记主要参考热力学部分——《热学 热力学与统计物理（上册）》（曹烈兆 周子舫），统计物理部分——《热学 热力学与统计物理（下册）》（周子舫 曹烈兆），以及《热力学与统计物理》（汪志诚）。
 >
-> 与Gemini Pro🤖共同完成
+> 与Gemini Pro 🤖共同完成
 
 &emsp;&emsp;
 
@@ -343,7 +343,7 @@ p {
 
   1. **开尔文表述（针对热功转换）**：不可能从单一热源吸取热量，使之完全变为有用功而不产生其他影响。
      
-     *实质*：确立了热机效率的绝对上限必然小于 100%。热机在持续输出机械功的过程中，必须向低温热源排放废热。
+     *实质*：确立了热机效率的上限必然小于 100%。热机在持续输出机械功的过程中，必须向低温热源排放废热。
 
   2. **克劳修斯表述（针对热量传递）**：不可能把热量从低温物体传到高温物体而不产生其他影响。
 
@@ -452,20 +452,20 @@ p {
   >
   >将理想气体的两个核心属性代入该式：
   >
-  >* **焦耳定律**：内能仅为温度的函数，$dU = nC_V dT$
+  >* **焦耳定律**：内能仅为温度的函数，$dU = C_V dT$
   >
   >* **物态方程**：$pV = nRT \implies \frac{p}{T} = \frac{nR}{V}$
   >
   >代入后得到熵的微元微分式：
   >
   >$$
-  >dS = nC_V \frac{dT}{T} + nR \frac{dV}{V}
+  >dS = C_V \frac{dT}{T} + nR \frac{dV}{V}
   >$$
   >
   >假定在所讨论的温度范围内，定容热容 $C_V$ 为常数，对等式两边直接积分，得到以 $T, V$ 为自变量的熵函数表达式：
   >
   >$$
-  >S(T, V) = nC_V \ln T + nR \ln V + S_0
+  >S(T, V) = C_V \ln T + nR \ln V + S_0
   >$$
   >
   >**2. 以 $(T, p)$ 为独立变量的推导**
@@ -476,19 +476,19 @@ p {
   >T dS = dH - V dp \implies dS = \frac{dH}{T} - \frac{V}{T} dp
   >$$
   >
-  >同理，代入理想气体的焓变性质（$dH = nC_p dT$）与物态方程（$\frac{V}{T} = \frac{nR}{p}$）：
+  >同理，代入理想气体的焓变性质（$dH = C_p dT$）与物态方程（$\frac{V}{T} = \frac{nR}{p}$）：
   >
   >$$
-  >dS = nC_p \frac{dT}{T} - nR \frac{dp}{p}
+  >dS = C_p \frac{dT}{T} - nR \frac{dp}{p}
   >$$
   >
   >在定压热容 $C_p$ 为常数的假设下，积分可得：
   >
   >$$
-  >S(T, p) = nC_p \ln T - nR \ln p + S'_0
+  >S(T, p) = C_p \ln T - nR \ln p + S'_0
   >$$
   >
-  >式中的 $S_0$ 和 $S'_0$ 是积分常数。在经典宏观热力学框架内，熵只能确定到相差一个任意常数，我们只能计算过程前后的**熵变** ($\Delta S$)。熵的绝对数值零点，必须等到引入**热力学第三定律**和量子统计物理后才能严格标定。上述简洁的对数表达式严格依赖于“热容是常数”这一近似。如果温度变化跨度极大（激发了分子的振动自由度），热容将成为温度的函数 $C_V(T)$，此时必须退回保留积分号的原始形式：$S = \int \frac{nC_V(T)}{T} dT + nR \ln V + S_0$。
+  >式中的 $S_0$ 和 $S'_0$ 是积分常数。在经典宏观热力学框架内，熵只能确定到相差一个任意常数，我们只能计算过程前后的**熵变** ($\Delta S$)。熵的绝对数值零点，必须等到引入**热力学第三定律**和量子统计物理后才能严格标定。上述简洁的对数表达式严格依赖于“热容是常数”这一近似。如果温度变化跨度极大（激发了分子的振动自由度），热容将成为温度的函数 $C_V(T)$，此时必须退回保留积分号的原始形式：$S = \int \frac{C_V(T)}{T} dT + nR \ln V + S_0$。
   >
   >在 $S(T, V)$ 表达式中，体积项前是 **正号 ($+$)**。物理图像：体积膨胀，分子活动空间增大，系统微观状态数增多（混乱度增加），导致熵增。在 $S(T, p)$ 表达式中，压强项前是 **负号 ($-$)**。物理图像：压强增大意味着系统被压缩，分子活动空间受限，混乱度降低，导致熵减。
   >
@@ -527,7 +527,7 @@ p {
 
 ## 1.5 辅助特性函数的初步引入
 
-+ 熵增加原理（$dS \ge 0$）为宏观过程的方向性提供了绝对判据，但其严格的适用前提是**孤立系统**（即系统的内能 $U$ 和体积 $V$ 保持不变）。在实际的物理和化学过程中，系统往往并非孤立，而是处于等温、等容或等压等特定约束条件下。为了在这些常见约束下寻找系统平衡的判据，需要引入新的热力学状态函数。
++ 熵增加原理（$dS \ge 0$）为宏观过程的方向性提供了判据，但其严格的适用前提是**孤立系统**（即系统的内能 $U$ 和体积 $V$ 保持不变）。在实际的物理和化学过程中，系统往往并非孤立，而是处于等温、等容或等压等特定约束条件下。为了在这些常见约束下寻找系统平衡的判据，需要引入新的热力学状态函数。
 
 ### 1.5.1 自由能 ($F$) 与等温等容系统的判据
 + 考察一个与恒温热源（温度为 $T$）接触的系统。根据克劳修斯不等式，系统在微小过程中吸收的热量 $\delta Q$ 满足：
@@ -663,7 +663,7 @@ p {
 
   4. 由 $dG$： $\left(\frac{\partial S}{\partial p}\right)_T = -\left(\frac{\partial V}{\partial T}\right)_p$
 
-  麦克斯韦关系是热力学理论走向实验的绝对桥梁。特别是第3和第4个关系式，它们成功地将包含熵 $S$ 的不可测偏导数，完美地转化为了由 $p, V, T$ 构成的完全可测偏导数。
+  麦克斯韦关系是热力学理论走向实验的桥梁。特别是第3和第4个关系式，它们成功地将包含熵 $S$ 的不可测偏导数，完美地转化为了由 $p, V, T$ 构成的完全可测偏导数。
 
 + 雅可比行列式恒等式在热力学中，雅可比行列式有一个极为方便的性质，它可以将任何偏导数转化为行列式的商：
   
@@ -705,52 +705,52 @@ p {
 
   吉布斯函数的特性函数：$G(T, p)$
 
-  >**1.以 $(T, V)$ 为独立变量的表述（自由能表示）**
+  >1. **以 $(T, V)$ 为独立变量的表述（自由能表示）**
   >
-  >在等温过程中，最方便的特性函数是自由能 $F(T, V)$。一旦获知 $F(T, V)$ 的解析式，系统的所有性质可按如下逻辑导出：
+  >&emsp;&emsp;在等温过程中，最方便的特性函数是自由能 $F(T, V)$。一旦获知 $F(T, V)$ 的解析式，系统的所有性质可按如下逻辑导出：
   >
-  >**基本参数：**
+  >&emsp;&emsp;**基本参数：**
   >
-  >  根据 $dF = -SdT - pdV$，直接求一阶偏导：
+  >&emsp;&emsp;根据 $dF = -SdT - pdV$，直接求一阶偏导：
   >
-  >  熵：$S = -\left( \frac{\partial F}{\partial T} \right)_V$
+  >&emsp;&emsp;熵：$S = -\left( \frac{\partial F}{\partial T} \right)_V$
   >
-  >  压强：$p = -\left( \frac{\partial F}{\partial V} \right)_T$ （此即系统的状态方程）
+  >&emsp;&emsp;压强：$p = -\left( \frac{\partial F}{\partial V} \right)_T$ （此即系统的状态方程）
   >
-  >**能量参数：**
+  >&emsp;&emsp;**能量参数：**
   >
-  >  内能：$U = F + TS = F - T\left( \frac{\partial F}{\partial T} \right)_V$
+  >&emsp;&emsp;内能：$U = F + TS = F - T\left( \frac{\partial F}{\partial T} \right)_V$
   >
-  >  焓：$H = U + pV = F - T\left( \frac{\partial F}{\partial T} \right)_V - V\left( \frac{\partial F}{\partial V} \right)_T$
+  >&emsp;&emsp;焓：$H = U + pV = F - T\left( \frac{\partial F}{\partial T} \right)_V - V\left( \frac{\partial F}{\partial V} \right)_T$
   >
-  >**特性参量：**
+  >&emsp;&emsp;**特性参量：**
   >
-  >  吉布斯函数：$G = F + pV = F - V\left( \frac{\partial F}{\partial V} \right)_T$
+  >&emsp;&emsp;吉布斯函数：$G = F + pV = F - V\left( \frac{\partial F}{\partial V} \right)_T$
   >
-  >  定容热容：$C_V = \left( \frac{\partial U}{\partial T} \right)_V = -T\left( \frac{\partial^2 F}{\partial T^2} \right)_V$
+  >&emsp;&emsp;定容热容：$C_V = \left( \frac{\partial U}{\partial T} \right)_V = -T\left( \frac{\partial^2 F}{\partial T^2} \right)_V$
   >
-  >**2.以 $(U, V)$ 为独立变量的表述（熵表示）**
+  >2. **以 $(U, V)$ 为独立变量的表述（熵表示）**
   >
-  >根据热力学基本方程的另一种形式 $dS = \frac{1}{T}dU + \frac{p}{T}dV$，可知在以 $(U, V)$ 为独立变量时，**熵 $S(U, V)$** 是该系统的特性函数（属于熵表示，Entropy Representation）。
+  >&emsp;&emsp;根据热力学基本方程的另一种形式 $dS = \frac{1}{T}dU + \frac{p}{T}dV$，可知在以 $(U, V)$ 为独立变量时，**熵 $S(U, V)$** 是该系统的特性函数（属于熵表示，Entropy Representation）。
   >
   >
-  >已知 $S(U, V)$ 后，推导逻辑如下：
+  >&emsp;&emsp;已知 $S(U, V)$ 后，推导逻辑如下：
   >
-  >**基本参数：**
+  >&emsp;&emsp;**基本参数：**
   >
-  >  温度：根据 $\frac{1}{T} = \left( \frac{\partial S}{\partial U} \right)_V$，可得 $T = \left[ \left( \frac{\partial S}{\partial U} \right)_V \right]^{-1}$
+  >&emsp;&emsp;温度：根据 $\frac{1}{T} = \left( \frac{\partial S}{\partial U} \right)_V$，可得 $T = \left[ \left( \frac{\partial S}{\partial U} \right)_V \right]^{-1}$
   >
-  >  压强：根据 $\frac{p}{T} = \left( \frac{\partial S}{\partial V} \right)_U$，可得 $p = T \left( \frac{\partial S}{\partial V} \right)_U = \frac{(\partial S / \partial V)_U}{(\partial S / \partial U)_V}$
+  >&emsp;&emsp;压强：根据 $\frac{p}{T} = \left( \frac{\partial S}{\partial V} \right)_U$，可得 $p = T \left( \frac{\partial S}{\partial V} \right)_U = \frac{(\partial S / \partial V)_U}{(\partial S / \partial U)_V}$
   >
-  >**其他热力学函数：**
+  >&emsp;&emsp;**其他热力学函数：**
   >
-  >  利用已求得的 $T$ 和 $p$，可以直接代入定义式求出其他态函数：
+  >&emsp;&emsp;利用已求得的 $T$ 和 $p$，可以直接代入定义式求出其他态函数：
   >
-  >  $F = U - TS$
+  >&emsp;&emsp;$F = U - TS$
   >
-  >  $H = U + pV$
+  >&emsp;&emsp;$H = U + pV$
   >
-  >  $G = U - TS + pV$
+  >&emsp;&emsp;$G = U - TS + pV$
 
 + 特性函数的“全能性”严格依赖于变量的选择。例如，虽然 $U$ 是状态函数，但如果将其表达为 $U(T, V)$，它就失去了特性函数的地位。因为从 $U(T, V)$ 出发，我们只能得到热容信息，却无法唯一地推导出系统的状态方程（压强 $p$）。
 
@@ -1093,8 +1093,44 @@ p {
     &emsp;&emsp;对于以内能 $U(S, V)$ 为代表的势函数，其自然变量均为广延量。热力学稳定性要求总内能对任何局部的熵或体积涨落具有恢复力，这在数学上等价于要求 $U$ 是其自变量 $S$ 和 $V$ 的凸函数。其二阶变分要求 $d^2U = dTdS - dpdV > 0$。由此导出系统的基本响应函数必须为正：
 
     &emsp;&emsp;热容要求：$\left(\frac{\partial^2 U}{\partial S^2}\right)_V = \frac{T}{C_V} > 0 \implies C_V > 0$
-
+    
     &emsp;&emsp;压缩系数要求：$\left(\frac{\partial^2 U}{\partial V^2}\right)_S = \frac{1}{V\kappa_S} > 0 \implies \kappa_S > 0$
+
+    >1. 为考察热学稳定性，施加等容约束（$dV = 0$），不等式简化为：
+    >
+    >$$
+    >dTdS > 0
+    >$$
+    >
+    >&emsp;&emsp;由等容热容定义 $\delta Q_V = TdS = C_V dT$，可导出熵变 $dS = \frac{C_V}{T} dT$。代入上式有：
+    >
+    >$$
+    >\frac{C_V}{T} (dT)^2 > 0
+    >$$
+    >
+    >&emsp;&emsp;由于绝对温度 $T > 0$ 且涨落项 $(dT)^2 > 0$ 恒成立，为使该不等式严格大于零，必须得出：
+    >
+    >$$
+    >C_V > 0
+    >$$
+    >
+    >2. 为考察纯力学稳定性，施加等温约束（$dT = 0$），不等式简化为：
+    >
+    >$$
+    >-dpdV > 0
+    >$$
+    >
+    >&emsp;&emsp;由等温压缩系数定义 $\kappa_T = -\frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_T$，可导出体积变分 $dV = -V\kappa_T dp$。代入上式有：
+    >
+    >$$
+    >V\kappa_T (dp)^2 > 0
+    >$$
+    >
+    >&emsp;&emsp;由于系统宏观体积 $V > 0$ 且压强涨落项 $(dp)^2 > 0$ 恒成立，为使该不等式严格大于零，必然得出：
+    >
+    >$$
+    >\kappa_T > 0
+    >$$
 
   2. **强度量空间的凹性**
 
@@ -1914,3 +1950,2151 @@ p {
   >* **分子数不变的反应 ($\Delta \nu = 0$)**：
   >
   >  压强变化不影响 $K_x$，平衡不发生移动。
+
+&emsp;&emsp;
+
+&emsp;&emsp;
+
+&emsp;&emsp;
+
+---
+
+# 第5章 近独立子系组成的统计理论
+
++ 本章从微观粒子的力学性质出发，引入统计物理的基本假设，建立系统宏观状态与其微观状态之间的定量联系。我们首先对微观态进行量子力学界定，并确立等概率原理作为一切统计推导的逻辑起点。
+
+## 5.1 统计物理的基本假设与微观态的量子力学描述
+
+### 5.1.1 相空间与微观态的量子化描述
+
++ 在经典力学中，单粒子的微观运动状态由广义坐标 $\mathbf{q} = (q_1, q_2, q_3)$ 和广义动量 $\mathbf{p} = (p_1, p_2, p_3)$ 共同确定。这 6 个变量构成的 6 维空间称为**单粒子相空间（$\mu$ 空间）**。经典粒子的状态对应于 $\mu$ 空间中的一个几何点。
+
+  然而，根据量子力学的海森堡不确定性原理，粒子在某一方向上的坐标与动量不能同时被无限精确地确定，其不确定度满足：
+
+  $$
+  \Delta q_i \Delta p_i \ge \frac{h}{4\pi}
+  $$
+
+  （在玻尔-索末菲量子化条件或半经典极限下，通常取体积元尺度为普朗克常数 $h$）。
+
+  因此，单粒子微观态不再是相空间中的一个数学点，而是一个体积为 $h^3$ 的**相格（Phase Cell）**。在体积元 $d^3\mathbf{q} d^3\mathbf{p}$ 内，系统可能存在的微观量子态数目为：
+
+  $$
+  d\Omega = \frac{d^3\mathbf{q} d^3\mathbf{p}}{h^3}
+  $$
+
+  >**一维相空间量子化体积 $\Delta q \Delta p = h$ 的推导**
+  >
+  >考虑一个质量为 $m$ 的自由粒子，被限制在长度为 $L$ 的一维无限深势阱中（坐标域 $0 \le q \le L$）。
+  >
+  >根据量子力学的薛定谔方程，粒子波函数必须在边界处为零（即形成驻波），其德布罗意波长 $\lambda$ 必须满足驻波条件：
+  >
+  >$$
+  >L = n \frac{\lambda_n}{2} \quad (n = 1, 2, 3, \dots)
+  >$$
+  >
+  >结合德布罗意关系 $p = \frac{h}{\lambda}$，该粒子的动量本征值（绝对值）被严格量子化为：
+  >
+  >$$
+  >p_n = \frac{n h}{2L}
+  >$$
+  >
+  >现在切换到经典相空间（由坐标 $q$ 和动量 $p$ 构成的二维空间）。
+  >
+  >对于处于第 $n$ 个量子态的粒子，其动量大小为 $p_n$。在经典图景中，该粒子在势阱中以恒定速率来回碰撞，因此其动量在 $+p_n$ 和 $-p_n$ 之间交替，坐标 $q$ 则在 $0$ 到 $L$ 之间均匀取值。
+  >
+  >该粒子在相空间中的运动轨迹是一个面积被封闭的矩形线圈。根据玻尔-索末菲量子化条件或经典作用量积分，第 $n$ 个量子态所包围的相空间总面积 $A_n$ 为：
+  >
+  >$$
+  >A_n = \oint p \, dq = \int_0^L (+p_n) \, dq + \int_L^0 (-p_n) \, dq = 2 p_n L
+  >$$
+  >
+  >将量子化动量 $p_n = \frac{n h}{2L}$ 代入相空间面积公式中：
+  >
+  >$$
+  >A_n = 2 \left( \frac{n h}{2L} \right) L = n h
+  >$$
+  >
+  >这表明，第 $n$ 个量子态所包围的相空间面积严格等于 $n$ 倍的普朗克常数。
+  >
+  >进一步计算两个相邻量子态（第 $n$ 态与第 $n-1$ 态）在相空间中所夹的环形面积（即**一个微观量子态所独占的相空间面积**）：
+  >
+  >$$
+  >\Delta A = A_n - A_{n-1} = n h - (n-1) h = h
+  >$$
+  >
+  >无论势阱的长度 $L$ 如何变化，每一个独立的一维微观量子态在相空间中必然占据绝对恒定的面积 $h$。
+  >
+  >将此一维模型直接推广到三维独立自由粒子，坐标与动量分量相互正交，每个维度的相面积元均为 $h$。因此，三维单粒子相空间（$\mu$ 空间）中，一个微观量子态所对应的相体积基元严格等于：
+  >
+  >$$
+  >\Delta \Omega = (\Delta q_x \Delta p_x) (\Delta q_y \Delta p_y) (\Delta q_z \Delta p_z) = h^3
+  >$$
+  >
+  >这在数学上赋予了连续的经典相体积积分 $\frac{1}{h^3} \int d^3\mathbf{q} d^3\mathbf{p}$ 以严格的离散量子态计数物理意义。
+  >
+  >系统允许的单粒子能量通常是量子化的离散值，记为能级 $\epsilon_1, \epsilon_2, \dots, \epsilon_l, \dots$。当存在多个不同的量子态具有相同的能量 $\epsilon_l$ 时，该能级被称为是简并的，其包含的量子态数目定义为**简并度 $g_l$**。
+
+### 5.1.2 近独立子系模型与全同粒子分类
+
++ 实际的宏观系统由大量粒子构成。若系统极度稀薄或粒子间相互作用能远小于粒子的平均动能，系统可以被抽象为**近独立子系（Nearly Independent Subsystems）**。
+
+  在此模型中，考虑孤立系统，系统总能量 $E$ 严格等于各个子系（粒子）的能量之和。若第 $l$ 个能级 $\epsilon_l$ 上分布有 $a_l$ 个粒子，则系统总能量为：
+
+  $$
+  E = \sum_l a_l \epsilon_l
+  $$
+
+  同时满足总粒子数守恒：
+
+  $$
+  N = \sum_l a_l
+  $$
+
+  根据量子力学的全同性原理，系统中的微观粒子按其不可分辨性及自旋特征严格分为三类：
+
+  1. **定域子系（Localized Subsystems）**：虽然粒子全同，但由于被固定在晶格等空间特定格点上，粒子可以通过其空间位置被**绝对分辨**（如爱因斯坦固体模型中的晶格振子）。
+
+  2. **非定域玻色子（Non-localized Bosons）**：自旋为整数的粒子（如光子、声子、氦-4原子）。粒子在空间中自由运动，**绝对不可分辨**。其多体波函数是对称的，同一个微观量子态可以容纳任意数量的玻色子。
+
+  3. **非定域费米子（Non-localized Fermions）**：自旋为半奇数的粒子（如电子、质子）。粒子同样**绝对不可分辨**。其多体波函数是反对称的，严格服从**泡利不相容原理（Pauli Exclusion Principle）**，即一个微观量子态内最多只能容纳一个费米子（$a_l \le g_l$）。
+
+### 5.1.3 等概率原理（Principle of Equal A Priori Probabilities）
+
++ 统计物理学必须在动力学规律与概率论之间建立公理联系。对于一个与外界无任何能量与物质交换的**孤立系统（微正则系综，宏观约束为 $N, V, E$）**，由于不受外界干扰，力学规律并不偏袒任何一个符合宏观守恒条件的微观状态。
+
+  由此确立统计物理学最根本的假设——**等概率原理**：
+
+  *对于处于平衡态的孤立系统，系统出现在任何一个满足宏观约束条件的微观状态的概率是绝对相等的。*
+
+  基于等概率原理，系统在宏观上必然表现出拥有微观状态数最多的那个分布状态。这表明，求解宏观热力学平衡态的问题，在数学上已被完全转化为 **计算在给定 $(N, V, E)$ 约束下特定分布所包含的微观状态数（热力学概率 $\Omega$）** 的组合数学问题。
+
+## 5.2 近独立子系微观状态数 $\Omega$ 的计算
+
++ 对于包含 $N$ 个近独立子系的宏观平衡态系统，设其处于特定的能量分布 $\{a_1, a_2, \dots, a_l, \dots\}$（即第 $l$ 能级 $\epsilon_l$ 上的占据粒子数为 $a_l$，对应的能级简并度为 $g_l$）。系统对应于该分布的总微观状态数 $\Omega$ 的代数计算，严格依赖于微观粒子的可分辨性及泡利不相容原理的物理约束。
+
+### 5.2.1 麦克斯韦-玻尔兹曼（MB）统计：定域子系
+
++ 定域子系在空间上是绝对可分辨的。计算系统处于给定分布 $\{a_l\}$ 的微观状态数分为两个独立步骤：
+
+  1. **粒子分组组合**：将 $N$ 个可分辨粒子划分为若干组，使得第 $l$ 能级确切分配到 $a_l$ 个粒子。该过程的组合数可通过连乘形式严格展开：
+
+  $$
+  C_N^{a_1} C_{N-a_1}^{a_2} C_{N-a_1-a_2}^{a_3} \cdots = \frac{N!}{a_1!(N-a_1)!} \frac{(N-a_1)!}{a_2!(N-a_1-a_2)!} \cdots = \frac{N!}{\prod_l a_l!}
+  $$
+
+  2. **能级内部态分配**：对于分配至第 $l$ 能级的 $a_l$ 个可分辨粒子，每个粒子均可独立占据该能级所属的 $g_l$ 个量子态之一。因此，该能级内部的微观占据方式总数为 $g_l^{a_l}$。
+
+  各能级的量子态占据过程相互独立，系统的总微观状态数为粒子分组组合数与各能级内部占据方式连乘积的乘积：
+
+  $$
+  \Omega_{MB} = \left( \frac{N!}{\prod_l a_l!} \right) \prod_l g_l^{a_l} = N! \prod_l \frac{g_l^{a_l}}{a_l!}
+  $$
+
+### 5.2.2 费米-狄拉克（FD）统计：非定域费米子
+
++ 费米子为全同不可分辨粒子，严格服从泡利不相容原理，每个量子态至多容纳一个粒子，即必须满足数学约束 $a_l \le g_l$。
+
+  1. **单能级状态数**：对于第 $l$ 能级，由于粒子不可分辨，微观状态的区别仅在于 $g_l$ 个量子态中有哪 $a_l$ 个量子态被占据。互换处于不同量子态的粒子不产生新的微观态。因此，该能级的微观状态数等于从 $g_l$ 中选取 $a_l$ 的组合数：
+
+  $$
+  \Omega_{l, FD} = C_{g_l}^{a_l} = \frac{g_l!}{a_l!(g_l - a_l)!}
+  $$
+
+  2. **总热力学概率**：由于各能级量子态的占据相互独立，整个系统的总微观状态数为各单能级微观状态数的连乘积：
+
+  $$
+  \Omega_{FD} = \prod_l \Omega_{l, FD} = \prod_l C_{g_l}^{a_l} = \prod_l \frac{g_l!}{a_l!(g_l - a_l)!}
+  $$
+
+### 5.2.3 玻色-爱因斯坦（BE）统计：非定域玻色子
+
++ 玻色子为全同不可分辨粒子，且量子态的占据数不受任何限制。
+
+  1. **单能级状态数**：对于第 $l$ 能级，将 $a_l$ 个不可分辨粒子分配至 $g_l$ 个量子态的数学模型，等价于将 $a_l$ 个全同元素与 $g_l - 1$ 个全同隔板进行一维线形全排列。总排列位置数为 $a_l + g_l - 1$，从中选取 $a_l$ 个位置放置粒子的组合数为：
+
+  $$
+  \Omega_{l, BE} = C_{a_l + g_l - 1}^{a_l} = C_{a_l + g_l - 1}^{g_l - 1} = \frac{(a_l + g_l - 1)!}{a_l!(g_l - 1)!}
+  $$
+
+  2. **总热力学概率**：各能级的状态分配相互独立，系统对应的总微观状态数为各单能级微观状态数的连乘积：
+
+  $$
+  \Omega_{BE} = \prod_l \Omega_{l, BE} = \prod_l C_{a_l + g_l - 1}^{a_l} = \prod_l \frac{(a_l + g_l - 1)!}{a_l!(g_l - 1)!}
+  $$
+
+## 5.3 极值条件与三种最概然分布的导出
+
++ 在热力学极限（$N \to \infty, V \to \infty$）下，系统微观状态数 $\Omega$ 在某一个特定的分布 $\{a_l^*\}$ 处会表现出极其尖锐的极大值。该分布所包含的微观状态数占据了系统所有可能状态数的绝对主导地位，因此被称为**最概然分布**。求系统平衡态的统计规律，在数学上即转化为在宏观约束条件下求解 $\ln \Omega$ 的极大值问题。
+
+### 5.3.1 **斯特林公式与连续化近似**
+
++ 为了应用微积分求解泛函极值，必须将离散的阶乘连续化。当系统中各能级上的粒子数 $a_l \gg 1$ 且简并度 $g_l \gg 1$ 时，可引入斯特林公式（Stirling's approximation）：
+
+  $$
+  \ln(x!) \approx x \ln x - x
+  $$
+
+  基于此，我们分别对三种统计体系的 $\ln \Omega$ 进行严格展开与一阶变分求导。
+
+### 5.3.2 **三种统计系统的泛函一阶变分**
+
++ **麦克斯韦-玻尔兹曼 (MB) 系统**：
+
+    利用斯特林公式展开 $\ln \Omega_{MB}$：
+
+    $$
+    \ln \Omega_{MB} = \ln N! + \sum_l (a_l \ln g_l - \ln a_l!) \approx N \ln N - N + \sum_l \left[ a_l \ln g_l - (a_l \ln a_l - a_l) \right]
+    $$
+
+    对粒子数分布 $a_l$ 发生微小变分 $\delta a_l$ 时，求一阶变分（由于 $N$ 守恒，$\delta N = 0$）：
+
+    $$
+    \delta \ln \Omega_{MB} = \sum_l \left[ \ln g_l - \frac{\partial}{\partial a_l}(a_l \ln a_l - a_l) \right] \delta a_l = \sum_l (\ln g_l - \ln a_l - 1 + 1) \delta a_l = \sum_l \ln \left( \frac{g_l}{a_l} \right) \delta a_l
+    $$
+
++ **费米-狄拉克 (FD) 系统**：
+
+    $$
+    \ln \Omega_{FD} = \sum_l \left[ \ln g_l! - \ln a_l! - \ln(g_l - a_l)! \right]
+    $$
+
+    $$
+    \approx \sum_l \left[ g_l \ln g_l - g_l - (a_l \ln a_l - a_l) - ((g_l - a_l) \ln(g_l - a_l) - (g_l - a_l)) \right]
+    $$
+
+    化简后对其求一阶变分（注意仅 $a_l$ 为变量，$g_l$ 为常数）：
+
+    $$
+    \delta \ln \Omega_{FD} = \sum_l \left[ - (\ln a_l + 1) - \frac{\partial}{\partial a_l} ((g_l - a_l) \ln(g_l - a_l)) \right] \delta a_l
+    $$
+
+    $$
+    = \sum_l \left[ - \ln a_l - 1 - ( - \ln(g_l - a_l) - 1 ) \right] \delta a_l = \sum_l \ln \left( \frac{g_l - a_l}{a_l} \right) \delta a_l = \sum_l \ln \left( \frac{g_l}{a_l} - 1 \right) \delta a_l
+    $$
+
++ **玻色-爱因斯坦 (BE) 系统**：
+
+    由于 $a_l \gg 1, g_l \gg 1$，可近似取 $a_l + g_l - 1 \approx a_l + g_l$ 以及 $g_l - 1 \approx g_l$：
+
+    $$
+    \ln \Omega_{BE} \approx \sum_l \left[ (a_l + g_l) \ln(a_l + g_l) - (a_l + g_l) - (a_l \ln a_l - a_l) - (g_l \ln g_l - g_l) \right]
+    $$
+
+    对其求一阶变分：
+
+    $$
+    \delta \ln \Omega_{BE} = \sum_l \left[ \ln(a_l + g_l) + 1 - (\ln a_l + 1) \right] \delta a_l = \sum_l \ln \left( \frac{a_l + g_l}{a_l} \right) \delta a_l = \sum_l \ln \left( \frac{g_l}{a_l} + 1 \right) \delta a_l
+    $$
+
+### 5.3.3 **统一变分表达式与拉格朗日乘子法**
+
++ 观察上述三个变分结果，我们可以通过引入一个符号参量 $\delta$，将其严格统一为唯一的代数形式：
+
+  $$
+  \delta \ln \Omega = \sum_l \ln \left( \frac{g_l}{a_l} - \delta \right) \delta a_l
+  $$
+
+  其中：
+
+  &emsp;&emsp;$\delta = 0$ 对应 MB 统计
+
+  &emsp;&emsp;$\delta = 1$ 对应 FD 统计
+
+  &emsp;&emsp;$\delta = -1$ 对应 BE 统计
+
+  对于处于热力学平衡的孤立系统，必须同时满足两个绝对的宏观守恒约束：
+
+  1.  **总粒子数守恒**：
+
+      $$
+      \sum_l \delta a_l = 0
+      $$
+
+  2.  **总能量守恒**：
+
+      $$
+      \sum_l \epsilon_l \delta a_l = 0
+      $$
+
+  为了在受约束条件下求解 $\delta \ln \Omega = 0$，应用拉格朗日乘子法（Lagrange multipliers）。分别引入两个待定常数乘子 $-\alpha$ 和 $-\beta$，乘以两个守恒约束方程并加到变分方程中，构造无条件极值方程：
+
+  $$
+  \sum_l \left[ \ln \left( \frac{g_l}{a_l} - \delta \right) - \alpha - \beta \epsilon_l \right] \delta a_l = 0
+  $$
+
+  由于引入了拉格朗日乘子，上述方程中的各个 $\delta a_l$ 现已在数学上转化为完全独立的变分量。为了保证该连加等式对任意的 $\delta a_l$ 组合均严格恒等于零，方程各项方括号内的系数必须分别恒等于零：
+
+  $$
+  \ln \left( \frac{g_l}{a_l} - \delta \right) - \alpha - \beta \epsilon_l = 0
+  $$
+
+  $$
+  \frac{g_l}{a_l} - \delta = e^{\alpha + \beta \epsilon_l}
+  $$
+
+  通过代数移项，我们得到了主宰微观统计体系的最核心、最普适的**统一最概然分布律**：
+
+  $$
+  a_l = \frac{g_l}{e^{\alpha + \beta \epsilon_l} + \delta} \quad (\delta = 0, 1, -1)
+  $$
+
+## 5.4 拉格朗日乘子的热力学意义与配分函数
+
++ 为了确定最概然分布中引入的拉格朗日乘子 $\alpha$ 和 $\beta$ 的物理意义，我们从宏观系统的内能全微分出发，通过与热力学基本方程的严格比对，自然导出宏观热力学量并证实玻尔兹曼关系。
+
+### 5.4.1 **内能的全微分与热功分解**
+
++ 系统的内能 $U$ 为处于各能级上的粒子能量总和：
+
+  $$
+  U = \sum_l a_l \epsilon_l
+  $$
+
+  考虑系统经历一个极微小的可逆热力学过程，内能的全微分包含两部分：
+
+  $$
+  dU = \sum_l \epsilon_l da_l + \sum_l a_l d\epsilon_l
+  $$
+
+  这两项具有明确的宏观热力学对应：
+
+  1. **第一项 $\sum \epsilon_l da_l$**：在外部约束（能级 $\epsilon_l$）固定的条件下，粒子在各能级间重新分布引起的能量变化。这完全对应于系统与外界交换的热量，即可逆过程中的微小热量 $\delta Q = \sum \epsilon_l da_l$。
+
+  2. **第二项 $\sum a_l d\epsilon_l$**：对于近独立子系，能级 $\epsilon_l$ 的数值仅取决于系统受到的外部约束（如系统的体积 $V$）。在粒子分布 $\{a_l\}$ 不变的条件下，改变体积导致能级移动所引起的能力变化，即为系统对外界做功。因此 $- \sum a_l d\epsilon_l = p dV$。
+
+### 5.4.2 **利用微观变分条件替换热量项**
+
++ 当系统处于平衡态时，由于系统绝大部分时间停留在最概然分布，微观状态数 $\Omega$ 可用最概然分布的状态数代替。对 $\ln \Omega$ 求全微分：
+
+  $$
+  d(\ln \Omega) = \sum_l \frac{\partial \ln \Omega}{\partial a_l} da_l
+  $$
+
+  将 5.3 节导出的极值条件 $\frac{\partial \ln \Omega}{\partial a_l} = \alpha + \beta \epsilon_l$ 代入上式：
+
+  $$
+  d(\ln \Omega) = \sum_l (\alpha + \beta \epsilon_l) da_l = \alpha \sum_l da_l + \beta \sum_l \epsilon_l da_l
+  $$
+
+  由于 $\sum da_l = dN$，且 $\sum \epsilon_l da_l = \delta Q$，可将热量项解出：
+
+  $$
+  \delta Q = \frac{1}{\beta} d(\ln \Omega) - \frac{\alpha}{\beta} dN
+  $$
+
+### 5.4.3 **与热力学基本方程的比对与玻尔兹曼关系的自然导出**
+
++ 将 $\delta Q$ 和功的表达式代回内能全微分 $dU$ 中：
+
+  $$
+  dU = \frac{1}{\beta} d(\ln \Omega) - \frac{\alpha}{\beta} dN - p dV
+  $$
+
+  将此式与宏观开系的热力学基本方程进行对比：
+
+  $$
+  dU = T dS + \mu dN - p dV
+  $$
+
+  通过各项系数的对应关系，我们得到以下严格结论：
+
+  **推导温度与 $\beta$ 的关系**：对于封闭系统（$dN = 0$），对比得出 $T dS = \frac{1}{\beta} d(\ln \Omega)$，即：
+
+  $$
+  dS = \frac{1}{\beta T} d(\ln \Omega)
+  $$
+
+  因为热力学熵 $S$ 是广延量，而对于两个相互独立的系统，总概率 $\Omega = \Omega_1 \Omega_2$ 使得 $\ln \Omega$ 具有严格的加和性（广延性）。因此，比例系数 $\frac{1}{\beta T}$ 必须是一个与具体系统无关的普适常数，定义为玻尔兹曼常数 $k_B$。
+
+  由此得出乘子 $\beta$ 的物理意义：
+
+  $$
+  \beta = \frac{1}{k_B T}
+  $$
+
+  同时对其积分，自然导出了著名的**玻尔兹曼关系**（略去积分常数）：
+
+  $$
+  S = k_B \ln \Omega
+  $$
+
+  **推导化学势与 $\alpha$ 的关系**：对比 $dN$ 的系数：
+
+  $$
+  \mu = -\frac{\alpha}{\beta} = -\alpha k_B T \implies \alpha = -\frac{\mu}{k_B T}
+  $$
+
+### 5.4.4 **麦克斯韦-玻尔兹曼分布与单粒子配分函数 $Z_1$**
+
++ 将 $\alpha, \beta$ 代回 5.3 节的分布律。对于遵守 MB 统计的系统（$\delta = 0$），其各能级平均粒子数为：
+
+  $$
+  a_l = g_l e^{\mu/k_B T} e^{-\epsilon_l/k_B T}
+  $$
+
+  为了消去化学势 $\mu$，利用总粒子数归一化条件 $N = \sum a_l = e^{\mu/k_B T} \sum g_l e^{-\epsilon_l/k_B T}$。
+
+  定义**单粒子配分函数（Partition Function）** $Z_1$ 为：
+
+  $$
+  Z_1 = \sum_l g_l e^{-\epsilon_l/k_B T}
+  $$
+
+  由此得到 $e^{\mu/k_B T} = \frac{N}{Z_1}$，将其代回分布公式，得到以配分函数表达的分布律：
+
+  $$
+  a_l = N \frac{g_l e^{-\epsilon_l/k_B T}}{Z_1}
+  $$
+
+### 5.4.5 **宏观热力学量的统计计算框架**
+
++ 确立了 $Z_1$ 后，系统的宏观热力学量均可通过对 $\ln Z_1$ 及其参量（$T, V$）求偏导数直接导出。
+
+  **内能 $U$**：
+
+  $$
+  U = \sum_l a_l \epsilon_l = \frac{N}{Z_1} \sum_l \epsilon_l g_l e^{-\epsilon_l/k_B T} = -N \frac{\partial \ln Z_1}{\partial \beta} = N k_B T^2 \left( \frac{\partial \ln Z_1}{\partial T} \right)_V
+  $$
+
+  **亥姆霍兹自由能 $F$**：
+
+  由热力学关系 $\mu = \left(\frac{\partial F}{\partial N}\right)_{T,V}$，将 $e^{\mu/k_B T} = \frac{N}{Z_1}$ 取对数得 $\mu = -k_B T \ln\left(\frac{Z_1}{N}\right)$。对该式积分（对于定域子系），可得：
+
+  $$
+  F = -N k_B T \ln Z_1
+  $$
+
+  **压强 $p$（物态方程）**：
+
+  $$
+  p = -\left(\frac{\partial F}{\partial V}\right)_T = N k_B T \left( \frac{\partial \ln Z_1}{\partial V} \right)_T
+  $$
+
+
+## 5.5 经典极限条件
+
++ 在 5.3 节导出的统一分布律中，单粒子能级的平均占据数（分布函数）表示为：
+
+  $$
+  f_l = \frac{a_l}{g_l} = \frac{1}{e^{\alpha + \beta \epsilon_l} + \delta} \quad (\delta = 0, 1, -1)
+  $$
+
+  当系统处于特定宏观状态，使得所有允许能级上的平均占据数均远小于 1（即 $f_l \ll 1$）时，系统满足**经典极限条件**，在统计物理中亦称**非简并条件（Non-degeneracy Condition）**。
+
+  由于能级能量 $\epsilon_l \ge 0$ 且 $\beta = \frac{1}{k_B T} > 0$，要使得分母中的指数项远大于 1 对应任意能级严格恒成立，其数学充要条件为：
+
+  $$
+  e^\alpha \gg 1 \quad \text{或等价表示为} \quad -\frac{\mu}{k_B T} \gg 1
+  $$
+
+  在此极限下，分母中的量子修正项 $\delta = \pm 1$ 的代数权重可以忽略（即量子统计的零阶近似）。费米分布与玻色分布在数学上同时收敛于经典的麦克斯韦-玻尔兹曼分布形式：
+
+  $$
+  a_l \approx g_l e^{-\alpha} e^{-\beta \epsilon_l}
+  $$
+
+  利用总粒子数守恒条件 $N = \sum a_l$，在经典极限下，总粒子数与单粒子配分函数 $Z_1 = \sum g_l e^{-\beta \epsilon_l}$ 满足：
+
+  $$
+  N \approx e^{-\alpha} \sum_l g_l e^{-\beta \epsilon_l} = e^{-\alpha} Z_1
+  $$
+
+  由此解得经典极限下逸度 $z$ 与拉格朗日乘数 $\alpha$ 的一阶表达式：
+
+  $$
+  z = e^{\mu/k_B T} = e^{-\alpha} = \frac{N}{Z_1}
+  $$
+
+  将 5.6 节在连续能量近似下导出的单原子理想气体平动配分函数 $Z_1 = V \left(\frac{2\pi m k_B T}{h^2}\right)^{3/2}$ 代入上式，得到以宏观热力学量（温度 $T$、体积 $V$、粒子数 $N$）表征的经典极限显式判据：
+
+  $$
+  e^\alpha = \frac{V}{N} \left(\frac{2\pi m k_B T}{h^2}\right)^{3/2} \gg 1
+  $$
+
+  引入分子的平均平均间距 $d = \left(\frac{V}{N}\right)^{1/3} = n^{-1/3}$，以及表征微观粒子波动性空间扩展尺度的**热德布罗意波长（Thermal De Broglie Wavelength）**：
+
+  $$
+  \lambda_{dB} = \frac{h}{\sqrt{2\pi m k_B T}}
+  $$
+
+  则上述经典极限判据可严格改写为无量纲的几何比值形式：
+
+  $$
+  \left( \frac{d}{\lambda_{dB}} \right)^3 \gg 1 \implies d \gg \lambda_{dB}
+  $$
+
+  该结果表明，经典极限条件的物理实质在于：气体的平均粒子间距远大于其微观热德布罗意波长。此时，粒子波包的空间重叠区域趋于零，由全同性原理引发的量子统计关联（玻色聚集或费米排斥）在宏观统计平均中不再显现。
+
+## 5.6 经典理想气体的统计分布与双原子分子内部自由度
+
++ 在弱简并极限下，系统的统计行为遵循经典的麦克斯韦-玻尔兹曼分布。对于宏观容器中的平动自由粒子，其相邻能级间的能量差极小，离散的求和运算在数学上可严格转化为对连续相空间的积分。对于多原子分子（如双原子分子），除了质心的平动之外，还必须引入分子内部的转动与振动自由度。
+
+### 5.6.1 连续能量积分与平动配分函数
+
++ 对于处于体积 $V$ 内的单原子理想气体，粒子的平动能仅取决于其动量，色散关系为 $\epsilon = \frac{p^2}{2m} = \frac{p_x^2 + p_y^2 + p_z^2}{2m}$。
+
+  在单粒子相空间（$\mu$ 空间）中，处于微小相体积元 $d^3\mathbf{q} d^3\mathbf{p}$ 内的微观量子态数目为 $\frac{d^3\mathbf{q} d^3\mathbf{p}}{h^3}$。将 5.4 节中配分函数的离散求和 $\sum_l g_l e^{-\beta \epsilon_l}$ 转化为积分：
+
+  $$
+  Z_t = \iint \frac{1}{h^3} e^{-\beta \frac{p^2}{2m}} d^3\mathbf{q} d^3\mathbf{p} = \frac{1}{h^3} \left( \iiint_V d^3\mathbf{q} \right) \left( \iiint_{-\infty}^{\infty} e^{-\frac{p_x^2 + p_y^2 + p_z^2}{2m k_B T}} dp_x dp_y dp_z \right)
+  $$
+
+  由于空间积分直接给出系统体积 $V$，动量积分可分离为三个独立的一维高斯积分（利用公式 $\int_{-\infty}^{\infty} e^{-ax^2} dx = \sqrt{\frac{\pi}{a}}$）：
+
+  $$
+  Z_t = \frac{V}{h^3} \left( \int_{-\infty}^{\infty} e^{-\frac{p_x^2}{2m k_B T}} dp_x \right) \left( \int_{-\infty}^{\infty} e^{-\frac{p_y^2}{2m k_B T}} dp_y \right) \left( \int_{-\infty}^{\infty} e^{-\frac{p_z^2}{2m k_B T}} dp_z \right) = V \left( \frac{2\pi m k_B T}{h^2} \right)^{3/2}
+  $$
+
+### 5.6.2 麦克斯韦速度与速率分布律
+
++ 系统处于动量区间 $\mathbf{p}$ 到 $\mathbf{p} + d\mathbf{p}$（即相体积元 $V d^3\mathbf{p}$）内的粒子数 $dN_{\mathbf{p}}$ 可由 MB 分布律直接给出：
+
+  $$
+  dN_{\mathbf{p}} = N \left( \frac{1}{2\pi m k_B T} \right)^{3/2} e^{-\frac{p_x^2 + p_y^2 + p_z^2}{2m k_B T}} dp_x dp_y dp_z
+  $$
+
+  引入动量与速度的关系 $\mathbf{p} = m\mathbf{v}$，则 $d p_x = m d v_x$，代换可得处于速度区间 $\mathbf{v}$ 到 $\mathbf{v}+d\mathbf{v}$ 的粒子数（麦克斯韦速度分布律）：
+
+  $$
+  dN_{\mathbf{v}} = N \left( \frac{m}{2\pi k_B T} \right)^{3/2} e^{-\frac{m(v_x^2 + v_y^2 + v_z^2)}{2k_B T}} dv_x dv_y dv_z
+  $$
+
+  将速度空间的直角坐标积分变换为球坐标系，体积元 $dv_x dv_y dv_z$ 对应于球壳体积 $4\pi v^2 dv$，得到速率概率密度函数 $f(v) = \frac{1}{N} \frac{dN_v}{dv}$（麦克斯韦速率分布律）：
+
+  $$
+  f(v) = 4\pi \left( \frac{m}{2\pi k_B T} \right)^{3/2} v^2 e^{-\frac{mv^2}{2k_B T}}
+  $$
+
+### 5.6.3 多自由度解耦与双原子分子平动
+
++ 对于构造更复杂的理想双原子分子系统，分子的总能量不仅包含其质心的平动能 $\epsilon_t$，还包含分子绕质心转动的能量 $\epsilon_r$ 以及两原子沿轴线振动的能量 $\epsilon_v$。在非极端条件下，这些自由度可视为相互解耦的独立变量。因此，双原子分子的单粒子哈密顿量可表达为加和形式：
+
+  $$
+  \epsilon = \epsilon_t + \epsilon_r + \epsilon_v
+  $$
+
+  由于能量表达式满足代数可加性，单粒子配分函数 $Z_1$ 能够严格地分解为各项独立自由度配分函数的乘积：
+
+  $$
+  Z_1 = \sum e^{-\beta(\epsilon_t + \epsilon_r + \epsilon_v)} = Z_t \cdot Z_v \cdot Z_r
+  $$
+
+  **平动部分的对比**：
+
+  设双原子分子由质量分别为 $m_1$ 和 $m_2$ 的原子构成，其总质量为 $m = m_1 + m_2$。双原子分子的平动完全由其质心运动描述，其质心色散关系同样为 $\epsilon_t = \frac{p^2}{2m}$。因此，在连续能量近似下，双原子分子的平动配分函数在数学形式上与单原子分子完全一致：
+
+  $$
+  Z_t = V \left( \frac{2\pi (m_1+m_2) k_B T}{h^2} \right)^{3/2}
+  $$
+
+### 5.6.4 谐振子模型与振动配分函数
+
++ 双原子分子两核间的相对位移在微振动近似下可视为一维理想量子谐振子。设其特征振动频率为 $\nu$。
+
+  量子谐振子的本征能级为：
+
+  $$
+  \epsilon_n = \left(n + \frac{1}{2}\right)h\nu \quad (n = 0, 1, 2, \dots)
+  $$
+
+  由于一维谐振子能级是非简并的，其简并度 $g_n = 1$。构建振动配分函数 $Z_v$ 表现为严格的等比级数形式：
+
+  $$
+  Z_v = \sum_{n=0}^\infty e^{-\beta (n + 1/2)h\nu} = e^{-\frac{h\nu}{2k_B T}} \sum_{n=0}^\infty \left( e^{-\frac{h\nu}{k_B T}} \right)^n
+  $$
+
+  由于公比 $e^{-\frac{h\nu}{k_B T}} < 1$，应用等比级数求和公式 $\sum_{n=0}^\infty q^n = \frac{1}{1-q}$，直接导出振动配分函数的精确解析式：
+
+  $$
+  Z_v = \frac{e^{-\frac{h\nu}{2k_B T}}}{1 - e^{-\frac{h\nu}{k_B T}}}
+  $$
+
+  引入特征振动温度 $\Theta_v = \frac{h\nu}{k_B}$。分析其在不同温度区间下的渐近行为：
+
+  1. **低温极限（$T \ll \Theta_v$）**：指数项 $e^{-\frac{\Theta_v}{T}} \to 0$，分母趋于 1，配分函数收敛于 $Z_v \approx e^{-\frac{h\nu}{2k_B T}}$。此时系统完全冻结在零点振动基态，对热容等宏观物理量无微商贡献。
+
+  2. **高温经典极限（$T \gg \Theta_v$）**：将分母的指数项进行一阶泰勒展开（$e^{-\frac{h\nu}{k_B T}} \approx 1 - \frac{h\nu}{k_B T}$），同时分子近似为 1，振配分函数自动退化为：
+
+  $$
+  Z_v \approx \frac{1}{1 - (1 - \frac{h\nu}{k_B T})} = \frac{k_B T}{h\nu} = \frac{T}{\Theta_v}
+  $$
+
+  由此，理想双原子分子的总单粒子配分函数在经典高温极限下可完整表述为：
+
+  $$
+  Z_1 = \left[ V \left( \frac{2\pi m k_B T}{h^2} \right)^{3/2} \right] \cdot \left[ \frac{2I k_B T}{\hbar^2} \right] \cdot \left[ \frac{k_B T}{h\nu} \right]
+  $$
+
+  对该式应用 5.4 节的热力学偏导数框架，即可严密解析出双原子气体包含全自由度贡献的内能及定容热容。
+
+### 5.6.5 刚性转子模型与转动配分函数
+
++ 双原子分子的转动通常抽象为绕质心旋转的刚性转子模型。设分子的折合质量为 $\mu = \frac{m_1 m_2}{m_1 + m_2}$，两核间距为 $R_0$，则绕垂直于核轴线的转动惯量为 $I = \mu R_0^2$。
+
+  根据量子力学，角动量量子化导致转动能级呈现离散分布：
+
+  $$
+  \epsilon_J = \frac{\hbar^2}{2I} J(J+1) \quad (J = 0, 1, 2, \dots)
+  $$
+
+  每个能级对应的空间取向简并度为：
+
+  $$
+  g_J = 2J + 1
+  $$
+
+  由此构建转动配分函数 $Z_r$ 的级数形式：
+
+  $$
+  Z_r = \sum_{J=0}^\infty (2J+1) e^{-\frac{\hbar^2 J(J+1)}{2I k_B T}}
+  $$
+
+  引入特征转动温度 $\Theta_r = \frac{\hbar^2}{2I k_B}$。在常规及高温极限下（即 $T \gg \Theta_r$），转动能级间隔远小于热运动能量 $k_B T$，离散求和可转换为连续积分：
+
+  $$
+  Z_r \approx \int_0^\infty (2J+1) e^{-\frac{\Theta_r}{T} J(J+1)} dJ
+  $$
+
+  令变元 $x = J(J+1)$，则 $dx = (2J+1)dJ$，积分化简为：
+
+  $$
+  Z_r = \int_0^\infty e^{-\frac{\Theta_r}{T} x} dx = \frac{T}{\Theta_r} = \frac{2I k_B T}{\hbar^2}
+  $$
+
+  *(注：上述推导适用于异核双原子分子。若为全同同核双原子分子，由于空间旋转 $180^\circ$ 后的状态在拓扑上不可分辨，需引入对称性因子 $\sigma = 2$，配分函数相应修正为 $Z_r = \frac{T}{2\Theta_r}$)*。
+
+## 5.7 理想气体熵的吉布斯佯谬与全同性修正
+
++ 本节探讨全同粒子的不可分辨性对系统宏观广延性质的决定性影响，并展示如何通过量子修正消除经典统计力学在计算混合熵时出现的非广延性缺陷。
+
+### 5.7.1 经典理想气体熵与吉布斯佯谬的数学展现
+
++ 若不考虑量子全同性，将气体分子视为经典力学中**可分辨**的独立粒子，则含有 $N$ 个粒子的理想气体系统总配分函数直接写为 $Z_N = (Z_1)^N$。将 5.6 节导出的单粒子平动配分函数 $Z_1 = V \left(\frac{2\pi m k_B T}{h^2}\right)^{3/2} = V f(T)$ 代入，系统的亥姆霍兹自由能为：
+
+  $$
+  F = -k_B T \ln Z_N = -N k_B T \ln [V f(T)]
+  $$
+
+  根据热力学关系 $S = -\left(\frac{\partial F}{\partial T}\right)_{V,N}$，推导出未修正的经典理想气体熵表达式：
+
+  $$
+  S = N k_B \ln V + N k_B \left[ \ln f(T) + T \frac{f'(T)}{f(T)} \right]
+  $$
+
+  现考虑吉布斯佯谬的物理模型：在一个由隔板分为两个对称区域（体积均为 $V$、各含有 $N$ 个同温同压的同种气体分子）的孤立容器中，抽去隔板发生扩散过程。
+
+  &emsp;&emsp;**混合前**：两部分气体的总初熵为各项之和：
+
+  $$
+  S_i = 2 \cdot \left\{ N k_B \ln V + N k_B \left[ \ln f(T) + T \frac{f'(T)}{f(T)} \right] \right\}
+  $$
+
+  &emsp;&emsp;**混合后**：若粒子被视为可分辨的，抽去隔板后总粒子数变为 $2N$，气体可到达的总体积变为 $2V$，系统终熵为：
+
+  $$
+  S_f = (2N) k_B \ln (2V) + (2N) k_B \left[ \ln f(T) + T \frac{f'(T)}{f(T)} \right]
+  $$
+
+  &emsp;&emsp;**计算混合熵变 $\Delta S$**：
+
+  $$
+  \Delta S = S_f - S_i = 2N k_B \ln (2V) - 2N k_B \ln V = 2N k_B \ln 2 > 0
+  $$
+
+  **物理佯谬分析**：根据热力学理论，相同温度和压强的同种气体相互混合是一个完全不改变系统宏观状态的可逆物理过程，其实际宏观熵变 $\Delta S$ 必须严格为零。经典统计推导出的非零混合熵（$2N k_B \ln 2$）破坏了热力学熵的广延性约束（即体积和粒子数同时加倍时，熵未能表现出严格的加倍特征），此矛盾结果即为**吉布斯佯谬（Gibbs Paradox）**。
+
+### 5.7.2 全同性因子的引入与萨库尔-特特罗德方程
+
++ 吉布斯佯谬的微观根源在于经典力学允许跟踪粒子轨迹，从而错误地赋予了全同粒子以可分辨性。量子力学全同性原理表明，同种微观粒子在本质上是绝对不可分辨的。因此，当 $N$ 个全同粒子在弱简并条件下分布于不同的量子态时，任何在粒子之间进行的置换操作均不产生新的微观多体物理状态。经典配分函数 $Z_N = (Z_1)^N$ 将系统状态数重复计算了 $N!$ 次。
+
+  为了恢复统计理论的自洽性，必须引入**全同性因子 $\frac{1}{N!}$** 对系统的总配分函数进行修剪：
+
+  $$
+  Z_N = \frac{1}{N!} (Z_1)^N
+  $$
+
+  利用斯特林近似 $\ln N! \approx N \ln N - N$，重新计算系统的亥姆霍兹自由能：
+
+  $$
+  F = -k_B T \ln \left[ \frac{1}{N!} (Z_1)^N \right] \approx -k_B T \left[ N \ln Z_1 - (N \ln N - N) \right] = -N k_B T \left[ \ln \left( \frac{Z_1}{N} \right) + 1 \right]
+  $$
+
+  将 $Z_1 = V \left(\frac{2\pi m k_B T}{h^2}\right)^{3/2}$ 代入上式：
+
+  $$
+  F = -N k_B T \left[ \ln \left( \frac{V}{N} \left(\frac{2\pi m k_B T}{h^2}\right)^{3/2} \right) + 1 \right]
+  $$
+
+  依据 $S = -\left(\frac{\partial F}{\partial T}\right)_{V,N}$，对上式关于温度 $T$ 求偏导数（注意 $\frac{V}{N}$ 项不随温度变化）：
+
+  $$
+  S = N k_B \left[ \ln \left( \frac{V}{N} \left(\frac{2\pi m k_B T}{h^2}\right)^{3/2} \right) + 1 \right] + N k_B T \cdot \frac{\partial}{\partial T} \left[ \frac{3}{2} \ln T \right] = N k_B \left[ \ln \left( \frac{V}{N} \left(\frac{2\pi m k_B T}{h^2}\right)^{3/2} \right) + \frac{5}{2} \right]
+  $$
+
+  此式即为严格符合热力学广延性的单原子理想气体绝对熵公式——**萨库尔-特特罗德方程（Sackur-Tetrode Equation）**。
+
+  **佯谬的代数消除检验**：
+
+  利用修正后的方程重新审视同种气体的混合过程：
+
+  &emsp;&emsp;**混合前**：系统总熵为两部分之和：
+
+  $$
+  S_i = 2 \cdot N k_B \left[ \ln \left( \frac{V}{N} f(T) \right) + \frac{5}{2} \right]
+  $$
+
+  &emsp;&emsp;**混合后**：由于对数函数内的自变量表现为特异体积 $\frac{\text{总体积}}{\text{总粒子数}} = \frac{2V}{2N} = \frac{V}{N}$，该比值在等密度混合过程中维持严格恒定：
+
+  $$
+  S_f = (2N) k_B \left[ \ln \left( \frac{2V}{2N} f(T) \right) + \frac{5}{2} \right] = 2N k_B \left[ \ln \left( \frac{V}{N} f(T) \right) + \frac{5}{2} \right]
+  $$
+
+  &emsp;&emsp;**最终熵变**：
+
+  $$
+  \Delta S = S_f - S_i = 0
+  $$
+
+## 5.8 弱简并理想玻色气体和费米气体
+
++ 在弱简并条件（$e^\alpha \gg 1$）下，系统相空间中的量子态极为充裕，能级平均占据数远小于 $1$。但若系统并未绝对逼近经典极限（即处于弱简并与中度简并的过渡区），占据数分布函数中分母上的量子特征项 $\delta = \pm 1$ 将对系统的宏观热力学量产生不可忽略的一阶微扰。
+
+### 5.8.1 分布函数的一阶渐近展开
+
++ 引入参量**逸度（Fugacity）** $z = e^{-\alpha} = e^{\mu/k_B T}$。在弱简并条件下，化学势 $\mu$ 表现为绝对值极大的负数，因此逸度是一个极小量，即 $0 < z \ll 1$。
+
+  将统一的最概然分布律用逸度 $z$ 表示，并在 $z \ll 1$ 附近将其对 $z e^{-\beta \epsilon_l}$ 进行一阶泰勒展开：
+
+  $$
+  a_l = \frac{g_l}{z^{-1}e^{\beta \epsilon_l} + \delta} = g_l z e^{-\beta \epsilon_l} \frac{1}{1 + \delta z e^{-\beta \epsilon_l}} \approx g_l z e^{-\beta \epsilon_l} \left( 1 - \delta z e^{-\beta \epsilon_l} \right)
+  $$
+
+  展开式中的第一项即为经典的麦克斯韦-玻尔兹曼分布，而第二项则代表了由于全同粒子统计特性（$\delta = -1$ 对应玻色子，$\delta = +1$ 对应费米子）引入的**量子修正一阶项**。
+
+### 5.8.2 粒子数与内能的连续积分及一阶修正展开
+
++ 利用三维自由粒子态密度 $D(\epsilon) = \frac{2\pi V}{h^3} (2m)^{3/2} \epsilon^{1/2}$，将离散求和转化为连续积分，计算包含一阶修正的总粒子数 $N$：
+
+  $$
+  N = \int_0^\infty a(\epsilon) D(\epsilon) d\epsilon \approx \frac{2\pi V}{h^3} (2m)^{3/2} \int_0^\infty \epsilon^{1/2} \left[ z e^{-\beta \epsilon} - \delta z^2 e^{-2\beta \epsilon} \right] d\epsilon
+  $$
+
+  利用伽马积分 $\int_0^\infty x^{1/2} e^{-ax} dx = \frac{\sqrt{\pi}}{2} a^{-3/2}$，计算可得：
+
+  $$
+  N \approx \frac{2\pi V}{h^3} (2m)^{3/2} \left[ z \frac{\sqrt{\pi}}{2} \beta^{-3/2} - \delta z^2 \frac{\sqrt{\pi}}{2} (2\beta)^{-3/2} \right]
+  $$
+
+  引入系统的**热德布罗意波长 $\lambda = \frac{h}{\sqrt{2\pi m k_B T}}$**，化简上式得：
+
+  $$
+  N = \frac{V}{\lambda^3} \left( z - \frac{\delta}{2^{3/2}} z^2 \right) \quad \implies \quad n \lambda^3 = z - \frac{\delta}{2^{3/2}} z^2
+  $$
+
+  （此处 $n = N/V$ 为粒子数密度）。由于在弱简并下 $z \ll 1$，可利用迭代法将逸度 $z$ 用宏观可测的参量 $n$ 和 $T$ 反向表达。零阶近似为 $z \approx n \lambda^3$；将其代入一阶项中，得到反解关系：
+
+  $$
+  z \approx n \lambda^3 \left( 1 + \frac{\delta}{2^{3/2}} n \lambda^3 \right)
+  $$
+
+  同理，计算系统的总内能 $U$。内能积分核包含 $\epsilon \cdot \epsilon^{1/2} = \epsilon^{3/2}$：
+
+  $$
+  U = \int_0^\infty \epsilon a(\epsilon) D(\epsilon) d\epsilon \approx \frac{2\pi V}{h^3} (2m)^{3/2} \int_0^\infty \epsilon^{3/2} \left[ z e^{-\beta \epsilon} - \delta z^2 e^{-2\beta \epsilon} \right] d\epsilon
+  $$
+
+  利用积分 $\int_0^\infty x^{3/2} e^{-ax} dx = \frac{3\sqrt{\pi}}{4} a^{-5/2}$：
+
+  $$
+  U = \frac{2\pi V}{h^3} (2m)^{3/2} \left[ z \frac{3\sqrt{\pi}}{4} \beta^{-5/2} - \delta z^2 \frac{3\sqrt{\pi}}{4} (2\beta)^{-5/2} \right] = \frac{3}{2} k_B T \frac{V}{\lambda^3} \left( z - \frac{\delta}{2^{5/2}} z^2 \right)
+  $$
+
+  为了将此式与经典统计学结果进行直接对比，我们将前面求得的 $z$ 的反解表达式代入 $U$ 中，并在展开时仅保留至 $(n \lambda^3)^2$ 的一阶修正项（即取 $z^2 \approx (n\lambda^3)^2$）：
+
+  $$
+  U \approx \frac{3}{2} k_B T \frac{V}{\lambda^3} \left[ n \lambda^3 \left( 1 + \frac{\delta}{2^{3/2}} n \lambda^3 \right) - \frac{\delta}{2^{5/2}} (n \lambda^3)^2 \right]
+  $$
+
+  提取公因子 $n \lambda^3$ 并利用恒等式 $\frac{V}{\lambda^3} n \lambda^3 = N$，对方括号内合并同类项（注意 $\frac{1}{2^{3/2}} - \frac{1}{2^{5/2}} = \frac{1}{2\sqrt{2}} - \frac{1}{4\sqrt{2}} = \frac{1}{2^{5/2}}$）：
+
+  $$
+  U \approx \frac{3}{2} N k_B T \left[ 1 + \left( \frac{1}{2^{3/2}} - \frac{1}{2^{5/2}} \right) \delta n \lambda^3 \right] = \frac{3}{2} N k_B T \left[ 1 + \frac{\delta}{2^{5/2}} n \lambda^3 \right]
+  $$
+
+  推导证明：弱简并气体的内能严格等于经典理想气体平动内能（$\frac{3}{2}N k_B T$）附加一个由量子全同性引出的微小修正项。
+
+### 5.8.3 物态方程的量子修正与统计等效相互作用
+
++ 对于非相对论性理想气体系统（无论经典还是量子分布），其宏观压强与平动内能的严密体积微商关系均满足 $p = \frac{2}{3} \frac{U}{V}$。将 5.8.2 节化简完毕的内能表达式直接代入此关系中，立即得到包含一阶量子修正的物态方程：
+
+  $$
+  p = \frac{2}{3V} \cdot \frac{3}{2} N k_B T \left[ 1 + \frac{\delta}{2^{5/2}} n \lambda^3 \right]
+  $$
+
+  整理为标准的状态方程形式：
+
+  $$
+  pV \approx N k_B T \left[ 1 + \frac{\delta}{2^{5/2}} n \lambda^3 \right] = N k_B T \left[ 1 + \delta \frac{N}{V} \frac{h^3}{16 (\pi m k_B T)^{3/2}} \right]
+  $$
+
+  对比经典理想气体状态方程 $pV = N k_B T$，方括号中的修正项完全起源于全同粒子的量子统计关联：
+
+  1. **对于理想玻色气体（$\delta = -1$）**：修正项为负，实际压强小于相同条件下的经典理想气体。这表明由于玻色子倾向于共同占据同一量子态的对称波函数特征，宏观上表现出一种“统计等效吸引力”，使得气体分子在热力学效应上显得彼此聚拢。
+
+  2. **对于理想费米气体（$\delta = +1$）**：修正项为正，实际压强大于经典的理想气体。这直接体现了泡利不相容原理的反对称波函数限制，排斥多个粒子占据同一相体积元，在宏观上表现出一种“统计等效排斥力”。
+
+## 5.9 理想玻色气体的强简并条件与玻色-爱因斯坦凝聚
+
++ 当系统处于低温和高密度状态时，粒子的热德布罗意波长变得与粒子间平均间距相当，波函数发生显著的宏观交叠。此时，弱简并条件失效，系统进入**强简并状态**。本节专门探讨理想玻色气体在强简并极限下展现出的宏观量子特征。
+
+### 5.9.1 玻色系统的化学势限制
+
++ 在平衡状态下，理想玻色气体在能级 $\epsilon_l$ 上的平均占据数为：
+
+  $$
+  a_l = \frac{g_l}{e^{(\epsilon_l - \mu)/k_B T} - 1}
+  $$
+
+  玻色子不受泡利不相容原理限制，但作为真实的物理系统，任何能级上的粒子数都必须保证为非负实数，即对于所有可能的 $\epsilon_l$，必须满足：
+
+  $$
+  a_l \ge 0 \implies e^{(\epsilon_l - \mu)/k_B T} > 1
+  $$
+
+  该不等式等价于 $\mu < \epsilon_l$。为了使该条件对系统内所有的能级均严格成立，化学势 $\mu$ 必须小于系统的最低能级（基态能量 $\epsilon_0$）。若取基态能量为能量零点（$\epsilon_0 = 0$），则玻色气体的化学势受到绝对的代数限制：
+
+  $$
+  \mu \le 0
+  $$
+
+  这一限制是玻色系统引发宏观凝聚相变的前提。
+
+### 5.9.2 连续能量积分与粒子数的级数展开
+
++ 对于宏观体积 $V$ 中的三维自由粒子系统，引入态密度函数 $D(\epsilon) = \frac{2\pi V}{h^3} (2m)^{3/2} \epsilon^{1/2}$。考虑一般情况（化学势 $\mu < 0$），引入参量**逸度（Fugacity）** $z = e^{\mu/k_B T}$，由上述限制可知 $0 < z < 1$。
+
+  将激发态上的粒子数 $N_e$ 转化为连续积分：
+
+  $$
+  N_e = \int_0^\infty \frac{D(\epsilon)}{e^{(\epsilon - \mu)/k_B T} - 1} d\epsilon = \frac{2\pi V}{h^3} (2m)^{3/2} \int_0^\infty \frac{\epsilon^{1/2}}{z^{-1}e^{\epsilon/k_B T} - 1} d\epsilon
+  $$
+
+  引入无量纲变量 $x = \epsilon/k_B T$，由于 $z e^{-x} < 1$，可对被积函数的分母进行几何级数展开：
+
+  $$
+  \frac{1}{z^{-1}e^x - 1} = \frac{z e^{-x}}{1 - z e^{-x}} = \sum_{n=1}^\infty z^n e^{-nx}
+  $$
+
+  代入积分并交换求和与积分顺序：
+
+  $$
+  N_e = \frac{2\pi V}{h^3} (2m k_B T)^{3/2} \sum_{n=1}^\infty z^n \int_0^\infty x^{1/2} e^{-nx} dx
+  $$
+
+  利用伽马函数积分 $\int_0^\infty x^{1/2} e^{-nx} dx = \frac{\Gamma(3/2)}{n^{3/2}} = \frac{\sqrt{\pi}}{2 n^{3/2}}$，化简可得化学势不为零时，激发态粒子数的严格级数解析式：
+
+  $$
+  N_e = V \left( \frac{2\pi m k_B T}{h^2} \right)^{3/2} \sum_{n=1}^\infty \frac{z^n}{n^{3/2}}
+  $$
+
+  定义玻色-爱因斯坦积分函数 $g_{3/2}(z) = \sum_{n=1}^\infty \frac{z^n}{n^{3/2}}$，则系统总粒子数方程可精确表述为：
+
+  $$
+  N = N_0 + N_e = N_0 + V \left( \frac{2\pi m k_B T}{h^2} \right)^{3/2} g_{3/2}(z)
+  $$
+
+### 5.9.3 粒子数容纳上限与玻色-爱因斯坦凝聚 (BEC)
+
++ 随着温度 $T$ 的降低，因子 $(k_B T)^{3/2}$ 减小；为了维持总粒子数 $N$ 恒定，逸度 $z$ 必须单调递增（即 $\mu$ 趋近于 $0$）。当 $\mu \to 0$ 时，$z \to 1$。
+
+  此时，激发态所能容纳的粒子数达到绝对上限 $N_{\max}(T)$：
+
+  $$
+  N_{\max}(T) = V \left( \frac{2\pi m k_B T}{h^2} \right)^{3/2} g_{3/2}(1)
+  $$
+
+  数学上，级数 $g_{3/2}(1) = \sum_{n=1}^\infty \frac{1}{n^{3/2}}$ 正好对应于黎曼 $\zeta$ 函数（Riemann zeta function）在 $s = 3/2$ 时的取值，即 $\zeta(3/2)$。因此，连续激发态的最大容纳量为：
+
+  $$
+  N_{\max}(T) = V \left( \frac{2\pi m k_B T}{h^2} \right)^{3/2} \zeta\left(\frac{3}{2}\right)
+  $$
+
+  **相变判据**：当温度降至某一临界值 $T_c$ 时，激发态的粒子容纳上限恰好等于系统总粒子数 $N$，即 $N_{\max}(T_c) = N$。解得临界温度解析式：
+
+  $$
+  T_c = \frac{h^2}{2\pi m k_B} \left[ \frac{N}{V \zeta(3/2)} \right]^{2/3}
+  $$
+
+  当系统温度继续降低（$T < T_c$）时，由于 $\mu$ 无法突破 $0$ 的上限，连续谱的激发态无法再容纳系统中全部的宏观粒子。
+
+  多余的粒子必须被迫“坍缩”至被连续积分所忽略的单粒子极低能态（动量 $\mathbf{p}=0$ 的基态）。基态粒子数 $N_0$ 将占据宏观比例：
+
+  $$
+  N_0 = N - N_e(T) = N - V \left( \frac{2\pi m k_B T}{h^2} \right)^{3/2} \zeta\left(\frac{3}{2}\right)
+  $$
+
+  利用临界温度 $T_c$ 的定义代换，可得到极其优美的凝聚体分数方程：
+
+  $$
+  \frac{N_0}{N} = 1 - \left( \frac{T}{T_c} \right)^{3/2}
+  $$
+
+  **数值结果与物理结论**：
+
+  代入黎曼 $\zeta$ 函数的具体数值 $\zeta(3/2) \approx 2.612$，临界温度最终确认为：
+
+  $$
+  T_c \approx \frac{h^2}{2\pi m k_B} \left( \frac{n}{2.612} \right)^{2/3}
+  $$
+
+  当 $T < T_c$ 时，系统发生**玻色-爱因斯坦凝聚（BEC）**。宏观数量级的玻色子聚集在基态，形成巨型相干的物质波。该相变完全由粒子的不可分辨性及玻色统计规律所驱动，不存在经典意义上的空间气液相界面，是一种纯粹在动量空间内发生的连续量子相变。
+
+## 5.10 理想费米气体的强简并条件与低温微扰展开
+
++ 当系统的温度远低于其特征简并温度（即 $T \ll T_F$）时，费米-狄拉克分布函数的分母中指数项不再能被视作大标量，系统进入**强简并状态**。由于泡利不相容原理的刚性限制，全同费米子体系在低温下表现出与经典和玻色系统截然不同的力学与热力学本征行为。
+
+### 5.10.1 绝对零度下的费米海与费米能量 ($T = 0\text{ K}$)
+
++ 在绝对零度下，系统处于能量最低的量子基态。为了满足泡利不相容原理（每个微观量子态至多容纳一个费米子），$N$ 个全同费米子不得不自底向上依次填满单粒子能级。
+
+  此时，费米-狄拉克分布函数退化为一个严格的阶跃函数：
+
+  $$
+  f(\epsilon) = \frac{1}{e^{(\epsilon - \mu)/k_B T} + 1} \xrightarrow{T \to 0} \Theta(E_F - \epsilon) =
+  \begin{cases}
+  1, & \epsilon \le E_F \\
+  0, & \epsilon > E_F
+  \end{cases}
+  $$
+
+  式中 $E_F = \mu(0)$ 定义为绝对零度时的化学势，称为**费米能量（Fermi Energy）**。系统所有被占据的量子态在动量空间中构成的边界曲面称为**费米面（Fermi Surface）**。
+
+  引入粒子的内秉自旋简并度 $g_s = 2S + 1$（对于电子，$S=1/2$，$g_s = 2$），三维平动自由费米子的态密度函数为：
+
+  $$
+  D(\epsilon) = g_s \frac{2\pi V}{h^3} (2m)^{3/2} \epsilon^{1/2}
+  $$
+
+  利用总粒子数守恒条件，通过连续谱积分严格确定费米能量 $E_F$：
+
+  $$
+  N = \int_0^{E_F} D(\epsilon) d\epsilon = g_s \frac{2\pi V}{h^3} (2m)^{3/2} \int_0^{E_F} \epsilon^{1/2} d\epsilon = g_s \frac{2\pi V}{h^3} (2m)^{3/2} \cdot \frac{2}{3} E_F^{3/2} = \frac{4\pi g_s V}{3h^3} (2m E_F)^{3/2}
+  $$
+
+  由此解得费米能量以宏观数密度 $n = N/V$ 表达的解析式：
+
+  $$
+  E_F = \frac{h^2}{2m} \left( \frac{3N}{4\pi g_s V} \right)^{2/3} = \frac{h^2}{2m} \left( \frac{3n}{4\pi g_s} \right)^{2/3}
+  $$
+
+  定义**费米温度**为 $T_F = E_F / k_B$。
+
+  进一步计算绝对零度下费米子体系的总基态内能 $U_0$：
+
+  $$
+  U_0 = \int_0^{E_F} \epsilon D(\epsilon) d\epsilon = g_s \frac{2\pi V}{h^3} (2m)^{3/2} \int_0^{E_F} \epsilon^{3/2} d\epsilon = g_s \frac{2\pi V}{h^3} (2m)^{3/2} \cdot \frac{2}{5} E_F^{5/2}
+  $$
+
+  将前面求得的 $N$ 的表达式代入上式中进行消项化简：
+
+  $$
+  U_0 = \left[ \frac{4\pi g_s V}{3h^3} (2m E_F)^{3/2} \right] \cdot \frac{3}{2 E_F^{3/2}} \cdot \frac{2}{5} E_F^{5/2} = \frac{3}{5} N E_F
+  $$
+
+  利用压强与内能的普适关系 $p = \frac{2}{3}\frac{U}{V}$，导出绝对零度下的**零点简并压（Degeneracy Pressure）**：
+
+  $$
+  p_0 = \frac{2}{3} \frac{U_0}{V} = \frac{2}{5} n E_F
+  $$
+
+  该代数结果表明，由于泡利不相容原理限制，即使在绝对零度下，费米气体也具有宏观的非零动能与极其巨大的压强，这构成了解释白矮星力学支撑及金属电子不坍缩的微观物理基础。
+
+### 5.10.2 费米-狄拉克积分与索末菲展开原理 ($T \ll T_F$)
+
++ 当系统温度略微升高但仍处于强简并区间（$0 < T \ll T_F$）时，费米面附近的阶跃分布函数发生微弱的平滑模糊。计算热力学量需要求解形如 $I = \int_0^\infty H(\epsilon) f(\epsilon) d\epsilon$ 的积分（其中 $H(\epsilon)$ 为关于能量的光滑函数）。为此，必须引入索末菲展开（Sommerfeld Expansion）进行低温级数微扰处理。
+
+  定义原函数 $G(\epsilon) = \int_0^\epsilon H(\epsilon') d\epsilon'$，显然有 $G(0) = 0$ 且 $\frac{dG}{d\epsilon} = H(\epsilon)$。对积分 $I$ 应用分部积分法：
+
+  $$
+  I = \int_0^\infty f(\epsilon) dG(\epsilon) = \left[ F(\epsilon) G(\epsilon) \right]_0^\infty - \int_0^\infty G(\epsilon) \frac{df}{d\epsilon} d\epsilon = \int_0^\infty G(\epsilon) \left( -\frac{df}{d\epsilon} \right) d\epsilon
+  $$
+
+  微商项 $-\frac{df}{d\epsilon} = \frac{\beta e^{\beta(\epsilon-\mu)}}{(e^{\beta(\epsilon-\mu)}+1)^2}$ 具有强烈的局域拓扑特征：当 $T \to 0$ 时，它在 $\epsilon = \mu$ 处收敛为狄拉克 $\delta$ 函数。因此，可在 $\epsilon = \mu$ 附近将 $G(\epsilon)$ 严格展开为泰勒级数：
+
+  $$
+  G(\epsilon) = G(\mu) + G'(\mu)(\epsilon - \mu) + \frac{1}{2} G''(\mu)(\epsilon - \mu)^2 + \frac{1}{6} G'''(\mu)(\epsilon - \mu)^3 + \dots
+  $$
+
+  将级数项代回积分链条中，并引入无量纲代换变量 $x = \beta(\epsilon - \mu) = \frac{\epsilon - \mu}{k_B T}$：
+
+  $$
+  I = \int_{-\frac{\mu}{k_B T}}^\infty \left[ G(\mu) + G'(\mu)(k_B T)x + \frac{1}{2}G''(\mu)(k_B T)^2 x^2 + \dots \right] \frac{e^x}{(e^x+1)^2} dx
+  $$
+
+  由于强简并下 $\frac{\mu}{k_B T} \gg 1$，可将积分下限严格延展至 $-\infty$。分别计算各项定积分：
+
+  1. **零阶项**：$G(\mu) \int_{-\infty}^\infty \frac{e^x}{(e^x+1)^2} dx = G(\mu) \left[ -\frac{1}{e^x+1} \right]_{-\infty}^\infty = G(\mu) \cdot 1 = \int_0^\mu H(\epsilon) d\epsilon$
+
+  2. **一阶项（奇函数积分）**：由于积分区间对称且被积函数为奇函数，该项严格为零：
+
+  $$
+  G'(\mu)(k_B T) \int_{-\infty}^\infty x \frac{e^x}{(e^x+1)^2} dx = 0
+  $$
+
+  3. **二阶项**：利用留数定理或标准积分公式计算偶函数积分 $\int_{-\infty}^\infty \frac{x^2 e^x}{(e^x+1)^2} dx = \frac{\pi^2}{3}$：
+
+  $$
+  \frac{1}{2} G''(\mu)(k_B T)^2 \int_{-\infty}^\infty x^2 \frac{e^x}{(e^x+1)^2} dx = \frac{1}{2} H'(\mu) (k_B T)^2 \left( \frac{\pi^2}{3} \right) = \frac{\pi^2}{6} (k_B T)^2 H'(\mu)
+  $$
+
+  截断至二阶微扰项，索末菲展开的核心近似公式确立为：
+
+  $$
+  \int_0^\infty H(\epsilon) f(\epsilon) d\epsilon \approx \int_0^\mu H(\epsilon) d\epsilon + \frac{\pi^2}{6} (k_B T)^2 H'(\mu)
+  $$
+
+### 5.10.3 低温下化学势与内能的解析修正
+
++ 利用 5.10.2 节的索末菲展开公式，可以精确计算封闭费米系统在有限低温下的热力学参量修正。
+
+  **化学势 $\mu(T)$ 的温度依赖性**：
+
+  令 $H(\epsilon) = D(\epsilon) = C \epsilon^{1/2}$（其中 $C = g_s \frac{2\pi V}{h^3} (2m)^{3/2}$）。代入总粒子数公式：
+
+  $$
+  N = \int_0^\infty D(\epsilon) f(\epsilon) d\epsilon \approx \int_0^\mu C \epsilon^{1/2} d\epsilon + \frac{\pi^2}{6} (k_B T)^2 \left.\frac{d(C \epsilon^{1/2})}{d\epsilon}\right|_\mu = \frac{2}{3}C \mu^{3/2} + \frac{\pi^2}{12} C (k_B T)^2 \mu^{-1/2}
+  $$
+
+  我们已知在绝对零度下 $N = \frac{2}{3}C E_F^{3/2}$。建立等式关系并提取公因子：
+
+  $$
+  \frac{2}{3}C E_F^{3/2} \approx \frac{2}{3}C \mu^{3/2} \left[ 1 + \frac{\pi^2}{8} \left( \frac{k_B T}{\mu} \right)^2 \right] \implies E_F \approx \mu \left[ 1 + \frac{\pi^2}{8} \left( \frac{k_B T}{\mu} \right)^2 \right]^{2/3}
+  $$
+
+  由于 $\frac{k_B T}{\mu} \ll 1$，应用二项式展开 $(1+x)^{2/3} \approx 1 + \frac{2}{3}x$，进一步反解出化学势 $\mu$：
+
+  $$
+  \mu(T) \approx E_F \left[ 1 + \frac{\pi^2}{12} \left( \frac{k_B T}{E_F} \right)^2 \right]^{-1} \approx E_F \left[ 1 - \frac{\pi^2}{12} \left( \frac{k_B T}{E_F} \right)^2 \right]
+  $$
+
+  代数结果表明，随着温度升高，强简并费米气体的化学势以温度的二次方规律缓慢下降。
+
+  **总内能 $U(T)$ 的微扰计算**：
+
+  令 $H(\epsilon) = \epsilon D(\epsilon) = C \epsilon^{3/2}$。代入内能积分式中应用索末菲展开：
+
+  $$
+  U(T) = \int_0^\infty \epsilon D(\epsilon) f(\epsilon) d\epsilon \approx \int_0^\mu C \epsilon^{3/2} d\epsilon + \frac{\pi^2}{6} (k_B T)^2 \left.\frac{d(C \epsilon^{3/2})}{d\epsilon}\right|_\mu = \frac{2}{5}C \mu^{5/2} + \frac{\pi^2}{4} C (k_B T)^2 \mu^{1/2}
+  $$
+
+  将前面得到的化学势修正关系 $\mu \approx E_F [ 1 - \frac{\pi^2}{12} ( \frac{k_B T}{E_F} )^2 ]$ 代入上式的各项中，并严格保留至 $T^2$ 项：
+
+  $$
+  \mu^{5/2} \approx E_F^{5/2} \left[ 1 - \frac{\pi^2}{12} \left( \frac{k_B T}{E_F} \right)^2 \right]^{5/2} \approx E_F^{5/2} \left[ 1 - \frac{5\pi^2}{24} \left( \frac{k_B T}{E_F} \right)^2 \right]
+  $$
+
+  代回内能展开式中，保留至二阶项，合并整理：
+
+  $$
+  U(T) \approx \frac{2}{5}C E_F^{5/2} \left[ 1 - \frac{5\pi^2}{24} \left( \frac{k_B T}{E_F} \right)^2 \right] + \frac{\pi^2}{4} C (k_B T)^2 E_F^{1/2} = \frac{2}{5}C E_F^{5/2} + C E_F^{5/2} (k_B T / E_F)^2 \left[ -\frac{\pi^2}{12} + \frac{\pi^2}{4} \right]
+  $$
+
+  由于 $-\frac{\pi^2}{12} + \frac{\pi^2}{4} = \frac{\pi^2}{6}$，且由 5.10.1 节知 $U_0 = \frac{2}{5}C E_F^{5/2} = \frac{3}{5}NE_F$，上式可重写为直接与经典能量标度对应的形式：
+
+  $$
+  U(T) \approx U_0 + \frac{\pi^2}{6} C E_F^{1/2} (k_B T)^2 = U_0 + \frac{\pi^2}{6} \left( \frac{3N}{2 E_F^{3/2}} \right) E_F^{1/2} (k_B T)^2 = U_0 + \frac{\pi^2}{4} N \frac{(k_B T)^2}{E_F}
+  $$
+
+  将其完全表示为基态内能 $U_0$ 的修正倍数形式：
+
+  $$
+  U(T) \approx \frac{3}{5}N E_F \left[ 1 + \frac{5\pi^2}{12} \left( \frac{k_B T}{E_F} \right)^2 \right]
+  $$
+
+### 5.10.4 简并费米子气体热容的温度依赖性
+
++ 基于包含二阶量子修正的系统总内能表达式，可以通过对温度的一阶微商直接导出强简并理想费米气体的定容热容 $C_V$：
+
+  $$
+  C_V = \left( \frac{\partial U}{\partial T} \right)_V = \frac{\partial}{\partial T} \left[ U_0 + \frac{\pi^2}{4} N \frac{k_B^2 T^2}{E_F} \right] = \frac{\pi^2}{2} N k_B \left( \frac{k_B T}{E_F} \right)
+  $$
+
+  引入费米温度 $T_F = E_F / k_B$，热容方程写为：
+
+  $$
+  C_V = \frac{\pi^2}{2} N k_B \frac{T}{T_F}
+  $$
+
+  **物理机制解析：**
+
+  根据经典能量均分定理，完全自由的可分辨电子气体的定容热容应当恒等于定值 $\frac{3}{2}N k_B$，这导致了经典金属热容理论在历史上与实验数据的严重偏离。
+
+  由统计力学导出的上式严格表明，强简并费米气体的热容不是常数，而是**与绝对温度 $T$ 呈严格的线性一阶正比关系**。
+
+  这一现象的物理本质在于泡利不相容原理造成的量子冻结：在满足 $T \ll T_F$ 的条件下，深埋在费米海内部的绝大多数费米子由于其周围的量子态已被完全占满，无法接受热激发。真正能够通过热涨落跃迁至激发态的，仅限于费米面附近厚度约为 $k_B T$ 狭窄能量区间内的少数费米子。该部分粒子数占总人数的比例约为 $T/T_F$。因此，只有这部分粒子能够贡献热容，使得宏观热容受到经典值附加一阶线性系数（$\sim T/T_F$）的强烈压制。
+
+## 5.11 玻色费米统计应用例
+
+### 5.11.1 **晶格振动与固体热容的量子统计理论（声子气体）**
+
++ 将近独立子系模型应用于晶格振动系统。晶体由 $N$ 个原子组成，每个原子在三维空间中进行微振动，系统总共具有 $3N$ 个振动自由度。在简谐近似下，晶格的微观热运动可等效为 $3N$ 个独立的线性量子谐振子。
+
++ 爱因斯坦模型（Einstein Model）
+
+  爱因斯坦模型做出了最严格的零阶近似：假设晶体中所有的 $3N$ 个独立谐振子均以同一恒定频率 $\omega_E$ 振动。
+
+  单个量子谐振子的能级为 $\epsilon_n = \left(n + \frac{1}{2}\right)\hbar\omega_E$。根据 5.6 节推导的单谐振子配分函数 $Z_v$（将 $h\nu$ 替换为 $\hbar\omega_E$），单振子平均能量为：
+
+  $$
+  \langle \epsilon \rangle = -\frac{\partial \ln Z_v}{\partial \beta} = \frac{1}{2}\hbar\omega_E + \frac{\hbar\omega_E}{e^{\beta\hbar\omega_E} - 1}
+  $$
+
+  由于 $3N$ 个振子相互独立，系统总内能 $U$ 为：
+
+  $$
+  U = 3N \langle \epsilon \rangle = \frac{3}{2}N\hbar\omega_E + \frac{3N\hbar\omega_E}{e^{\hbar\omega_E/k_B T} - 1}
+  $$
+
+  对温度求导得到固体定容热容 $C_V$：
+
+  $$
+  C_V = \left( \frac{\partial U}{\partial T} \right)_V = 3N k_B \left( \frac{\hbar\omega_E}{k_B T} \right)^2 \frac{e^{\hbar\omega_E/k_B T}}{(e^{\hbar\omega_E/k_B T} - 1)^2}
+  $$
+
+  定义爱因斯坦温度 $\Theta_E = \hbar\omega_E / k_B$：
+
+  1. **高温极限（$T \gg \Theta_E$）**：展开指数项 $e^{\Theta_E/T} \approx 1 + \Theta_E/T$，得到 $C_V \approx 3N k_B$，严格退化为经典的杜隆-珀蒂定律（Dulong-Petit law）。
+
+  2. **低温极限（$T \ll \Theta_E$）**：指数项主导分母，得到 $C_V \approx 3N k_B (\Theta_E/T)^2 e^{-\Theta_E/T}$。热容随温度呈指数衰减。
+
+  **模型局限**：实验表明，绝缘体在极低温下的真实热容呈 $T^3$ 规律衰减，而非指数衰减。爱因斯坦模型失效的根源在于其忽略了晶体原子的长波集体耦合振动模式。
+
++ 德拜模型（Debye Model）与声子气体
+
+  德拜模型将晶体视为连续的弹性介质，将 $3N$ 个独立振子修正为具有不同频率的连续格波。由于格波能量是量子化的，能量量子 $\hbar\omega$ 被称为**声子（Phonon）**。声子服从玻色-爱因斯坦统计，且由于声子数不守恒（类似于光子），其化学势 $\mu \equiv 0$。
+
+  在连续介质近似下，格波色散关系呈线性：$\omega = v q$（$v$ 为声速，$q$ 为波矢）。三维空间中的波矢态密度为 $\frac{V}{(2\pi)^3} 4\pi q^2 dq$。由于弹性波包含 1 个纵波分支和 2 个横波分支，设平均声速为 $\bar{v}$，声子频率的态密度 $D(\omega)$ 为：
+
+  $$
+  D(\omega) d\omega = 3 \frac{V}{2\pi^2 \bar{v}^3} \omega^2 d\omega
+  $$
+
+  晶体具有有限的晶格常数，因而波长存在下限，频率存在上限（**德拜截止频率 $\omega_D$**）。截止频率由系统总自由度必须严格等于 $3N$ 的代数条件确定：
+
+  $$
+  \int_0^{\omega_D} D(\omega) d\omega = \int_0^{\omega_D} \frac{3V}{2\pi^2 \bar{v}^3} \omega^2 d\omega = \frac{V}{2\pi^2 \bar{v}^3} \omega_D^3 = 3N \implies \omega_D = \bar{v} \left( \frac{6\pi^2 N}{V} \right)^{1/3}
+  $$
+
+  系统总内能为各频率格波能量之和：
+
+  $$
+  U = U_0 + \int_0^{\omega_D} \frac{\hbar\omega}{e^{\hbar\omega/k_B T} - 1} D(\omega) d\omega = U_0 + \frac{3V \hbar}{2\pi^2 \bar{v}^3} \int_0^{\omega_D} \frac{\omega^3}{e^{\hbar\omega/k_B T} - 1} d\omega
+  $$
+
+  引入德拜温度 $\Theta_D = \hbar\omega_D / k_B$，并作无量纲代换 $x = \hbar\omega/k_B T$：
+
+  $$
+  U = U_0 + 9N k_B T \left( \frac{T}{\Theta_D} \right)^3 \int_0^{\Theta_D/T} \frac{x^3}{e^x - 1} dx
+  $$
+
+  求导得到德拜热容公式：
+
+  $$
+  C_V = 9N k_B \left( \frac{T}{\Theta_D} \right)^3 \int_0^{\Theta_D/T} \frac{x^4 e^x}{(e^x - 1)^2} dx
+  $$
+
+  **低温极限展开（$T \ll \Theta_D$）**：
+
+  当温度趋于绝对零度时，积分上限 $\Theta_D/T \to \infty$。积分项收敛为常数 $\int_0^\infty \frac{x^4 e^x}{(e^x - 1)^2} dx = \frac{4\pi^4}{15}$。代入原式化简：
+
+  $$
+  C_V \approx \frac{12\pi^4}{5} N k_B \left( \frac{T}{\Theta_D} \right)^3
+  $$
+
+  此结果即为著名的**德拜 $T^3$ 定律**，与晶体在极低温下的实验测量结果严格吻合。
+
+
+### 5.11.2 **强简并费米气体的应用——金属泡利顺磁性**
+
++ 考察外磁场对强简并费米气体（如金属中的自由电子气）宏观磁化强度的影响。电子具有自旋磁矩 $\mu_B$（玻尔磁子，$\mu_B = \frac{e\hbar}{2m_e}$）。
+
++ 磁场中的能带劈裂与粒子分布
+
+  在外加均匀弱磁场 $\mathbf{B}$ 中，电子自旋与磁场耦合，产生塞曼效应（Zeeman Effect）。自旋平行于磁场的电子（自旋向上，$+$）能量降低，自旋反平行于磁场的电子（自旋向下，$-$）能量升高。单电子的色散关系修正为：
+
+  $$
+  \epsilon_{\pm} = \epsilon_0 \mp \mu_B B
+  $$
+
+  其中 $\epsilon_0 = \frac{p^2}{2m_e}$ 为无磁场时的平动动能。
+
+  由于自旋简并被解除，自旋向上与向下的态密度函数分离，各自为总态密度（无自旋简并）的一半，且在能量坐标上发生反向平移：
+
+  $$
+  D_{\pm}(\epsilon) = \frac{1}{2} D_0(\epsilon \pm \mu_B B) \approx \frac{1}{2} D_0(\epsilon) \pm \frac{1}{2} \mu_B B D_0'(\epsilon)
+  $$
+
+  （其中 $D_0(\epsilon) = \frac{4\pi V}{h^3} (2m_e)^{3/2} \epsilon^{1/2}$ 为零磁场且包含自旋简并度的费米气体态密度）。
+
++ 磁化强度的代数推导
+
+  在平衡态下，自旋向上和向下的电子气体共用同一个费米能级 $E_F$（由系统总粒子数 $N = N_+ + N_-$ 的守恒严格约束）。
+
+  在绝对零度及低温强简并条件（$T \ll T_F$）下，系统处于阶跃分布。自旋向上的粒子数 $N_+$ 与自旋向下的粒子数 $N_-$ 分别为连续谱积分：
+
+  $$
+  N_{\pm} = \int_0^{E_F} D_{\pm}(\epsilon) d\epsilon = \frac{1}{2} \int_0^{E_F} D_0(\epsilon \pm \mu_B B) d\epsilon
+  $$
+
+  由于外加磁场通常是弱场，满足磁耦合能量远小于费米能量（$\mu_B B \ll E_F$），可以通过变量代换和泰勒级数将积分边界统一化：
+
+  $$
+  N_{\pm} = \frac{1}{2} \int_{\pm \mu_B B}^{E_F \pm \mu_B B} D_0(x) dx \approx \frac{1}{2} \int_0^{E_F} D_0(x) dx \pm \frac{1}{2} \int_{E_F}^{E_F \pm \mu_B B} D_0(x) dx
+  $$
+
+  由于下限处的态密度 $D_0(0) = 0$，下限的微扰不产生影响。第二项积分在边界狭窄区间内可用矩形面积近似：
+
+  $$
+  N_{\pm} \approx \frac{N}{2} \pm \frac{1}{2} \mu_B B D_0(E_F)
+  $$
+
+  系统宏观磁化强度 $M$ 等于单位体积内净磁矩的总和：
+
+  $$
+  M = \mu_B (N_+ - N_-) = \mu_B \left[ \left( \frac{N}{2} + \frac{1}{2} \mu_B B D_0(E_F) \right) - \left( \frac{N}{2} - \frac{1}{2} \mu_B B D_0(E_F) \right) \right] = \mu_B^2 B D_0(E_F)
+  $$
+
++ 泡利磁化率的确定
+
+  由于零场时费米面处的态密度可表示为 $D_0(E_F) = \frac{3N}{2E_F}$，将其代入磁化强度公式：
+
+  $$
+  M = \mu_B^2 B \frac{3N}{2E_F}
+  $$
+
+  宏观体积磁化率 $\chi_P$（单位体积内的磁化强度对外磁场的响应）定义为 $\chi_P = \frac{M}{V B}$，由此导出泡利顺磁磁化率（Pauli Paramagnetic Susceptibility）的解析解：
+
+  $$
+  \chi_P = \frac{3n \mu_B^2}{2E_F}
+  $$
+
+  根据经典统计物理推导的居里定律（Curie's Law），系统的顺磁磁化率应与绝对温度成反比（$\chi \propto 1/T$）。然而，上述量子统计推导严密证明：强简并费米气体的顺磁磁化率是一个极其微弱的正值，且在 $T \ll T_F$ 极限下**与温度完全无关**。
+
+  其物理机制在于泡利不相容原理的刚性限制。外磁场只能迫使处于费米面附近深度为 $\mu_B B$ 的极少量电子发生自旋翻转（粒子数比例约为 $\mu_B B / E_F$），而费米海深处的绝大多数电子处于双占据状态，它们的自旋响应被泡利不相容原理绝对锁死，从而导致宏观顺磁响应受到强烈的量子压制。
+
+&emsp;&emsp;
+
+&emsp;&emsp;
+
+&emsp;&emsp;
+
+---
+
+# 第6章 系综理论
+
++ 本章将抛弃“近独立子系”模型的局限性。对于内部存在任意复杂相互作用的真实宏观系统，单粒子的 $\mu$ 空间无法再提供自洽的描述。我们必须将整个由 $N$ 个粒子构成的宏观系统作为一个单一的力学体系，在更高维度的相空间中研究其统计规律。这是现代统计物理学中最具普适性和严格性的理论框架。
+
+## 6.1 $\Gamma$ 空间与刘维尔定理
+
+### 6.1.1 $\Gamma$ 空间的概念建立
+
++ 对于一个由 $N$ 个微观粒子构成的系统，若每个粒子具有 $3$ 个空间自由度，则整个系统的力学状态需要由 $s = 3N$ 个广义坐标 $q = (q_1, q_2, \dots, q_s)$ 和 $s$ 个广义动量 $p = (p_1, p_2, \dots, p_s)$ 共同完全确定。
+
+  这 $2s = 6N$ 个变量所张成的多维正交空间被称为**系统的相空间，即 $\Gamma$ 空间（$\Gamma$-space）**。
+
+  在 $\Gamma$ 空间中：
+
+  1. **相点（Representative Point）**：在任意给定时刻 $t$，整个宏观系统所有的微观运动状态被 $\Gamma$ 空间中的一个唯一确定的几何点 $(q, p)$ 所代表。
+
+  2. **相轨线（Phase Trajectory）**：随着时间演化，系统状态的改变在 $\Gamma$ 空间中描绘出一条连续的轨迹。其动力学演化严格服从经典力学的哈密顿正则方程：
+
+  $$
+  \dot{q}_i = \frac{\partial H}{\partial p_i}, \quad \dot{p}_i = -\frac{\partial H}{\partial q_i} \quad (i = 1, 2, \dots, s)
+  $$
+
+  其中 $H(q, p)$ 为系统的总哈密顿量。只要哈密顿量不显含时间，相轨线在 $\Gamma$ 空间中绝对不会自身相交（除非在奇点）。
+
+### 6.1.2 相体积与系综密度函数
+
++ 为了运用概率论，吉布斯（J. W. Gibbs）引入了系综（Ensemble）的概念。系综是指在相同宏观条件下（如相同的 $N, V, T$ 或 $E$），包含着大量在微观上互不干涉、由系统所有可能微观状态构成的假想系统集合。
+
+  在 $\Gamma$ 空间中，系综表现为海量相点构成的“流体”。定义相体积元为 $d\Gamma = dq_1 \dots dq_s dp_1 \dots dp_s$。
+
+  引入**系综密度函数 $\rho(q, p, t)$**，它表示在时刻 $t$，位于相点 $(q, p)$ 附近单位相体积内的系统数目（或概率密度）。
+
+  对于包含 $\mathcal{N}$ 个系统的系综，位于 $d\Gamma$ 内的系统数为 $d\mathcal{N} = \mathcal{N} \rho(q, p, t) d\Gamma$。
+
+  分布函数满足全空间归一化条件：
+
+  $$
+  \int \rho(q, p, t) d\Gamma = 1
+  $$
+
+### 6.1.3 刘维尔定理 (Liouville's Theorem) 的严格推导
+
++ 系综相点在 $\Gamma$ 空间中的运动不会凭空产生或消失，必须严格服从类似于流体力学的连续性方程：
+
+  $$
+  \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0
+  $$
+
+  在 $6N$ 维 $\Gamma$ 空间中，散度算符展开为对所有广义坐标和动量的微商，速度矢量 $\mathbf{v}$ 的分量为 $(\dot{q}_1, \dots, \dot{q}_s, \dot{p}_1, \dots, \dot{p}_s)$。连续性方程写为：
+
+  $$
+  \frac{\partial \rho}{\partial t} + \sum_{i=1}^s \left[ \frac{\partial}{\partial q_i}(\rho \dot{q}_i) + \frac{\partial}{\partial p_i}(\rho \dot{p}_i) \right] = 0
+  $$
+
+  利用乘积法则展开括号内的项：
+
+  $$
+  \frac{\partial \rho}{\partial t} + \sum_{i=1}^s \left( \frac{\partial \rho}{\partial q_i}\dot{q}_i + \frac{\partial \rho}{\partial p_i}\dot{p}_i \right) + \rho \sum_{i=1}^s \left( \frac{\partial \dot{q}_i}{\partial q_i} + \frac{\partial \dot{p}_i}{\partial p_i} \right) = 0
+  $$
+
+  应用哈密顿正则方程，考察速度场的散度项（即最后一项的括号内部分）：
+
+  $$
+  \frac{\partial \dot{q}_i}{\partial q_i} + \frac{\partial \dot{p}_i}{\partial p_i} = \frac{\partial}{\partial q_i}\left( \frac{\partial H}{\partial p_i} \right) + \frac{\partial}{\partial p_i}\left( -\frac{\partial H}{\partial q_i} \right) = \frac{\partial^2 H}{\partial q_i \partial p_i} - \frac{\partial^2 H}{\partial p_i \partial q_i} \equiv 0
+  $$
+
+  这在物理上意味着 $\Gamma$ 空间中的“相点流体”是**绝对不可压缩的**。
+
+  将散度为零代回连续性方程，利用泊松括号（Poisson Bracket） $[\rho, H]$ 的定义，得到描述系综密度演化的方程：
+
+  $$
+  \frac{\partial \rho}{\partial t} + \sum_{i=1}^s \left( \frac{\partial \rho}{\partial q_i} \frac{\partial H}{\partial p_i} - \frac{\partial \rho}{\partial p_i} \frac{\partial H}{\partial q_i} \right) = \frac{\partial \rho}{\partial t} + [\rho, H] = 0
+  $$
+
+  根据多元函数的全导数定义，上式直接等价于：
+
+  $$
+  \frac{d\rho}{dt} = 0
+  $$
+
+  **刘维尔定理结论**：沿着系统在 $\Gamma$ 空间中运动的相轨线，系综密度函数 $\rho$ 是一个绝对常数。任意一块包含固定数目相点的相体积 $d\Gamma$，在随时间演化的过程中，其形状可能发生剧烈扭曲，但其包含的超体积绝对大小保持不变（即相体积守恒）。
+
+  对于处于宏观热力学平衡态的系统，其统计性质不随时间显含变化，即要求 $\frac{\partial \rho}{\partial t} = 0$。根据演化方程，平衡态系综必然满足：
+
+  $$
+  [\rho, H] = 0
+  $$
+
+  这意味着在平衡统计物理中，分布密度函数 $\rho$ 必须是系统运动积分（Constants of motion）的函数。通常由于宏观守恒量的限制，**$\rho$ 仅能是系统总哈密顿量 $H(q, p)$ 的函数**，即 $\rho = \rho(H)$。
+
+### 6.1.4 密度矩阵与量子刘维尔方程的推广
+
++ 经典力学中的相空间点和连续分布在量子力学中是不适用的。在量子统计中，系统状态由希尔伯特空间中的多体波函数或态矢量 $|\psi\rangle$ 描述，系综分布被推广为**密度矩阵算符（Density Operator） $\hat{\rho}$**。
+
+  若系综以概率 $w_k$ 处于正交归一的纯态 $|\psi_k\rangle$，密度算符定义为：
+
+  $$
+  \hat{\rho} = \sum_k w_k |\psi_k\rangle \langle \psi_k|
+  $$
+
+  经典刘维尔方程在量子力学中直接映射为**冯·诺依曼方程（von Neumann Equation）**。利用薛定谔方程 $i\hbar \frac{\partial}{\partial t}|\psi\rangle = \hat{H}|\psi\rangle$，求导可得密度算符的演化律：
+
+  $$
+  i\hbar \frac{\partial \hat{\rho}}{\partial t} = [\hat{H}, \hat{\rho}]
+  $$
+
+  其中 $[\hat{H}, \hat{\rho}] = \hat{H}\hat{\rho} - \hat{\rho}\hat{H}$ 为对易子（Commutator），严格对应于经典的泊松括号 $i\hbar \{H, \rho\}$。
+
+  对于量子平衡态系统 $\frac{\partial \hat{\rho}}{\partial t} = 0$，必然要求 $[\hat{H}, \hat{\rho}] = 0$。这表明处于平衡态的量子系统，**其密度算符 $\hat{\rho}$ 必须与哈密顿量算符 $\hat{H}$ 具有共同的本征态群**，矩阵在能量表象中是对角化的。
+
+## 6.2 统计物理的基本公设与系综分类
+
++ 在 6.1 节中，刘维尔定理证明了 $\Gamma$ 空间中代表系综的相流是不可压缩的，且平衡态密度函数 $\rho$ 必然是运动积分的函数。为了将这一纯粹的动力学演化与实际可观测的宏观热力学量联系起来，统计物理学必须确立其核心逻辑公设，并根据系统受到的宏观外部约束对系综进行严密的物理分类。
+
+### 6.2.1 各态历经假说与等概率原理
+
++ 一个具有 $s = 3N$ 个自由度的宏观孤立系统，其总能量 $E$ 严格守恒。在动力学上，这限制了系统的代表相点 $(q, p)$ 只能在 $\Gamma$ 空间中由方程 $H(q, p) = E$ 所确定的 $(6N-1)$ 维能量超曲面（Energy Hypersurface）上运动。
+
+  为了将系统的长时间动力学行为与概率统计相联系，玻尔兹曼提出了**各态历经假说（Ergodic Hypothesis）**：
+
+  > 只要经过足够长的时间，孤立系统的代表相点将穿过（或无限逼近）能量超曲面上所有满足守恒律的微观相点。
+
+  由于相点在能量超曲面上是均匀“巡游”的，系统在其演化历史中，停留在超曲面上任意大小相等的微小相体积元 $d\Gamma$ 内的时间比例是相同的。将时间演化转化为系综空间分布，这直接导出了经典统计力学的核心基础——**等概率原理（Principle of Equal A Priori Probabilities）**：
+
+  > 对于一个处于平衡态的孤立系统，在满足系统宏观守恒条件（如能量 $E$、粒子数 $N$、体积 $V$ 恒定）的 $\Gamma$ 空间允许区域内，系综密度函数 $\rho(q, p)$ 处处相等（即常数）；而在该区域之外，$\rho(q, p)$ 严格为零。
+
+### 6.2.2 宏观物理量的系综平均与时间平均
+
++ 在实验室中，任何宏观物理量（如压强 $p$、磁化强度 $M$）的测量过程都需要经历一段宏观时间 $\tau$。在此期间，微观相点在 $\Gamma$ 空间中飞速划过极其漫长的轨迹。因此，实验测得的物理量 $O_{obs}$ 在本质上是微观力学量 $O[q(t), p(t)]$ 在观测时间 $\tau$ 内的**时间平均值**：
+
+  $$
+  \overline{O} = \lim_{\tau \to \infty} \frac{1}{\tau} \int_0^\tau O[q(t), p(t)] dt
+  $$
+
+  然而，由于系统自由度巨大（$N \sim 10^{23}$），求解 $6N$ 个哈密顿演化方程以求得时间平均值在解析上是绝对不可能的。
+
+  吉布斯系综理论的伟大之处在于，利用各态历经假说和等概率原理，将上述无法计算的“随时间积分”在数学上严格转换为“在 $\Gamma$ 空间中对所有可能状态的加权积分”。定义物理量 $O(q, p)$ 的系综平均值（Ensemble Average）为：
+
+  $$
+  \langle O \rangle = \int_{\Gamma} O(q, p) \rho(q, p) d\Gamma
+  $$
+
+  统计物理的基本公设断言，对于平衡系统，物理量的**时间平均值严格等于系综平均值**：
+
+  $$
+  O_{obs} = \overline{O} \equiv \langle O \rangle
+  $$
+
+  这一等式是整个现代宏观物理学能够通过微观第一性原理进行定量计算的绝对基石。
+
+### 6.2.3 三大系综的物理界定
+
++ 自然界中的宏观系统根据其与外界的相互作用边界条件，受到不同的热力学约束。为了普适地处理各类边界条件，吉布斯构造了三种绝对的基础系综模型：
+
+  1. **微正则系综 (Microcanonical Ensemble)**
+
+      &emsp;&emsp;**物理模型**：代表完全孤立的系统，与外界既无能量交换，也无物质交换。
+
+      &emsp;&emsp;**宏观约束量**：系统的粒子数 $N$、体积 $V$ 和总能量 $E$ 是严格固定的常数（考虑极其微弱的能量涨落，通常设能量在 $E$ 到 $E + \Delta E$ 的无限窄壳层内）。
+
+      &emsp;&emsp;**统计特征**：在该能量壳层内，$\rho(q, p) = \text{const}$；壳层外 $\rho = 0$。这是最基础的系综，但数学积分极为困难。
+
+  1. **正则系综 (Canonical Ensemble)**
+
+      &emsp;&emsp;**物理模型**：代表被刚性透热壁包裹的封闭系统，它与一个温度为 $T$ 的绝对巨大的恒温热浴（Heat Bath）处于热接触平衡状态。
+
+      &emsp;&emsp;**宏观约束量**：系统的粒子数 $N$、体积 $V$ 和绝对温度 $T$ 为给定常数。
+
+      &emsp;&emsp;**统计特征**：系统的总能量 $E$ 不再守恒，而是在一个平均值周围发生热涨落。代表系统的相点分布于整个 $\Gamma$ 空间，不受能量超曲面的硬约束。
+
+  2. **巨正则系综 (Grand Canonical Ensemble)**
+
+      &emsp;&emsp;**物理模型**：代表被多孔透热壁包裹的开放系统，它与外界同时存在热量交换与粒子交换（与巨大的温度浴和粒子源相连）。
+
+      &emsp;&emsp;**宏观约束量**：系统的绝对温度 $T$、体积 $V$ 和化学势 $\mu$ 为给定常数。
+
+      &emsp;&emsp;**统计特征**：不仅系统的能量 $E$ 会发生涨落，系统内部的粒子总数 $N$ 也是一个动态涨落的随机变量。此时代表系统的相点存在于不同粒子数维度的 $\Gamma$ 空间的直和空间中。
+
+## 6.3 微正则系综 (Microcanonical Ensemble) 与热力学基本方程
+
++ 在确立了等概率原理后，我们将这一公设首先应用于与外界绝对隔离的孤立系统。微正则系综是统计物理中最基本、最直接反映动力学守恒定律的系综模型，它是建立宏观绝对熵与微观动力学之间严格数学映射的起点。
+
+### 6.3.1 微正则分布与相体积的几何界定
+
++ 对于一个由 $N$ 个粒子构成、体积为 $V$ 的绝对孤立系统，其总能量 $E$ 应当是一个严格的守恒量。然而，在真实的宏观物理测量中，绝对无限精确的能量隔离是不存在的，系统能量总是存在一个极其微小的观测不确定度或宏观涨落 $\Delta E$（且 $\Delta E \ll E$）。
+
+  因此，系统的代表相点并不局限于一个无限薄的 $(6N-1)$ 维超曲面，而是被限制在由 $H(q, p) = E$ 和 $H(q, p) = E + \Delta E$ 两个超曲面所夹的高维能量壳层（Energy Shell）内。
+
+  根据各态历经假说与等概率原理，微正则系综的密度函数 $\rho(q, p)$ 在 $\Gamma$ 空间中表现为严格的“方波”截断分布：
+
+  $$
+  \rho(q, p) =
+  \begin{cases}
+  C, & E \le H(q, p) \le E + \Delta E \\
+  0, & \text{其他区域}
+  \end{cases}
+  $$
+
+  其中 $C$ 为归一化常数。系统在能量壳层内所占据的经典相空间超体积 $\Delta \Gamma$ 可通过对该壳层区域进行 $6N$ 重积分严格求得：
+
+  $$
+  \Delta \Gamma = \int_{E \le H \le E + \Delta E} d\Gamma
+  $$
+
+  由于等概率原理，系统出现在壳层内任意等体积相元中的概率完全相同。因此，这个宏观的相体积 $\Delta \Gamma$ 直接正比于系统可达的微观状态总数。
+
+### 6.3.2 玻尔兹曼熵的绝对定义与状态数的计算方法
+
++ 为了将经典的连续相体积转化为有绝对物理意义的离散微观状态数 $\Omega$，需要引入量子力学的两项修正：相体积的量子化单元 $h^{3N}$，以及全同粒子的不可分辨性因子 $1/N!$。
+
+  据此，微正则系综的微观状态数 $\Omega(N, V, E)$ 首先被绝对定义为能量壳层内的积分：
+
+  $$
+  \Omega(N, V, E) = \frac{\Delta \Gamma}{N! h^{3N}} = \frac{1}{N! h^{3N}} \int_{E \le H \le E + \Delta E} d\Gamma
+  $$
+
++ **微观状态数的实用计算方法：**
+
+  在绝大多数高维物理模型中，直接对由两个等能面夹成的壳层进行多重几何积分是极其困难的。为了获得精确的代数解析解，必须引入**能量面所包围的总相体积 $\Sigma(E)$** 的辅助函数法。
+
+  定义 $\Sigma(E)$ 为 $\Gamma$ 空间中所有满足 $H(q, p) \le E$ 的相点构成的超球体体积：
+
+  $$
+  \Sigma(E) = \int_{H(q, p) \le E} d\Gamma
+  $$
+
+  计算无约束超球体的体积 $\Sigma(E)$ 在代数上通常可以严格执行。由于能量涨落壳层厚度 $\Delta E$ 是宏观小量（$\Delta E \ll E$），壳层的相体积 $\Delta \Gamma$ 可以在数学上转化为总相体积 $\Sigma(E)$ 对能量 $E$ 的一阶偏导数与 $\Delta E$ 的乘积：
+
+  $$
+  \Delta \Gamma = \Sigma(E + \Delta E) - \Sigma(E) \approx \frac{\partial \Sigma(E)}{\partial E} \Delta E
+  $$
+
+  将此微分关系代回绝对定义式中，我们得到了微正则系综中计算 $\Omega$ 的标准代数范式：
+
+  $$
+  \Omega(N, V, E) = \frac{1}{N! h^{3N}} \frac{\partial \Sigma(E)}{\partial E} \Delta E
+  $$
+
+  确立了可达微观状态数后，宏观热力学熵 $S$ 的绝对统计定义由玻尔兹曼关系直接给出：
+
+  $$
+  S(N, V, E) = k_B \ln \Omega(N, V, E)
+  $$
+
+  *(注：在热力学极限 $N \to \infty$ 下，微观状态数随能量呈极度陡峭的指数级增长。数学上可以严格证明，无论能量壳层厚度 $\Delta E$ 取何种宏观小量，甚至直接用总相体积量度 $\frac{\Sigma(E)}{N!h^{3N}}$ 替代 $\Omega$，它们对 $\ln \Omega$ 的相对偏差仅为 $\mathcal{O}(\frac{\ln N}{N})$ 量级，在宏观极限下完全消隐。因此，宏观熵的定义与 $\Delta E$ 的具体数值绝对解耦。)*
+
+### 6.3.3 热力学基本方程的微观导出
+
++ 微正则系综的终极目的是在没有任何经验假设的前提下，纯粹通过对微观状态数函数的微积分操作推导出全部热力学定律。
+
+  已知系统熵是能量 $E$、体积 $V$ 和粒子数 $N$ 的多元函数 $S(E, V, N)$。对其取全微分：
+
+  $$
+  dS = \left( \frac{\partial S}{\partial E} \right)_{V,N} dE + \left( \frac{\partial S}{\partial V} \right)_{E,N} dV + \left( \frac{\partial S}{\partial N} \right)_{E,V} dN
+  $$
+
+  将此式与经典热力学基本方程 $dS = \frac{1}{T} dE + \frac{p}{T} dV - \frac{\mu}{T} dN$ 进行各项系数的绝对比对。这种等价性赋予了宏观热力学参量以极其冷峻的微观偏导数定义：
+
+  1. **绝对温度 $T$**：温度在本质上是系统熵随能量增加的纯粹导数斜率：
+
+  $$
+  \frac{1}{T} = \left( \frac{\partial S}{\partial E} \right)_{V,N} = k_B \left( \frac{\partial \ln \Omega}{\partial E} \right)_{V,N}
+  $$
+
+  2. **宏观压强 $p$**：压强本质上是系统微观状态数对外部空间自由度（体积）膨胀的响应率：
+
+  $$
+  p = T \left( \frac{\partial S}{\partial V} \right)_{E,N} = k_B T \left( \frac{\partial \ln \Omega}{\partial V} \right)_{E,N}
+  $$
+
+  3. **化学势 $\mu$**：化学势衡量了引入额外粒子（增加内部自由度约束）时，系统相体积变化所必须付出的代数代价：
+
+  $$
+  \mu = -T \left( \frac{\partial S}{\partial N} \right)_{E,V} = -k_B T \left( \frac{\partial \ln \Omega}{\partial N} \right)_{E,V}
+  $$
+
+## 6.4 正则系综 (Canonical Ensemble) 与能量涨落
+
++ 微正则系综虽然在逻辑上最为基础，但其要求系统绝对孤立、能量绝对守恒的约束在实际物理测量中极为苛刻，且 $\Gamma$ 空间中能量壳层积分的数学处理往往遇到不可逾越的代数障碍。为了获得具有强大可计算性的理论框架，我们必须引入**正则系综**，将系统状态的硬性守恒约束（$E$ 恒定）松弛为平均守恒约束（与恒温热浴耦合）。
+
+### 6.4.1 正则分布律的微正则导出
+
++ 考虑一个被刚性透热壁包裹的宏观系统 $A$（具有确定的粒子数 $N$ 和体积 $V$），它与一个无限大的恒温热浴 $A'$ 处于热接触平衡。热浴极其庞大，满足自由度 $N' \gg N$ 且能量 $E' \gg E_A$。
+
+  复合系统 $A^{(0)} = A + A'$ 与外界完全隔离，构成一个微正则系综。其总能量 $E^{(0)} = E_i + E'$ 严格守恒（其中 $E_i$ 为系统 $A$ 处于某一特定微观态 $i$ 时的能量，相互作用能极小可忽略）。
+
+  根据等概率原理，复合系统 $A^{(0)}$ 处于任一微观态的概率均相等。因此，子系统 $A$ 处于特定微观态 $i$ 的概率 $P_i$，直接正比于此时热浴 $A'$ 所能容纳的微观状态总数 $\Omega'(E')$：
+
+  $$
+  P_i \propto \Omega'(E^{(0)} - E_i)
+  $$
+
+  由于 $E_i \ll E^{(0)}$，且 $\ln \Omega'$ 是能量的极其平缓的函数（广延量），可在 $E^{(0)}$ 处对 $\ln \Omega'(E^{(0)} - E_i)$ 进行泰勒展开：
+
+  $$
+  \ln \Omega'(E^{(0)} - E_i) \approx \ln \Omega'(E^{(0)}) - \left( \frac{\partial \ln \Omega'}{\partial E'} \right)_{E^{(0)}} E_i + \dots
+  $$
+
+  根据微正则系综中温度的绝对定义 $\frac{\partial \ln \Omega'}{\partial E'} = \frac{1}{k_B T}$（其中 $T$ 为热浴温度，处于热平衡的子系统 $A$ 必然与之同温）：
+
+  $$
+  \ln \Omega'(E^{(0)} - E_i) \approx \text{const} - \frac{E_i}{k_B T}
+  $$
+
+  取指数并引入规范常数算符 $\beta = \frac{1}{k_B T}$，导出统计物理中最核心的**玻尔兹曼分布律（正则分布）**：
+
+  $$
+  P_i = \frac{1}{Z_N} e^{-\beta E_i}
+  $$
+
+### 6.4.2 配分函数 $Z_N$ 与亥姆霍兹自由能 $F$
+
++ 为了使概率分布满足归一化条件 $\sum_i P_i = 1$，归一化常数 $Z_N$ 被定义为**系统配分函数（Partition Function）**：
+
+  $$
+  Z_N = \sum_i e^{-\beta E_i}
+  $$
+
+  对于连续的经典 $\Gamma$ 空间，引入相体积量子化及全同性修正，配分函数表现为 $6N$ 重相空间积分：
+
+  $$
+  Z_N(T, V, N) = \frac{1}{N! h^{3N}} \int_{\Gamma} e^{-\beta H(q, p)} d\Gamma
+  $$
+
+  该积分为无约束全空间积分，在代数上（如高斯积分）极其容易解析。
+
+  为了确立正则系综与宏观热力学的桥梁，引入信息熵公式 $S = -k_B \sum_i P_i \ln P_i$。代入正则分布律 $P_i = \frac{e^{-\beta E_i}}{Z_N}$：
+
+  $$
+  S = -k_B \sum_i P_i (-\beta E_i - \ln Z_N) = k_B \beta \sum_i P_i E_i + k_B \ln Z_N \sum_i P_i
+  $$
+
+  由于系统平均内能 $U = \langle E \rangle = \sum_i P_i E_i$，上式化简为：
+
+  $$
+  S = \frac{U}{T} + k_B \ln Z_N \implies U - TS = -k_B T \ln Z_N
+  $$
+
+  根据热力学定义，亥姆霍兹自由能 $F = U - TS$。由此得到极其严密的宏观热力学映射方程：
+
+  $$
+  F = -k_B T \ln Z_N
+  $$
+
+  一旦通过微观哈密顿量算出了 $Z_N$，系统的全部热力学量均可通过对 $F$ 的偏导数直接导出（如 $S = -\left(\frac{\partial F}{\partial T}\right)_{V,N}$, $p = -\left(\frac{\partial F}{\partial V}\right)_{T,N}$, $\mu = \left(\frac{\partial F}{\partial N}\right)_{T,V}$）。
+
+### 6.4.3 能量涨落定理与系综等价性
+
++ 在正则系综中，系统的能量不再是守恒量，而是在期望值 $\langle E \rangle$ 附近发生热涨落。
+
+  内能 $\langle E \rangle$ 的代数计算为：
+
+  $$
+  \langle E \rangle = \frac{1}{Z_N} \sum_i E_i e^{-\beta E_i} = -\frac{1}{Z_N} \frac{\partial Z_N}{\partial \beta} = -\frac{\partial \ln Z_N}{\partial \beta}
+  $$
+
+  衡量能量涨落幅度的绝对量为能量均方差 $\langle (\Delta E)^2 \rangle = \langle E^2 \rangle - \langle E \rangle^2$。对上述平均能量方程再次对 $\beta$ 求偏导：
+
+  $$
+  \frac{\partial \langle E \rangle}{\partial \beta} = -\frac{\partial}{\partial \beta} \left( \frac{1}{Z_N} \sum_i E_i e^{-\beta E_i} \right) = \frac{1}{Z_N^2} \frac{\partial Z_N}{\partial \beta} \sum_i E_i e^{-\beta E_i} - \frac{1}{Z_N} \sum_i (-E_i^2) e^{-\beta E_i}
+  $$
+
+  $$
+  = -\langle E \rangle^2 + \langle E^2 \rangle = \langle (\Delta E)^2 \rangle
+  $$
+
+  利用宏观热容定义 $C_V = \left(\frac{\partial \langle E \rangle}{\partial T}\right)_V = \left(\frac{\partial \langle E \rangle}{\partial \beta}\right)_V \frac{d\beta}{dT} = \left(\frac{\partial \langle E \rangle}{\partial \beta}\right)_V \left(-\frac{1}{k_B T^2}\right)$，导出**能量涨落定理**：
+
+  $$
+  \langle (\Delta E)^2 \rangle = k_B T^2 C_V
+  $$
+
+  由于系统的内能 $U \propto N$，热容 $C_V \propto N$，系统的**相对涨落**尺度为：
+
+  $$
+  \frac{\sqrt{\langle (\Delta E)^2 \rangle}}{\langle E \rangle} \propto \frac{\sqrt{N}}{N} = \frac{1}{\sqrt{N}}
+  $$
+
+  **系综等价性结论**：当系统处于热力学极限（$N \sim 10^{23}$）时，相对能量涨落趋近于 $\sim 10^{-11}$，这远远超出了任何宏观实验的测量精度。
+
+  这意味着，在正则系综中，概率分布 $P(E)$ 表现为一个以 $\langle E \rangle$ 为中心、宽度极窄的狄拉克 $\delta$ 函数状尖峰。系统绝大部分时间严格停留在微正则系综所定义的能量壳层内。由此在数学上绝对证明了：**微正则系综与正则系综在热力学极限下是完全等价的。**
+
+## 6.5 巨正则系综 (Grand Canonical Ensemble) 与粒子数涨落
+
++ 在微正则系综中，系统的能量 $E$ 和粒子数 $N$ 是固定不变的；在正则系综中，能量约束被松弛，系统与温度为 $T$ 的热浴进行能量交换。现在，我们进一步解除物质交换的限制。
+
+  考虑一个存在多孔透热壁的开放系统，它不仅与外界交换能量，还交换粒子。这种同时与**恒温热浴**和恒定粒子源（化学势浴）耦合的统计模型，即为巨正则系综。它是处理量子多体系统、相变涨落以及化学反应的强有力工具。
+
+### 6.5.1 巨正则分布律的微正则导出
+
++ 设有一个被多孔透热壁包裹的小系统 $A$（体积固定的开放系统），它被浸泡在一个宏观庞大的热浴兼粒子源 $A'$ 中。复合系统 $A^{(0)} = A + A'$ 是一个孤立的微正则系综，其总能量 $E^{(0)}$ 和总粒子数 $N^{(0)}$ 严格守恒。
+
+  此时，系统 $A$ 的微观状态由两个变量联合定义：它包含了 $N_i$ 个粒子，且处于由这 $N_i$ 个粒子构成的第 $i$ 号多体量子态（能量为 $E_{i, N_i}$）。
+
+  当系统 $A$ 处于特定的微观态 $(i, N_i)$ 时，热浴 $A'$ 的能量被扣除为 $E' = E^{(0)} - E_{i, N_i}$，粒子数被扣除为 $N' = N^{(0)} - N_i$。
+
+  根据等概率原理，系统 $A$ 处于该特定状态的概率 $P_{i, N_i}$ 正比于此时热浴所能容纳的微观状态数 $\Omega'(E', N')$：
+
+  $$
+  P_{i, N_i} \propto \Omega'(E^{(0)} - E_{i, N_i}, N^{(0)} - N_i)
+  $$
+
+  由于 $E_{i, N_i} \ll E^{(0)}$ 且 $N_i \ll N^{(0)}$，对广延量 $\ln \Omega'$ 在 $(E^{(0)}, N^{(0)})$ 处进行二元泰勒展开，并截断至一阶：
+
+  $$
+  \ln \Omega' \approx \ln \Omega'_0 - \left( \frac{\partial \ln \Omega'}{\partial E'} \right)_{V', N'} E_{i, N_i} - \left( \frac{\partial \ln \Omega'}{\partial N'} \right)_{E', V'} N_i
+  $$
+
+  利用微正则系综给出的热力学偏导数定义：$\frac{\partial \ln \Omega'}{\partial E'} = \frac{1}{k_B T}$（其中 $T$ 为绝对温度），$\frac{\partial \ln \Omega'}{\partial N'} = -\frac{\mu}{k_B T}$。代入展开式：
+
+  $$
+  \ln \Omega' \approx \text{const} - \frac{E_{i, N_i}}{k_B T} + \frac{\mu N_i}{k_B T}
+  $$
+
+  取指数，引入规范常数 $\beta = \frac{1}{k_B T}$，我们便得到了**巨正则分布律**（即系统具有 $N$ 个粒子且处于第 $i$ 态的概率）：
+
+  $$
+  P_{i, N} = \frac{1}{\Xi} e^{-\beta (E_{i,N} - \mu N)}
+  $$
+
+### 6.5.2 巨配分函数 $\Xi$ 与巨热力学势 $J$
+
++ 为了使概率分布满足归一化条件 $\sum_{N=0}^\infty \sum_i P_{i, N} = 1$，必须引入**巨配分函数（Grand Partition Function） $\Xi$**：
+
+  $$
+  \Xi(T, V, \mu) = \sum_{N=0}^\infty \sum_i e^{-\beta (E_{i,N} - \mu N)} = \sum_{N=0}^\infty \left[ e^{\beta \mu N} \left( \sum_i e^{-\beta E_{i,N}} \right) \right]
+  $$
+
+  括号内的求和正是系统在给定粒子数 $N$ 时的正则配分函数 $Z_N(T, V)$。引入**逸度（Fugacity） $z = e^{\beta \mu}$**，巨配分函数可表示为各阶正则配分函数的母函数（离散拉普拉斯变换）：
+
+  $$
+  \Xi(T, V, z) = \sum_{N=0}^\infty z^N Z_N(T, V)
+  $$
+
+  确立微观与宏观桥梁的步骤与正则系综类似。代入信息熵公式 $S = -k_B \sum_{N,i} P_{i,N} \ln P_{i,N}$：
+
+  $$
+  S = -k_B \sum_{N,i} P_{i,N} (-\beta E_{i,N} + \beta \mu N - \ln \Xi) = \frac{U}{T} - \frac{\mu \langle N \rangle}{T} + k_B \ln \Xi
+  $$
+
+  整理得到 $U - TS - \mu N = -k_B T \ln \Xi$。
+
+  根据经典热力学，系统内能的欧拉积分为 $U = TS - pV + \mu N$，即 $U - TS - \mu N = -pV$。
+
+  由此，巨配分函数直接给出了**巨热力学势（Grand Potential） $J$**，或者等效于系统的压强方程：
+
+  $$
+  J = -pV = -k_B T \ln \Xi
+  $$
+
+  巨热力学势 $J(T, V, \mu)$ 的全微分为 $dJ = -S dT - p dV - N d\mu$。只需通过对 $\ln \Xi$ 求解偏导数，即可获得系统的全套宏观参量：
+
+  **平均粒子数**：$N = \langle N \rangle = \frac{1}{\beta} \left( \frac{\partial \ln \Xi}{\partial \mu} \right)_{T, V} = z \left( \frac{\partial \ln \Xi}{\partial z} \right)_{T, V}$
+
+  **宏观熵**：$S = -\left( \frac{\partial J}{\partial T} \right)_{V, \mu} = k_B \ln \Xi + k_B T \left( \frac{\partial \ln \Xi}{\partial T} \right)_{V, \mu}$
+
+  **状态方程**：$p = -\frac{J}{V} = \frac{k_B T}{V} \ln \Xi$
+
+  这部分推导是连接纯统计涨落与宏观热力学响应的经典桥梁。为了满足简洁且不过于刻板的要求，我将这部分的数学推导重新梳理，剥离了冗余的修饰词，重点突出代数变形的逻辑链条。
+
+  你可以将以下内容直接替换进 **6.5.3 节**：
+
+### 6.5.3 粒子数涨落与等温压缩率
+
++ 在巨正则系综中，不仅能量发生涨落，系统占据固定体积 $V$ 内的瞬时粒子数 $N$ 也是一个涨落的随机变量。
+
+  首先计算平均粒子数 $\langle N \rangle$：
+
+  $$
+  \langle N \rangle = \frac{1}{\beta} \frac{\partial \ln \Xi}{\partial \mu} = \frac{1}{\Xi} \sum_{N,i} N e^{-\beta(E_{i,N} - \mu N)}
+  $$
+
+  为了寻找均方涨落 $\langle (\Delta N)^2 \rangle = \langle N^2 \rangle - \langle N \rangle^2$，对上式继续关于化学势 $\mu$ 求偏导，并利用乘积法则展开：
+
+  $$
+  \frac{\partial \langle N \rangle}{\partial \mu} = -\frac{1}{\Xi^2} \left( \frac{\partial \Xi}{\partial \mu} \right) \sum_{N,i} N e^{-\beta(E_{i,N} - \mu N)} + \frac{1}{\Xi} \sum_{N,i} \beta N^2 e^{-\beta(E_{i,N} - \mu N)}
+  $$
+
+  由于 $\frac{1}{\Xi} \frac{\partial \Xi}{\partial \mu} = \beta \langle N \rangle$，上式可以自然化简为：
+
+  $$
+  \frac{\partial \langle N \rangle}{\partial \mu} = -\beta \langle N \rangle^2 + \beta \langle N^2 \rangle = \beta \langle (\Delta N)^2 \rangle
+  $$
+
+  引入 $\beta = 1/k_B T$，我们便得到了联系微观涨落与系统状态参量的基本公式：
+
+  $$
+  \langle (\Delta N)^2 \rangle = k_B T \left( \frac{\partial \langle N \rangle}{\partial \mu} \right)_{T, V}
+  $$
+
++ 为了将上式中的纯统计微商 $\left( \frac{\partial \langle N \rangle}{\partial \mu} \right)_{T, V}$ 与可测量的宏观力学响应（等温压缩率 $\kappa_T$）对应，我们可以借助热力学恒等式进行变量代换。
+
+  引入粒子数密度 $n = \langle N \rangle / V$。在体积 $V$ 固定的前提下，偏导数可写为：
+
+  $$
+  \left( \frac{\partial \langle N \rangle}{\partial \mu} \right)_{T, V} = V \left( \frac{\partial n}{\partial \mu} \right)_T
+  $$
+
+  根据恒温条件下的吉布斯-杜亥姆方程 $d\mu = v dp = \frac{1}{n} dp$，可以得到化学势随密度变化的链式关系：
+
+  $$
+  \left( \frac{\partial \mu}{\partial n} \right)_T = \frac{1}{n} \left( \frac{\partial p}{\partial n} \right)_T \implies \left( \frac{\partial n}{\partial \mu} \right)_T = n \left( \frac{\partial n}{\partial p} \right)_T
+  $$
+
+  接下来，利用密度的微分定义 $dn = d(N/V) = -\frac{N}{V^2}dV = -\frac{n}{V}dV$（在保持 $N$ 恒定考察体积压缩时），代入等温压缩率的定义式 $\kappa_T = -\frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_T$：
+
+  $$
+  \left( \frac{\partial n}{\partial p} \right)_T = -\frac{n}{V} \left( \frac{\partial V}{\partial p} \right)_T = n \kappa_T
+  $$
+
+  将上述推导逐层代回，即可完成桥接：
+
+  $$
+  \left( \frac{\partial \langle N \rangle}{\partial \mu} \right)_{T, V} = V \cdot (n \cdot n \kappa_T) = \frac{\langle N \rangle^2}{V} \kappa_T
+  $$
+
+  将其代入第一步得出的涨落公式，便导出了经典的**粒子数涨落定理**：
+
+  $$
+  \langle (\Delta N)^2 \rangle = k_B T \frac{\langle N \rangle^2}{V} \kappa_T
+  $$
+
+  系统的**相对粒子数涨落**表现为：
+
+  $$
+  \frac{\sqrt{\langle (\Delta N)^2 \rangle}}{\langle N \rangle} = \sqrt{\frac{k_B T \kappa_T}{V}} \propto \frac{1}{\sqrt{\langle N \rangle}}
+  $$
+
+  在大数极限下（$\langle N \rangle \to \infty$），只要等温压缩率 $\kappa_T$ 保持为有限值，粒子数的相对涨落将趋近于零。此时巨正则系综的分布概率 $P(N)$ 收缩为一个尖峰，巨正则系综在宏观上与正则/微正则系综等效。
+
+## 6.6 系综理论对量子统计的严格重构
+
++ 在第五章中，我们曾使用最概然分布法（即微正则系综的近似化身），通过引入拉格朗日乘子和斯特林近似，通过组合数学推导出了玻色与费米分布律。
+
+  现在，利用巨正则系综的数学框架，我们将抛弃粒子数 $N$ 的硬性约束约束，直接从 $\Gamma$ 空间向独立量子态空间进行代数映射，量子统计分布律的推导将变得异常简洁和优美。
+
+### 6.6.1 巨配分函数的能级解耦
+
++ 考虑一个由无相互作用的全同粒子组成的理想量子气体系统。设单粒子能级为 $\epsilon_l$，系统处于某一特定多体微观态时，各能级上的粒子占据数为 $\{a_1, a_2, \dots, a_l, \dots\}$。
+
+  系统的总能量和总粒子数可分别表示为占据数的线性叠加：
+
+  $$
+  E = \sum_l a_l \epsilon_l, \quad N = \sum_l a_l
+  $$
+
+  在巨正则系综中，系统的巨配分函数定义为对所有可能的微观量子态求和：
+
+  $$
+  \Xi = \sum_{\{a_l\}} e^{-\beta(E - \mu N)} = \sum_{a_1, a_2, \dots} e^{-\beta \sum_l a_l (\epsilon_l - \mu)}
+  $$
+
+  利用指数函数的乘法性质，将求和号内的指数展开为连乘积：
+
+  $$
+  \Xi = \sum_{a_1, a_2, \dots} \left( \prod_l e^{-\beta a_l (\epsilon_l - \mu)} \right)
+  $$
+
+  **这是整个推导中最具决定性的一步：** 如果在正则系综中，由于存在 $\sum_l a_l = N$ 的刚性约束，各个 $a_l$ 之间是相互牵制的，求和与连乘绝对无法交换顺序。但在巨正则系综中，总粒子数 $N$ 是浮动的，每个能级上的占据数 $a_l$ 都可以**完全独立地**遍历其所有可能取值！
+
+  因此，多重求和与连乘可以无障碍地交换顺序，配分函数实现了完美的数学解耦：
+
+  $$
+  \Xi = \prod_l \left( \sum_{a_l} e^{-\beta a_l (\epsilon_l - \mu)} \right) \equiv \prod_l \Xi_l
+  $$
+
+  其中，$\Xi_l = \sum_{a_l} e^{-\beta a_l (\epsilon_l - \mu)}$ 被定义为**单能级巨配分函数**。宏观系统的巨热力学势由此化为各独立能级贡献的简单加和：
+
+  $$
+  \ln \Xi = \sum_l \ln \Xi_l
+  $$
+
+### 6.6.2 费米-狄拉克与玻色-爱因斯坦分布的导出
+
++ 对于任意能级 $l$，其平均占据数 $\langle a_l \rangle$ 可以通过对该能级的巨配分函数求偏导极其简便地获得：
+
+  $$
+  \langle a_l \rangle = \frac{\sum_{a_l} a_l e^{-\beta a_l (\epsilon_l - \mu)}}{\sum_{a_l} e^{-\beta a_l (\epsilon_l - \mu)}} = -\frac{1}{\beta} \frac{\partial \ln \Xi_l}{\partial \epsilon_l}
+  $$
+
+  接下来，只需代入全同粒子的自旋统计特征，即可瞬间解析出分布律。
+
++ **费米-狄拉克 (FD) 统计：**
+
+  费米子服从泡利不相容原理，每个能级上的占据数只能取 $a_l = 0$ 或 $1$。
+
+  单能级巨配分函数为一个仅含两项的极简和式：
+
+  $$
+  \Xi_l = \sum_{a_l=0}^1 e^{-\beta a_l (\epsilon_l - \mu)} = 1 + e^{-\beta (\epsilon_l - \mu)}
+  $$
+
+  代入平均占据数公式，直接求偏导：
+
+  $$
+  \langle a_l \rangle = -\frac{1}{\beta} \frac{\partial}{\partial \epsilon_l} \ln \left( 1 + e^{-\beta (\epsilon_l - \mu)} \right) = -\frac{1}{\beta} \frac{-\beta e^{-\beta (\epsilon_l - \mu)}}{1 + e^{-\beta (\epsilon_l - \mu)}}
+  $$
+
+  分子分母同乘 $e^{\beta (\epsilon_l - \mu)}$，顷刻间得出 FD 分布：
+
+  $$
+  \langle a_l \rangle = \frac{1}{e^{\beta (\epsilon_l - \mu)} + 1}
+  $$
+
++ **玻色-爱因斯坦 (BE) 统计：**
+
+  玻色子不受泡利原理限制，占据数可以取 $a_l = 0, 1, 2, \dots, \infty$。
+
+  只要满足 $\epsilon_l - \mu > 0$，其单能级巨配分函数就是一个标准的无穷等比级数（公比 $q = e^{-\beta (\epsilon_l - \mu)} < 1$）：
+
+  $$
+  \Xi_l = \sum_{a_l=0}^\infty \left[ e^{-\beta (\epsilon_l - \mu)} \right]^{a_l} = \frac{1}{1 - e^{-\beta (\epsilon_l - \mu)}}
+  $$
+
+  对其取对数 $\ln \Xi_l = -\ln \left( 1 - e^{-\beta (\epsilon_l - \mu)} \right)$，并求偏导：
+
+  $$
+  \langle a_l \rangle = -\frac{1}{\beta} \frac{\partial}{\partial \epsilon_l} \left[ -\ln \left( 1 - e^{-\beta (\epsilon_l - \mu)} \right) \right] = \frac{1}{\beta} \frac{\beta e^{-\beta (\epsilon_l - \mu)}}{1 - e^{-\beta (\epsilon_l - \mu)}}
+  $$
+
+  分子分母同乘 $e^{\beta (\epsilon_l - \mu)}$，顺理成章得出 BE 分布：
+
+  $$
+  \langle a_l \rangle = \frac{1}{e^{\beta (\epsilon_l - \mu)} - 1}
+  $$
+
+  回顾第五章中动用海量微观态组合排列、斯特林近似展开以及拉格朗日待定系数法所耗费的漫长篇幅，巨正则系综由于天然契合粒子数不守恒的量子微观态图像，使得推导过程宛如摧枯拉朽般自然、严谨。
+
+### 6.6.3 理想量子气体普适物态方程的解析证明
+
++ 利用巨正则系综，我们还可以非常优美地证明非相对论理想气体的普适状态方程 $pV = \frac{2}{3}U$。
+
+  根据 6.5.2 节的巨热力学势关系 $pV = k_B T \ln \Xi = k_B T \sum_l \ln \Xi_l$。将 FD 和 BE 统计的单能级配分函数统一写为：
+
+  $$
+  pV = \pm k_B T \sum_l \ln \left( 1 \pm e^{-\beta (\epsilon_l - \mu)} \right)
+  $$
+
+  （式中上方符号“$+$”对应费米子，下方符号“$-$”对应玻色子）。
+
+  将离散求和转化为连续相空间积分，引入三维自由粒子的态密度 $D(\epsilon) = C \epsilon^{1/2}$（其中 $C$ 包含自旋简并度及常数项）：
+
+  $$
+  pV = \pm k_B T \int_0^\infty D(\epsilon) \ln \left( 1 \pm e^{-\beta (\epsilon - \mu)} \right) d\epsilon = \pm k_B T \int_0^\infty C \epsilon^{1/2} \ln \left( 1 \pm e^{-\beta (\epsilon - \mu)} \right) d\epsilon
+  $$
+
+  对该定积分应用**分部积分法**。令：
+
+  $u = \ln \left( 1 \pm e^{-\beta (\epsilon - \mu)} \right)$，则 $du = \frac{\mp \beta e^{-\beta (\epsilon - \mu)}}{1 \pm e^{-\beta (\epsilon - \mu)}} d\epsilon = \mp \beta \frac{1}{e^{\beta (\epsilon - \mu)} \pm 1} d\epsilon$
+
+  $dv = C \epsilon^{1/2} d\epsilon$，则 $v = \frac{2}{3} C \epsilon^{3/2} = \frac{2}{3} \epsilon D(\epsilon)$
+
+  代入积分公式 $\int u dv = [uv]_0^\infty - \int v du$：
+
+  边界项 $[uv]_0^\infty$ 在上限 $\epsilon \to \infty$ 时指数衰减为零，在下限 $\epsilon = 0$ 时因 $\epsilon^{3/2} = 0$ 亦为零。因此仅剩下 $-\int v du$ 项：
+
+  $$
+  pV = \pm k_B T \int_0^\infty \left[ \frac{2}{3} \epsilon D(\epsilon) \right] \left[ \pm \beta \frac{1}{e^{\beta (\epsilon - \mu)} \pm 1} d\epsilon \right]
+  $$
+
+  注意到 $\pm \cdot \pm = +$，且 $k_B T \cdot \beta = 1$，常数项 $\frac{2}{3}$ 可提取至积分号外：
+
+  $$
+  pV = \frac{2}{3} \int_0^\infty \epsilon \left[ \frac{1}{e^{\beta (\epsilon - \mu)} \pm 1} \right] D(\epsilon) d\epsilon
+  $$
+
+  方括号中的项正是量子平均占据数 $\langle a(\epsilon) \rangle$。积分号内部的式子 $\int_0^\infty \epsilon \langle a(\epsilon) \rangle D(\epsilon) d\epsilon$ 恰好是系统总平动内能 $U$ 的标准定义式。
+
+  由此，我们完成了极其纯粹的解析证明：
+
+  $$
+  pV = \frac{2}{3} U
+  $$
+
+  该物态方程不依赖于任何关于经典或量子的特化近似，不依赖于温度或密度，它仅根源于三维非相对论粒子的色散关系（$\epsilon \propto p^2$），是统计物理框架下极其坚固的普适定律。
+
+&emsp;&emsp;
+
+&emsp;&emsp;
+
+&emsp;&emsp;
+
+---
+
+# 第七章 涨落理论
+
++ 在前几章的讨论中，我们主要关注了宏观热力学量在平衡态下的统计平均值。然而，微观粒子的无规则热运动会导致系统的实际状态在平均值附近发生微小的动态偏离，这种自发偏离被称为**涨落（Fluctuations）**。
+
+  涨落不仅是检验统计物理理论自洽性的重要部分，它更深刻地联系着系统自发偏离平衡的能力与其在外部扰动下作出响应的能力。本章将系统性地探讨涨落现象的统计与准热力学理论。
+
+## 7.1 涨落的广义系综理论
+
++ 广义系综理论提供了一种自下而上的微观推导方法。通过将配分函数视为数学上的母函数（Generating Function），我们可以利用连续的代数微商操作，非常简洁地导出各物理量涨落的统计矩。
+
+### 7.1.1 广义力与广义位移的统计框架
+
++ 为了建立普适的涨落公式，我们考察一个处于温度 $T$ 的平衡系统，并引入广义外力参量 $y_i$（如外加磁场 $B$、压强 $p$ 或化学势 $\mu$）以及与之共轭的广义位移（或广义坐标） $x_i$（如磁化强度 $M$、体积 $V$ 或粒子数 $N$）。
+
+  假设系统的总哈密顿量可以分离为一个无外场干扰的基础部分 $H_0$，以及一系列广义力与广义位移线性耦合的势能项：
+
+  $$
+  H(x, y) = H_0(x) - \sum_i y_i x_i
+  $$
+
+  在正则系综的框架下，系统处于某一微观状态的概率分布为：
+
+  $$
+  P(x) = \frac{1}{\mathcal{Z}} e^{-\beta \left( H_0(x) - \sum_i y_i x_i \right)}
+  $$
+
+  其中，归一化常数 $\mathcal{Z}(y_1, y_2, \dots)$ 被定义为系统的**广义配分函数**，它包含了所有广义力参量的信息：
+
+  $$
+  \mathcal{Z}(y) = \sum_{x} e^{-\beta H_0(x)} e^{\beta \sum_i y_i x_i}
+  $$
+
+### 7.1.2 物理量的平均值与均方涨落
+
++ 利用广义配分函数对参量 $y_i$ 求对数偏导，可以直接得到广义位移 $x_i$ 的统计平均值 $\langle x_i \rangle$：
+
+  $$
+  \langle x_i \rangle = \frac{\sum_x x_i e^{-\beta H(x, y)}}{\sum_x e^{-\beta H(x, y)}} = \frac{1}{\beta \mathcal{Z}} \frac{\partial \mathcal{Z}}{\partial y_i} = \frac{1}{\beta} \frac{\partial \ln \mathcal{Z}}{\partial y_i}
+  $$
+
+  为了考察该物理量的涨落幅度，我们研究其偏离平均值的程度 $\Delta x_i = x_i - \langle x_i \rangle$。涨落的平均值显然为零（$\langle \Delta x_i \rangle = 0$），因此衡量涨落尺度的核心量是**均方涨落 $\langle (\Delta x_i)^2 \rangle = \langle x_i^2 \rangle - \langle x_i \rangle^2$**。
+
+  对平均值公式再次关于共轭参量 $y_i$ 求偏导：
+
+  $$
+  \frac{\partial \langle x_i \rangle}{\partial y_i} = \frac{\partial}{\partial y_i} \left( \frac{\sum_x x_i e^{-\beta H}}{\mathcal{Z}} \right) = \frac{\sum_x \beta x_i^2 e^{-\beta H}}{\mathcal{Z}} - \frac{\sum_x x_i e^{-\beta H}}{\mathcal{Z}^2} \frac{\partial \mathcal{Z}}{\partial y_i}
+  $$
+
+  这可以化简为：
+
+  $$
+  \frac{\partial \langle x_i \rangle}{\partial y_i} = \beta \langle x_i^2 \rangle - \beta \langle x_i \rangle^2 = \beta \langle (\Delta x_i)^2 \rangle
+  $$
+
+  引入 $\beta = 1/k_B T$，我们得到了涨落的普适基本方程：
+
+  $$
+  \langle (\Delta x_i)^2 \rangle = k_B T \frac{\partial \langle x_i \rangle}{\partial y_i}
+  $$
+
+### 7.1.3 涨落-耗散关系
+
++ 上述公式具有非常深刻的热力学意义。等式右侧的偏导数 $\chi_{ii} = \frac{\partial \langle x_i \rangle}{\partial y_i}$ 称为**广义极化率（Generalized Susceptibility）**或**响应函数**。它衡量了系统在受到微小外部广义力 $y_i$ 扰动时，广义位移 $\langle x_i \rangle$ 所作出的宏观线性响应程度。
+
+  这个普适关系表明：**系统自发产生的均方涨落，直接正比于其对外部对应扰动的宏观响应能力。**
+
+  在之前的章节中推导过的具体涨落定理，均可视为该普适框架的特例：
+
+  1. 若取 $y = -1/T$，$x = E$（能量），广义极化率关联到定容热容 $C_V$，即可得到 $\langle (\Delta E)^2 \rangle = k_B T^2 C_V$。
+
+  2. 若取 $y = \mu$，$x = N$（粒子数），响应函数关联到等温压缩率 $\kappa_T$，即可得到 $\langle (\Delta N)^2 \rangle = k_B T \frac{\langle N \rangle^2}{V} \kappa_T$。
+
+  3. 若考察顺磁体，取 $y = B$（磁场），$x = M$（磁化强度），则磁化强度的涨落直接正比于等温磁化率 $\chi_T$。
+
+### 7.1.4 多变量的交叉关联与响应矩阵的对称性
+
++ 真实系统中往往存在多个物理量共同涨落的情况。为了描述两个不同物理量 $x_i$ 与 $x_j$ 之间的统计相关性，可以定义它们的**协方差（交叉关联函数）** $\langle \Delta x_i \Delta x_j \rangle$。
+
+  类似于单一变量的推导，我们将 $\langle x_i \rangle$ 对另一个参量 $y_j$ 求偏导：
+
+  $$
+  \frac{\partial \langle x_i \rangle}{\partial y_j} = \beta \langle x_i x_j \rangle - \beta \langle x_i \rangle \langle x_j \rangle = \beta \langle \Delta x_i \Delta x_j \rangle
+  $$
+
+  由此得到交叉涨落公式：
+
+  $$
+  \langle \Delta x_i \Delta x_j \rangle = k_B T \frac{\partial \langle x_i \rangle}{\partial y_j}
+  $$
+
+  根据数学上的偏导数交换律，广义配分函数的二阶混合偏导数与求导顺序无关：
+
+  $$
+  \frac{\partial \langle x_i \rangle}{\partial y_j} = \frac{\partial}{\partial y_j} \left( \frac{1}{\beta} \frac{\partial \ln \mathcal{Z}}{\partial y_i} \right) = \frac{1}{\beta} \frac{\partial^2 \ln \mathcal{Z}}{\partial y_j \partial y_i} = \frac{\partial \langle x_j \rangle}{\partial y_i}
+  $$
+
+  这一关系式证明了宏观响应矩阵的**对称性**，即系统参量 $x_i$ 对力 $y_j$ 的响应率，等同于参量 $x_j$ 对力 $y_i$ 的响应率。这种由微观统计关联直接导致的宏观对称性，构成了不可逆过程热力学中著名的昂萨格倒易关系（Onsager Reciprocal Relations）的静态微观基础。
+
+## 7.2 涨落的准热力学理论
+
++ 在 7.1 节中，我们利用微观的配分函数导出了涨落的一般统计规律。然而，爱因斯坦（A. Einstein）在 1910 年提出了一种极为深刻的逆向物理视角：他跳出了微观哈密顿量的繁琐计算，将宏观的经典热力学定律直接向下延伸，通过反演玻尔兹曼公式，建立了一套纯粹基于宏观热力学参量的唯象涨落理论，即**准热力学理论**。
+
+### 7.2.1 玻尔兹曼原理的反演与爱因斯坦公式
+
++ 玻尔兹曼公式 $S = k_B \ln \Omega$ 建立了孤立系统宏观熵与微观状态数 $\Omega$ 的绝对对应关系。爱因斯坦将其逻辑反转：既然 $\Omega$ 正比于系统处于某宏观态的概率，那么系统自发处于熵为 $S$ 的状态的概率 $P$ 必然满足：
+
+  $$
+  P \propto e^{S / k_B}
+  $$
+
+  考察一个由研究对象（体积较小的局部子系统）和广阔环境（庞大的恒温恒压浴）共同构成的绝对孤立复合系统。由于环境极大，其温度 $T_0$ 和压强 $p_0$ 保持恒定。
+
+  当子系统内部发生微小的自发涨落时，整个复合系统偏离了绝对平衡态。复合系统的总熵变 $\Delta S_{total}$ 等于子系统熵变 $\Delta S$ 与环境熵变 $\Delta S_{env}$ 之和：
+
+  $$
+  \Delta S_{total} = \Delta S + \Delta S_{env}
+  $$
+
+  环境吸收的热量为 $\Delta Q_{env} = -\Delta U - p_0 \Delta V$（其中 $\Delta U$ 和 $\Delta V$ 分别为子系统内能和体积的涨落增量）。由于环境足够大，其熵变可通过可逆热力学过程计算：$\Delta S_{env} = \frac{\Delta Q_{env}}{T_0} = -\frac{\Delta U + p_0 \Delta V}{T_0}$。
+
+  因此，总熵变为：
+
+  $$
+  \Delta S_{total} = \Delta S - \frac{\Delta U + p_0 \Delta V}{T_0} = -\frac{\Delta U - T_0 \Delta S + p_0 \Delta V}{T_0} = -\frac{\Delta W_{\min}}{T_0}
+  $$
+
+  其中 $\Delta W_{\min}$ 为可逆条件下使子系统产生该宏观偏离所必须对它做的**最小功**。
+
+  将其代回爱因斯坦概率反演公式，我们得到了描述子系统发生热力学涨落的**爱因斯坦涨落公式**：
+
+  $$
+  P \propto \exp\left( \frac{\Delta S_{total}}{k_B} \right) = \exp\left( -\frac{\Delta W_{\min}}{k_B T_0} \right)
+  $$
+
+### 7.2.2 熵的二阶展开与高斯正态近似
+
++ 由于孤立复合系统在绝对平衡态时的总熵达到极大值，$\Delta S_{total}$ 泰勒展开的一阶变分为零。因此，决定涨落概率分布的只能是二阶微小量。
+
+  我们将最小功做二阶泰勒展开。对于纯粹的热力学 $p-V-T$ 系统，子系统的内能是独立变量 $S$ 和 $V$ 的函数 $U(S, V)$。对 $\Delta U$ 进行展开：
+
+  $$
+  \Delta U \approx \left( \frac{\partial U}{\partial S} \right)_V \Delta S + \left( \frac{\partial U}{\partial V} \right)_S \Delta V + \frac{1}{2} \left[ \frac{\partial^2 U}{\partial S^2} (\Delta S)^2 + 2 \frac{\partial^2 U}{\partial S \partial V} \Delta S \Delta V + \frac{\partial^2 U}{\partial V^2} (\Delta V)^2 \right]
+  $$
+
+  利用热力学基本关系 $\left(\frac{\partial U}{\partial S}\right)_V = T_0$ 且 $\left(\frac{\partial U}{\partial V}\right)_S = -p_0$，展开式中的一阶项恰好抵消了最小功定义式中的一阶项（即证明了平衡态下的一阶微商为零）。
+
+  对于二阶项（方括号内的部分），利用微积分法则：
+
+  $$
+  \Delta \left( \frac{\partial U}{\partial S} \right)_V = \Delta T, \quad \Delta \left( \frac{\partial U}{\partial V} \right)_S = -\Delta p
+  $$
+
+  可将其代数化简为极其优美的对称二次型：
+
+  $$
+  \Delta W_{\min} \approx \frac{1}{2} (\Delta T \Delta S - \Delta p \Delta V)
+  $$
+
+  将其代回爱因斯坦公式，得出描述多变量联合涨落的**多元高斯分布律（正态分布）**：
+
+  $$
+  P \propto \exp\left[ -\frac{1}{2 k_B T} (\Delta T \Delta S - \Delta p \Delta V) \right]
+  $$
+
+  *(注：由于涨落处于极小区间，为了符号简洁，分母中的环境温度 $T_0$ 直接写作系统平均温度 $T$。)*
+
+### 7.2.3 热力学共轭变量的涨落与统计独立性
+
++ 上述多元高斯分布中包含了四个涨落变量（$\Delta T, \Delta S, \Delta p, \Delta V$），但对于单组分系统，仅有两个变量是完全独立的。我们可以选择一对相互独立的参量（例如体积 $V$ 和温度 $T$）作为独立的随机基底，对分布函数进行变换。
+
+  将 $\Delta S$ 和 $\Delta p$ 按照独立变量 $T$ 和 $V$ 进行全微分展开：
+
+  $$
+  \Delta S = \left( \frac{\partial S}{\partial T} \right)_V \Delta T + \left( \frac{\partial S}{\partial V} \right)_T \Delta V = \frac{C_V}{T} \Delta T + \left( \frac{\partial p}{\partial T} \right)_V \Delta V
+  $$
+
+  $$
+  \Delta p = \left( \frac{\partial p}{\partial T} \right)_V \Delta T + \left( \frac{\partial p}{\partial V} \right)_T \Delta V
+  $$
+
+  *(注：上式 $\Delta S$ 中使用了麦克斯韦关系式 $\left(\frac{\partial S}{\partial V}\right)_T = \left(\frac{\partial p}{\partial T}\right)_V$)*
+
+  将这两式代入二次型积分核 $(\Delta T \Delta S - \Delta p \Delta V)$ 中：
+
+  $$
+  \Delta T \Delta S - \Delta p \Delta V = \Delta T \left[ \frac{C_V}{T} \Delta T + \left( \frac{\partial p}{\partial T} \right)_V \Delta V \right] - \left[ \left( \frac{\partial p}{\partial T} \right)_V \Delta T + \left( \frac{\partial p}{\partial V} \right)_T \Delta V \right] \Delta V
+  $$
+
+  展开后可以发现，交叉项 $\left(\frac{\partial p}{\partial T}\right)_V \Delta T \Delta V$ 发生极其精确的正负抵消，结果完全解耦为单纯平方项的组合：
+
+  $$
+  \Delta T \Delta S - \Delta p \Delta V = \frac{C_V}{T} (\Delta T)^2 - \left( \frac{\partial p}{\partial V} \right)_T (\Delta V)^2
+  $$
+
+  联合分布概率随之严格分解为两个独立的高斯函数的乘积：
+
+  $$
+  P(\Delta T, \Delta V) \propto \exp\left[ -\frac{C_V}{2 k_B T^2} (\Delta T)^2 \right] \exp\left[ \frac{1}{2 k_B T} \left( \frac{\partial p}{\partial V} \right)_T (\Delta V)^2 \right]
+  $$
+
+  **统计独立性与涨落的定量结论：**
+
+  概率密度的因式分解从数学上确证了温度涨落 $\Delta T$ 与体积涨落 $\Delta V$ 之间不存在任何统计相关性。根据高斯分布的标准方差公式（$\int x^2 e^{-ax^2} dx$ 对应的方差为 $1/2a$），我们直接获得了如下精确的热力学宏观偏离准则：
+
+  1. **统计独立性**（交叉关联为零）：
+
+  $$
+  \langle \Delta T \Delta V \rangle = 0
+  $$
+
+  *(同理可证，压强与熵的涨落也相互独立，$\langle \Delta p \Delta S \rangle = 0$。但 $T$ 与 $S$、$p$ 与 $V$ 作为热力学共轭变量则是强烈相关的。)*
+
+  2. **基础变量的均方涨落**：
+
+  $$
+  \langle (\Delta T)^2 \rangle = \frac{k_B T^2}{C_V}
+  $$
+
+  $$
+  \langle (\Delta V)^2 \rangle = -k_B T \left( \frac{\partial V}{\partial p} \right)_T = k_B T V \kappa_T
+  $$
+
+  爱因斯坦的准热力学理论巧妙避开了配分函数求解的具体微观细节，以热力学定律的普适约束反推统计力学特性，其得出的结论与 7.1 节及更早期系综理论所求出的涨落方程绝对一致。这充分表明了吉布斯微观统计框架与经典热力学唯象宏观结构的完美自洽性。

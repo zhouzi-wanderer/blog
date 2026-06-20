@@ -1,7 +1,7 @@
 ---
 title: 电动力学
 published: 2025-09-19
-description: ''
+description: '四大力学之一：热力学与统计物理相关笔记，比较浓缩，推荐用作复习，也可用来预习。'
 image: '../../assets/covers/studying.png'
 tags: [notes, electrodynamics]
 category: 'Notes'
@@ -19,7 +19,7 @@ p {
 > 
 > 该笔记未讲解该书第七章，将缺少电磁波的散射、色散和吸收以及电磁质量与辐射阻尼部分。
 >
-> 第一章之后部分与Gemini Pro🤖共同完成
+> 第一章之后部分与Gemini Pro 🤖共同完成
 > 
 > 完成于2026年1月6日
 
